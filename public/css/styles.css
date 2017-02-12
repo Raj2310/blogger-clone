@@ -1,0 +1,50 @@
+
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+}
+.company-name{
+  font-size: 100px;
+}
+.below-company-name{
+    height: 4px;
+    background-color: #333;
+}
+.company-mantra{
+  word-spacing: 50px;
+}
+.editor-pick{
+  font-size: 50px;
+  color: #db4a37;
+  font-weight: bold;
+
+}
+.below-editor-pick{
+    height: 2px;
+    background-color: #333;
+}
+.footer-company-name{
+  /*text-decoration: underline;*/
+}
+.hero-bontent-body p{
+  line-height: 1.5;
+  word-spacing: 10px;
+  font-size: 20px;
+  font-family: cursive;
+}
+.similar-readings img{
+  max-width: 250px;
+  max-height: 250px;
+}
+body { padding-top: 70px; }
+.navbar li { color: #000 }
+@media screen and (min-width: 1200px) {
+  .main-outer-container{
+    border:2px solid #333;
+    margin-left:auto;
+    margin-right:auto;
+    /*margin-top:50px;*/
+    max-width: 1080px;
+  }
+}

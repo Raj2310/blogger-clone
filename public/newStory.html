@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="jquery.js"></script>
+</head>
+<body>
+<h3>new blog</h3>
+<form action="http://127.0.0.1:3000/wines" method="post">
+  <textarea rows="10" cols="50" id="content"></textarea>
+</form>
+<button type="button" name="button" id="clickMe">CLICKME</button>
+
+<p>Click on the submit button, and the input will be sent to a page on the server called "demo_form_method_post.asp".</p>
+<hr>
+<h3>update Document </h3>
+<input type="text" placeholder="id"/>
+<input type="text" palceholder="Main Body"/>  
+<hr>
+</body>
+<script>
+
+$("#clickMe").click(function(){
+  const mainContent=$("#content")[0].value;//get the value of text from textbox
+  const n=mainContent.search(" ");
+  const author=mainContent.substring(0,n);// author first 10 characters
+  const heading=mainContent.substring(n,25);
+  const body=mainContent.substring(25);
+  const d = new Date();
+  console.log(body);
+  const object={
+    author:author,
+    title:heading,
+    body:body,
+    date:d
+  };
+  $.post('http://127.0.0.1:3000/wines',object, function(result){
+   console.log(result);
+ })
+});
+
+</script>
+</html>
