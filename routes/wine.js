@@ -57,13 +57,29 @@ exports.findById = function(req, res) {
 
     });
 };
+exports.findByTag = function(req, res) {
+    var tag = req.params.tag;
+    console.log('Retrieving  tag: ' + tag);
+    db.collection('wines', function(err, collection) {
+      if(err){
+          res.send("here");
+          console.log(err);
+      }
+      else {
+        collection.find({tag:tag}).limit(5).toArray(function(err, items) {
+            res.send(items);
+        });
+      }
+
+    });
+};
 exports.addNewWine = function(req,res){
    console.log(req.query.color);
    console.log(req.query.handle);
 };
 exports.findAll = function(req, res) {
     db.collection('wines', function(err, collection) {
-        collection.find().toArray(function(err, items) {
+        collection.find().limit(5).toArray(function(err, items) {
             res.send(items);
         });
     });

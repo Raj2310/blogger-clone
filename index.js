@@ -33,6 +33,7 @@ var query1=request.body.var1;
 var query2=request.body.var2;
 console.log(request.body.fname);
 });*/
+app.get('/byTag/:tag',wine.findByTag);
 app.get('/wines/:id', wine.findById);
 //app.get('/addFromJsonData',wine.addFromJsonData);
 app.post('/wines', wine.addWine);

@@ -92,9 +92,9 @@
         <img src="resources/hero.jpg" class="img-responsive" alt="Responsive image"/>
         <div class="hero-bontent-body">
 
-          <h1><center>The Fox – Redefine the Magazine</center></h1>
-          <h4><center>Published on April 10, 2015  in Photography  by Sammy</center></h4>
-          <p>
+          <h1><center ><span id="postTitle">The Fox – Redefine the Magazine</span></center></h1>
+          <h4><center><span id="postDate">Published on April 10, 2015</span>  in Photography  by <span id="postAuthor">Sammy</span></center></h4>
+          <p id="postBody">
             Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center — an equal earth which all men occupy as equals. The airman's earth, if free men make it, will be truly round: a globe in practice, not in theory.
 
             Science cuts two ways, of course; its products can be used for both good and evil. But there's no turning back from science. The early warnings about technological dangers also come from science.
@@ -127,11 +127,11 @@
 
     </div>
   </div>
-  <div class="main-outer-container similar-readings container-fluid" style="border-top-width:0px">
+  <div class="main-outer-container similar-readings container-fluid" style="border-top-width:0px" id="suggestedPosts">
     <div>
       <h2><center><span class="label label-default">Similar Readings</span></center></h2>
     </div>
-    <div class="media">
+    <!-- <div class="media">
       <div class="media-left media-middle">
         <a href="#">
           <img class="media-object" src="resources/hero-small.jpg" alt="...">
@@ -147,40 +147,8 @@
         Gallery Post
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
       </div>
-    </div>
-    <div class="media">
-      <div class="media-left media-middle">
-        <a href="#">
-          <img class="media-object" src="resources/hero-small.jpg" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading">Middle aligned media</h3>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-
-        Morning in the city
-        Gorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-
-        Gallery Post
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-      </div>
-    </div>
-    <div class="media">
-      <div class="media-left media-middle">
-        <a href="#">
-          <img class="media-object" src="resources/hero-small.jpg" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading">Middle aligned media</h3>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-
-        Morning in the city
-        Gorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-
-        Gallery Post
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-      </div>
+    </div> -->
+    
     </div>
 
 
@@ -214,5 +182,38 @@
   <script></script>
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script>
+  function param(name) {//gets parameters from the url
+    return (location.search.split(name + '=')[1] || '').split('&')[0];
+}
+  $(document).ready(function(){
+    var id=param("id");
+     $.get("http://localhost:3000/wines/"+id, function(data, status){
+         $("#postTitle").html(data.title);
+         $("#postDate").html(data.date);
+         $("#postAuthor").html(data.author);
+         $("#postBody").html(data.body);
+  /*       console.log(data.author);
+         console.log(data._id);
+         console.log(data.title);*/
+        }
+      );
+     $.get("http://localhost:3000/wines", function(data, status){
+        $.each(data, function(index, element) {
+               $("#suggestedPosts").append("<div class='media'>"+
+      "<div class='media-left media-middle'>"+
+        "<a href='#'>"+
+          "<img class='media-object' src='resources/hero-small.jpg' alt='...'>"+
+        "</a>"+
+      "</div>"+
+      "<div class='media-body'>"+
+        "<h3 class='media-heading'><a href='post.html?id="+element._id+"'>"+ element.title+"</a></h3>"+
+       element.body+
+      "</div>"+
+    "</div>");
+        });
+      });
+  });
+  </script>
 </body>
 </html>
