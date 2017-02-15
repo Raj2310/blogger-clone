@@ -18,6 +18,15 @@
   <input type="text" name="postTitle" id="postTitle" placeholder="title of the post"/>
   <input type="text" name="postAuthor" id="postAuthor" placeholder="Author name" />
   <textarea id="postContent"></textarea>
+  <form ref='uploadForm' 
+      id='uploadForm' 
+      action='http://localhost:3000/upload' 
+      method='post' 
+      encType="multipart/form-data">
+        <input type="text" id="fileUploadName" id="fileUploadName" />
+        <input type="file" name="sampleFile" />
+        <input type='submit' value='Upload!' />
+    </form>
   <button id="submitPost">Submit</button>
   <script src="js/jquery.js"></script>
   <script>
@@ -30,6 +39,7 @@
             var postContent=$("#postContent").val();
             $.post("http://localhost:3000/wines",{ title:postTitle,author:postAuthor,body:postContent}, function(data, status){
                      console.log(data);
+                     $("#fileUploadName").val(data._id);
             });
           }
         );
