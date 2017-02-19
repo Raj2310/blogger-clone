@@ -171,20 +171,8 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
      <script type="text/javascript">
-      function loadAllData(){
-
-      }
-      function loadTagData(){
-        
-      }
-  </script>
-    <script>
-    function param(name) {//gets parameters from the url
-        return (location.search.split(name + '=')[1] || '').split('&')[0];
-    }
-    $(document).ready(function() {
-      if(param("tag")===""){
-          $.get("http://localhost:3000/wines", function(data, status){
+      function loadAllData(num){
+        $.get("http://localhost:3000/winesAll/"+num, function(data, status){
             $.each(data, function(index, element) {
                    $("#blogContainer").append("  <h2>"+
                          "<a href='post.html?id="+element._id+"' class='blogTitle'>"+(element.title)+"</a>"+
@@ -201,11 +189,10 @@
 
                      "<hr>");
             });
-          });
+        });
       }
-      else{
-             var tag=param("tag");
-             $.get("http://localhost:3000/byTag/"+tag, function(data, status){
+      function loadTagData(tag,num){
+            $.get("http://localhost:3000/byTag/"+tag+"/"+num, function(data, status){
                 $.each(data, function(index, element) {
                        $("#blogContainer").append("  <h2>"+
                              "<a href='post.html?id="+element._id+"' class='blogTitle'>"+(element.title)+"</a>"+
@@ -222,12 +209,35 @@
 
                          "<hr>");
                 });
-              });       
+            });       
+      }
+  </script>
+    <script>
+    function param(name) {//gets parameters from the url
+        return (location.search.split(name + '=')[1] || '').split('&')[0];
+    }
+    $(document).ready(function() {
+      if(param("tag")===""){
+         loadAllData(0);
+      }
+      else{
+             var tag=param("tag");
+             loadTagData(tag,0);
       }  
       
     });
     </script>
+    <script type="text/javascript">
+    //Load Data On scroll
+    $(window).scroll(function() {
+        if($(window).scrollTop() + $(window).height() == $(document).height()) {
+            console.log("bottom!");
+        }
+    });
 
+
+
+    </script>
 </body>
 
 </html>

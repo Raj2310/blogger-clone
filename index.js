@@ -116,14 +116,14 @@ app.post('logout',function(req,res){
     // cannot access session here
   })
 });
-app.get('/wines', wine.findAll);
+app.get('/winesAll/:num', wine.findAll);
 /*app.post('/wines',function(request,response){
 var query1=request.body.var1;
 var query2=request.body.var2;
 console.log(request.body.fname);
 });*/
-app.get('/byTag/:tag',wine.findByTag);
-app.get('/wines/:id', wine.findById);
+app.get('/byTag/:tag/:num',wine.findByTag);
+app.get('/wines/:id/', wine.findById);
 //app.get('/addFromJsonData',wine.addFromJsonData);
 app.post('/wines', wine.addWine);
 app.post('/signup',wine.newUserSignup);

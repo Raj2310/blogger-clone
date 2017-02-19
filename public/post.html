@@ -196,7 +196,7 @@
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
         }
       );
-     $.get("http://localhost:3000/wines", function(data, status){
+     $.get("http://localhost:3000/winesAll", function(data, status){
         $.each(data, function(index, element) {
                $("#suggestedPosts").append("<div class='media'>"+
       "<div class='media-left media-middle'>"+

@@ -47,10 +47,11 @@ exports.findById = function(req, res) {
     db.collection('wines', function(err, collection) {
       if(err){
           res.send("here");
-          console.log(err);
+          //console.log(err);
       }
       else {
         collection.findOne({_id:objectId(id)}, function(err, item) {
+          console.log(item);
             res.send(item);
         });
       }
@@ -59,6 +60,7 @@ exports.findById = function(req, res) {
 };
 exports.findByTag = function(req, res) {
     var tag = req.params.tag;
+    var num=req.params.num;
     console.log('Retrieving  tag: ' + tag);
     db.collection('wines', function(err, collection) {
       if(err){
@@ -155,6 +157,7 @@ exports.newUserSignup = function(req,res){
 };
 
 exports.findAll = function(req, res) {
+   var num=req.params.num;
     db.collection('wines', function(err, collection) {
         collection.find().limit(5).toArray(function(err, items) {
             res.send(items);
