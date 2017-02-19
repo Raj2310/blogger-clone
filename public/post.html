@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css">
-
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
@@ -89,7 +88,7 @@
         </center>
       </div>-->
       <div class="hero-content">
-        <img src="resources/hero.jpg" class="img-responsive" alt="Responsive image"/>
+        <img src="resources/hero.jpg" class="img-responsive" alt="Responsive image" id="mainPostImage" />
         <div class="hero-bontent-body">
 
           <h1><center ><span id="postTitle">The Fox – Redefine the Magazine</span></center></h1>
@@ -182,6 +181,7 @@
   <script></script>
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
+ 
   <script>
   function param(name) {//gets parameters from the url
     return (location.search.split(name + '=')[1] || '').split('&')[0];
@@ -191,11 +191,9 @@
      $.get("http://localhost:3000/wines/"+id, function(data, status){
          $("#postTitle").html(data.title);
          $("#postDate").html(data.date);
-         $("#postAuthor").html(data.author);
+         $("#postAuthor").html(data.author.firstName);
          $("#postBody").html(data.body);
-  /*       console.log(data.author);
-         console.log(data._id);
-         console.log(data.title);*/
+          $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
         }
       );
      $.get("http://localhost:3000/wines", function(data, status){
@@ -203,7 +201,7 @@
                $("#suggestedPosts").append("<div class='media'>"+
       "<div class='media-left media-middle'>"+
         "<a href='#'>"+
-          "<img class='media-object' src='resources/hero-small.jpg' alt='...'>"+
+          "<img class='media-object' src='upload/"+element._id+".jpg"+"' alt='...'>"+
         "</a>"+
       "</div>"+
       "<div class='media-body'>"+

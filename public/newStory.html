@@ -1,42 +1,187 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <script src="jquery.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bare - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
+
 <body>
-<h3>new blog</h3>
-<form action="http://127.0.0.1:3000/wines" method="post">
-  <textarea rows="10" cols="50" id="content"></textarea>
-</form>
-<button type="button" name="button" id="clickMe">CLICKME</button>
 
-<p>Click on the submit button, and the input will be sent to a page on the server called "demo_form_method_post.asp".</p>
-<hr>
-<h3>update Document </h3>
-<input type="text" placeholder="id"/>
-<input type="text" palceholder="Main Body"/>  
-<hr>
-</body>
-<script>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Start Bootstrap</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1 navbar-right">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li class="text-primary" id="userNamePlaceholder"></li>
+                  <li><button id="logout" class="btn btn-default">Logout</button></li>
+                </ul>
+            </div>
 
-$("#clickMe").click(function(){
-  const mainContent=$("#content")[0].value;//get the value of text from textbox
-  const n=mainContent.search(" ");
-  const author=mainContent.substring(0,n);// author first 10 characters
-  const heading=mainContent.substring(n,25);
-  const body=mainContent.substring(25);
-  const d = new Date();
-  console.log(body);
-  const object={
-    author:author,
-    title:heading,
-    body:body,
-    date:d
-  };
-  $.post('http://127.0.0.1:3000/wines',object, function(result){
-   console.log(result);
- })
-});
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-6 col-le-offset-2 col-md-8 text-center form-group">
+                
+                <label for="postTitle">Title of Post</label>
+                <input type="text" name="postTitle" id="postTitle" placeholder="title of the post" class="form-control"/>
+                
+                <label for="tags">Select list:</label>
+                <select class="form-control" id="tags">
+                  <option value="fashion">Fashion</option>
+                  <option value="food">Food</option>
+                  <option value="fitness">Fitness</option>
+                  <option value="politics">Politics</option>
+                </select>
+                
+                <label for="exampleInputPassword1">Write the post</label>
+                <textarea id="postContent" class="form-control"></textarea>
+                
+                <button id="submitPost"  class="btn btn-default">Submit</button>
+            </div>
+            <div class="col-lg-4 col-md-4 form-group">
+             <h3>Upload Image Here</h3>
+              <form ref='uploadForm' 
+                      id='uploadForm' 
+                      action='http://localhost:3000/upload' 
+                      method='post' 
+                      encType="multipart/form-data">
+                  
+                  <label for="fileUploadName">upload The Image</label>
+                  <input type="text" id="fileUploadName" name="fileUploadName" />
+                  
+                  <input type="file" name="sampleFile" id="fileUploadField" />
+                  
+                  <input type='submit' id="fileUploadButton" value='Upload!' />
+              </form>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+var writer={};
+$(document).ready(
+      function(){
+        $.get('http://localhost:3000/userinfo',function(data,status){
+            if(data.status==0){
+              window.location.replace("http://localhost:3000/login.html");
+            }
+            else{
+              console.log(data);
+              writer.firstName=data.firstName;
+              writer.lastName=data.lastName;
+              writer.id=data.id;
+              $("#userNamePlaceholder").html('hello '+writer.firstName);
+            }
+        });
+        $("#submitPost").click(
+          function(){
+            var postTitle=$("#postTitle").val();
+            var postAuthor=$("#postAuthor").val();
+            var postContent=$("#postContent").val();
+            var tag=$("#tags").val();
+            //var fileName=$("#fileUploadName").attr("name");
+            $.post("http://localhost:3000/wines",{ title:postTitle,tag:tag,body:postContent,author:writer}, function(data, status){
+                     console.log(data);
+                     $("#fileUploadName").val(data._id);
+            });
+          }
+        );
+        $("#uploadForm").submit(function(event){
+ 
+          //disable the default form submission
+          event.preventDefault();
+         
+          //grab all form data  
+          var formData = new FormData($(this)[0]);
+         
+          $.ajax({
+            url: 'http://localhost:3000/upload',
+            type: 'POST',
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function (returndata) {
+              console.log(returndata);
+            }
+          });
+         
+          return false;
+        });
+        $("#logout").click(function () {
+          $.post( "logout",function( data ) {
+              window.location.replace("http://localhost:3000/login.html");
+        } );
+  });
+
+      }
+    );
 
 </script>
+
+</body>
+
 </html>

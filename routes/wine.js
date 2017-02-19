@@ -77,6 +77,83 @@ exports.addNewWine = function(req,res){
    console.log(req.query.color);
    console.log(req.query.handle);
 };
+
+
+exports.sendUserInfo = function(req,res){
+    if(req.session.id){
+     res.send({status:1,firstName:req.session.firstName,lastName:req.session.lastName,id:req.session.id});   
+    }
+    else{
+      res.send({status:0})
+    }
+
+}
+
+
+
+
+
+
+
+
+exports.newUserSignup = function(req,res){
+   var user=req.body;
+   var signUpKey=user.signUpKey;
+   var email=user.email;
+   var firstName=user.firstName;
+   var lastName=user.lastName;
+   var password=user.password;
+  // var confirmPassword=user.confirmPassword;
+  if(req.session.id){
+     res.send({status:2});
+     return;
+  }
+   var age=user.age;
+    db.collection('users', function(err, collection) {
+      if(err){
+          res.send({status:0,msg:'An error has occurred'});
+          console.log(err);
+      }
+      else {
+        collection.findOne({email: email},{_id:1},function(err,result) {
+         if (err) {
+                console.log(err);
+                res.send({status:0,msg:'An error has occurred'});
+            } else {
+                if(result){
+                    console.log('Success: ' + result._id);
+                    res.send({status:0,msg:"Email id is already registered , try a new one"});
+                  }
+                  else{
+                     //Add new User
+                      if(signUpKey==="Iig20022017"){
+                        collection.insert({firstName:firstName,lastName:lastName,email:email,password:password,age:age}, {safe:true}, function(err, result) {
+                          if (err) {
+                              res.send({'error':'An error has occurred'});
+                          } else {
+                              //console.log('Success: ' + JSON.stringify(result[0]));
+                              req.session.email = email;
+                               req.session.password =password;
+                               req.session.firstName =firstName;
+                               req.session.lastName =lastName;
+                               req.session.id =result._id;
+                              res.send({status:1});
+                          }
+                        });
+                      }
+                      else{
+                         res.send({status:0,msg:'Wrong Confirmation Code'});
+                      }
+                      
+                  }
+                }
+              
+        });
+      }
+    });
+   
+};
+
 exports.findAll = function(req, res) {
     db.collection('wines', function(err, collection) {
         collection.find().limit(5).toArray(function(err, items) {

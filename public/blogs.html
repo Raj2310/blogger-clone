@@ -170,6 +170,14 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+     <script type="text/javascript">
+      function loadAllData(){
+
+      }
+      function loadTagData(){
+        
+      }
+  </script>
     <script>
     function param(name) {//gets parameters from the url
         return (location.search.split(name + '=')[1] || '').split('&')[0];
@@ -182,11 +190,11 @@
                          "<a href='post.html?id="+element._id+"' class='blogTitle'>"+(element.title)+"</a>"+
                      "</h2>"+
                      "<p class='lead'>"+
-                         "by <a href='index.php'>"+element.author+"</a>"+" on <a href='blogs.html?tag="+element.tag+"'>"+element.tag+"</a>"+
+                         "by <a href='index.php'>"+element.author.firstName+"</a>"+" on <a href='blogs.html?tag="+element.tag+"'>"+element.tag+"</a>"+
                      "</p>"+
                      "<p><span class='glyphicon glyphicon-time'></span> Posted on "+element.date+" </p>"+
                      "<hr>"+
-                     "<img class='img-responsive' src='http://placehold.it/900x300' alt=''>"+
+                     "<img class='img-responsive' src='upload/"+element._id+".jpg"+"' alt=''>"+
                      "<hr>"+
                      "<p>"+ element.body+"</p>"+
                      "<a class='btn btn-primary' href='#'>Read More <span class='glyphicon glyphicon-chevron-righ'></span></a>"+
@@ -203,7 +211,7 @@
                              "<a href='post.html?id="+element._id+"' class='blogTitle'>"+(element.title)+"</a>"+
                          "</h2>"+
                          "<p class='lead'>"+
-                             "by <a href='index.php'>"+element.author+"</a>"+" on <a href='blogs.html?tag="+element.tag+"'>"+element.tag+"</a>"+
+                             "by <a href='index.php'>"+element.author.firstName+"</a>"+" on <a href='blogs.html?tag="+element.tag+"'>"+element.tag+"</a>"+
                          "</p>"+
                          "<p><span class='glyphicon glyphicon-time'></span> Posted on "+element.date+" </p>"+
                          "<hr>"+

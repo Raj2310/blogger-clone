@@ -16,14 +16,31 @@
 <form>
   <header>Login</header>
   <label>Username <span>*</span></label>
-  <input/>
+  <input name="email"  id="email" />
   <div class="help">At least 6 character</div>
   <label>Password <span>*</span></label>
-  <input/>
+  <input name="password"  id="password" />
   <div class="help">Use upper and lowercase lettes as well</div>
-  <button>Login</button>
+  <button type="button" id="loginButton">Login</button>
 </form>
+<script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+  <script type="text/javascript">
+  $("#loginButton").click(function () {
+    var email=$("#email").val();
+    var password=$("#password").val();
+    $.post( "login_attempt", { email:email, password: password },function( data ) {
+        if(data.status==1){
+             window.location.replace("http://localhost:3000/newStory.html");
+        }
+        else{
+            alert(data.msg);
+        }
+    } );
+  });
   
-  
+  </script>
 </body>
 </html>
