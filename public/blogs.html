@@ -213,6 +213,7 @@
       }
   </script>
     <script>
+    var skip=0;
     function param(name) {//gets parameters from the url
         return (location.search.split(name + '=')[1] || '').split('&')[0];
     }
@@ -223,7 +224,8 @@
       else{
              var tag=param("tag");
              loadTagData(tag,0);
-      }  
+      } 
+      skip=5; 
       
     });
     </script>
@@ -231,7 +233,14 @@
     //Load Data On scroll
     $(window).scroll(function() {
         if($(window).scrollTop() + $(window).height() == $(document).height()) {
-            console.log("bottom!");
+             if(param("tag")===""){
+                 loadAllData(skip);
+              }
+              else{
+                     var tag=param("tag");
+                     loadTagData(tag,skip);
+              }
+              skip=skip+5;  
         }
     });
 

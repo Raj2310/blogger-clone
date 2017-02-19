@@ -68,7 +68,7 @@ exports.findByTag = function(req, res) {
           console.log(err);
       }
       else {
-        collection.find({tag:tag}).limit(5).toArray(function(err, items) {
+        collection.find({tag:tag}).skip(num).limit(5).toArray(function(err, items) {
             res.send(items);
         });
       }
@@ -157,9 +157,10 @@ exports.newUserSignup = function(req,res){
 };
 
 exports.findAll = function(req, res) {
-   var num=req.params.num;
+   var num=Number(req.params.num);
+   console.log(req.params);
     db.collection('wines', function(err, collection) {
-        collection.find().limit(5).toArray(function(err, items) {
+        collection.find({}).skip(num).limit(5).toArray(function(err, items) {
             res.send(items);
         });
     });
