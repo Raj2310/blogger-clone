@@ -60,7 +60,7 @@ exports.findById = function(req, res) {
 };
 exports.findByTag = function(req, res) {
     var tag = req.params.tag;
-    var num=req.params.num;
+    var num=Number(req.params.num);
     console.log('Retrieving  tag: ' + tag);
     db.collection('wines', function(err, collection) {
       if(err){
