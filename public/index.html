@@ -221,7 +221,7 @@ Dan euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi eni
     $(document).ready(
       function(){
         console.log("hi");
-        $.get("http://localhost:3000/wines", function(data, status){
+        $.get("http://localhost:3000/blogs", function(data, status){
           $.each(data, function(index, element) {
                  console.log(element.body);
 
@@ -229,7 +229,7 @@ Dan euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi eni
         });
         $("#addPost").click(
           function(){
-            $.post("http://localhost:3000/wines",{ title: "Mai Insaaf Karunga", time: "2pm" }, function(data, status){
+            $.post("http://localhost:3000/blogs",{ title: "Mai Insaaf Karunga", time: "2pm" }, function(data, status){
                      console.log(data);
             });
           }

@@ -1,5 +1,5 @@
 var express = require('express'),
-    wine = require('./routes/wine');
+    blog = require('./routes/blog');
 var bodyParser     =        require("body-parser");
 var app = express();
 var cookieParser = require('cookie-parser')
@@ -116,20 +116,20 @@ app.post('logout',function(req,res){
     // cannot access session here
   })
 });
-app.get('/winesAll/:num', wine.findAll);
-/*app.post('/wines',function(request,response){
+app.get('/blogsAll/:num', blog.findAll);
+/*app.post('/blogs',function(request,response){
 var query1=request.body.var1;
 var query2=request.body.var2;
 console.log(request.body.fname);
 });*/
-app.get('/byTag/:tag/:num',wine.findByTag);
-app.get('/wines/:id/', wine.findById);
-//app.get('/addFromJsonData',wine.addFromJsonData);
-app.post('/wines', wine.addWine);
-app.post('/signup',wine.newUserSignup);
-app.put('/wines/:id', wine.updateWine);
-app.get('/userinfo',wine.sendUserInfo);
-app.delete('/wines/:id', wine.deleteWine);
+app.get('/byTag/:tag/:num',blog.findByTag);
+app.get('/blog/:id/', blog.findById);
+//app.get('/addFromJsonData',blog.addFromJsonData);
+app.post('/blog', blog.addblog);
+app.post('/signup',blog.newUserSignup);
+app.put('/blog/:id', blog.updateblog);
+app.get('/userinfo',blog.sendUserInfo);
+app.delete('/blog/:id', blog.deleteblog);
 app.post('/upload', function(req, res) {
   var sampleFile;
  

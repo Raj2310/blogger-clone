@@ -142,7 +142,7 @@ $(document).ready(
             var postContent=$("#postContent").val();
             var tag=$("#tags").val();
             //var fileName=$("#fileUploadName").attr("name");
-            $.post("http://localhost:3000/wines",{ title:postTitle,tag:tag,body:postContent,author:writer}, function(data, status){
+            $.post("http://localhost:3000/blogs",{ title:postTitle,tag:tag,body:postContent,author:writer}, function(data, status){
                      console.log(data);
                      $("#fileUploadName").val(data._id);
             });

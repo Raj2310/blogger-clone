@@ -172,7 +172,7 @@
     <script src="js/bootstrap.min.js"></script>
      <script type="text/javascript">
       function loadAllData(num){
-        $.get("http://localhost:3000/winesAll/"+num, function(data, status){
+        $.get("http://localhost:3000/blogsAll/"+num, function(data, status){
             $.each(data, function(index, element) {
                    $("#blogContainer").append("  <h2>"+
                          "<a href='post.html?id="+element._id+"' class='blogTitle'>"+(element.title)+"</a>"+

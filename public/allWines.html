@@ -30,7 +30,7 @@
           console.log("Author:"+author);
           //console.log(post_id);
             $.ajax({
-            url: 'http://127.0.0.1:3000/wines/'+post_id,
+            url: 'http://127.0.0.1:3000/blogs/'+post_id,
             type: 'PUT',
             data:{
               _id:post_id,
@@ -48,7 +48,7 @@
           var post_id=$($(this).parent().find(".post_id")).val();
 
             $.ajax({
-            url: 'http://127.0.0.1:3000/wines/'+post_id,
+            url: 'http://127.0.0.1:3000/blogs/'+post_id,
             type: 'DELETE',
             success: function(data) {
               console.log('Load was performed.');
@@ -63,7 +63,7 @@
     function getDataa(){
 
     var blogData="";
-      $.get('http://127.0.0.1:3000/wines', function(result){
+      $.get('http://127.0.0.1:3000/blogs', function(result){
        blogData=result;
        //console.log(blogData[0].name);
        var arr = blogData;

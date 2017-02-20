@@ -37,7 +37,7 @@
             var postTitle=$("#postTitle").val();
             var postAuthor=$("#postAuthor").val();
             var postContent=$("#postContent").val();
-            $.post("http://localhost:3000/wines",{ title:postTitle,author:postAuthor,body:postContent}, function(data, status){
+            $.post("http://localhost:3000/blogs",{ title:postTitle,author:postAuthor,body:postContent}, function(data, status){
                      console.log(data);
                      $("#fileUploadName").val(data._id);
             });
