@@ -6,12 +6,12 @@ var Server = mongo.Server,
     BSON = mongo.BSONPure;
 var objectId=mongo.ObjectId;
 
-var server = new Server('localhost', 27017, {auto_reconnect: true});
-db = new Db('blogdb', server);
+var server = new Server('mongodb://admin:nljtmvmkhk@ds157549.mlab.com', 57549, {auto_reconnect: true});
+db = new Db('blog_website', server);
 
 db.open(function(err, db) {
     if(!err) {
-        console.log("Connected to 'blogdb' database");
+        console.log("Connected to 'blog_website' database");
         db.collection('blogs', {strict:true}, function(err, collection) {
             if (err) {
                 console.log("The 'blogs' collection doesn't exist. Creating it with sample data...");
