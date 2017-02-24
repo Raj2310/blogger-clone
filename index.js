@@ -11,6 +11,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var fileUpload = require('express-fileupload');
+app.set('port', (process.env.PORT || 5000));
 //app.configure(function () {
   //  app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
   //  app.use(express.bodyParser());
@@ -159,5 +160,5 @@ app.post('/upload', function(req, res) {
     }
   });
 });
-app.listen(3000);
+app.listen(app.get('port'));
 console.log('Listening on port 3000...');
