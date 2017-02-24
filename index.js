@@ -4,7 +4,9 @@ var bodyParser     =        require("body-parser");
 var app = express();
 var cookieParser = require('cookie-parser')
 var expressSession = require('express-session');
-var cookieSession = require('cookie-session')
+var cookieSession = require('cookie-session');
+var mongo = require('mongodb');
+var MongoClient = mongo.MongoClient;
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -75,31 +77,34 @@ app.post('/login_attempt', function(req, res){
               var email=req.body.email;
                var password=req.body.password;
               // console.log(req.body);
-              db.collection('users', function(err, collection) {
-                if(err){
-                    res.send({status:0,msg:'An error occured'});
-                    console.log(err);
-                }
-                else {
-                  console.log(email+" "+password);
-                  collection.findOne({email:email,password:password}, function(err, item) {
-                      if(item){
-                          req.session.email = item.email;
-                          req.session.password =item.password;
-                         req.session.firstName =item.firstName;
-                               req.session.lastName =item.lastName;
-                               req.session.id =item._id;
-                          res.send({status:1});
-                      }
-                      else{
-                          res.send({status:0,msg:"Email and password Do no match"});
-                      }
-                  });
-                }
+              MongoClient.connect('mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website',function(err, db) {
+                db.collection('users', function(err, collection) {
+                  if(err){
+                      res.send({status:0,msg:'An error occured'});
+                      console.log(err);
+                  }
+                  else {
+                    console.log(email+" "+password);
+                    collection.findOne({email:email,password:password}, function(err, item) {
+                        if(item){
+                            req.session.email = item.email;
+                            req.session.password =item.password;
+                           req.session.firstName =item.firstName;
+                                 req.session.lastName =item.lastName;
+                                 req.session.id =item._id;
+                            res.send({status:1});
+                        }
+                        else{
+                            res.send({status:0,msg:"Email and password Do no match"});
+                        }
+                    });
+                  }
+                });
+                db.close();
               });
   }
 });
-app.get('/dashboard', function(req, res){
+/*app.get('/dashboard', function(req, res){
   var html="";
   if (req.session.userName) {
    
@@ -115,7 +120,7 @@ app.post('logout',function(req,res){
   req.session.destroy(function(err) {
     // cannot access session here
   })
-});
+});*/
 app.get('/blogsAll/:num', blog.findAll);
 /*app.post('/blogs',function(request,response){
 var query1=request.body.var1;
@@ -124,11 +129,12 @@ console.log(request.body.fname);
 });*/
 app.get('/byTag/:tag/:num',blog.findByTag);
 app.get('/blog/:id/', blog.findById);
-//app.get('/addFromJsonData',blog.addFromJsonData);
+/*app.get('/addFromJsonData',blog.addFromJsonData);*/
 app.post('/blog', blog.addblog);
 app.post('/signup',blog.newUserSignup);
 app.put('/blog/:id', blog.updateblog);
 app.get('/userinfo',blog.sendUserInfo);
+app.get('/dashboard',blog.authorDashboard);
 app.delete('/blog/:id', blog.deleteblog);
 app.post('/upload', function(req, res) {
   var sampleFile;

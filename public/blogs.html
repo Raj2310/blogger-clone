@@ -182,11 +182,10 @@
                      "</p>"+
                      "<p><span class='glyphicon glyphicon-time'></span> Posted on "+element.date+" </p>"+
                      "<hr>"+
-                     "<img class='img-responsive' src='upload/"+element._id+".jpg"+"' alt=''>"+
+                     "<img id='element._id' class='img-responsive' src='https://placehold.it/350x150' alt=''>"+
                      "<hr>"+
                      "<p>"+ element.body+"</p>"+
                      "<a class='btn btn-primary' href='#'>Read More <span class='glyphicon glyphicon-chevron-righ'></span></a>"+
-
                      "<hr>");
             });
         });
@@ -202,7 +201,8 @@
                          "</p>"+
                          "<p><span class='glyphicon glyphicon-time'></span> Posted on "+element.date+" </p>"+
                          "<hr>"+
-                         "<img class='img-responsive' src='upload/"+element._id+".jpg"+"' alt=''>"+
+                         "<img id='element._id' class='img-responsive' src='https://placehold.it/350x150'"+ 
+                         "class='img-responsive' src='upload/"+element._id+".jpg"+"' alt=''>"+
                          "<hr>"+
                          "<p>"+ element.body+"</p>"+
                          "<a class='btn btn-primary' href='#'>Read More <span class='glyphicon glyphicon-chevron-righ'></span></a>"+

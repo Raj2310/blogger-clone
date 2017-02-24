@@ -221,7 +221,7 @@ Dan euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi eni
     $(document).ready(
       function(){
         console.log("hi");
-        $.get("http://localhost:3000/blogs", function(data, status){
+        $.get("http://localhost:3000/blogsAll/0", function(data, status){
           $.each(data, function(index, element) {
                  console.log(element.body);
 
