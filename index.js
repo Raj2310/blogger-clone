@@ -128,6 +128,7 @@ var query1=request.body.var1;
 var query2=request.body.var2;
 console.log(request.body.fname);
 });*/
+app.get('/top-blog',blog.topBlog);
 app.get('/byTag/:tag/:num',blog.findByTag);
 app.get('/blog/:id/', blog.findById);
 /*app.get('/addFromJsonData',blog.addFromJsonData);*/

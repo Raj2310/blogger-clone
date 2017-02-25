@@ -22,6 +22,33 @@ db.open(function(err, db) {
     }
 });*/
 
+exports.topBlog=function(req,res){
+  MongoClient.connect('mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website',function(err, db) {
+      db.collection('blogs', function(err, collection) {
+        if(err){
+            res.send({status:0});
+            console.log("Error in topBlog function "+err);
+        }
+        else {
+          collection.findOne({}, function(err, item) {
+              if (err) {
+                 console.log("Error in topBlog function "+err);
+                  res.send({status:0});
+
+              } else{
+                  res.send({status:1,blog:item});
+              };
+              
+          });
+        }
+
+      });
+       db.close();
+    });
+}
+
+
+
 exports.addFromJsonData = function(){
 
   jsonfile.readFile(file, function(err, obj) {

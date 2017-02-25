@@ -88,18 +88,18 @@
           Editors’ Picks
         </center>
       </div>-->
-      <div class="hero-content">
-        <img src="resources/hero.jpg" class="img-responsive" alt="Responsive image"/>
+      <div id="top-blog" class="hero-content">
+        <img src="resources/hero.jpg" class="img-responsive" alt="Responsive image" onerror='this.onerror=null;this.src="https://placehold.it/800x400"'/>
         <div class="hero-bontent-body">
 
-          <h1>The Fox – Redefine the Magazine</h1>
+          <h1><center>The Fox – Redefine the Magazine</center></h1>
           <p>
 Dan euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
  quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
   Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,
    vel illum dolore eu feugiat nulla.
  </p>
- <a href="" class="pull-right">Keep Reading</a>
+ <a  href="" class="pull-right content-link">Keep Reading</a>
         </div>
       </div>
      <br/>
@@ -107,84 +107,9 @@ Dan euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi eni
       <hr class="below-editor-pick"/>
       <div class="thumbnail-posts">
         <div class="row posts">
-          <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-              <img src="http://placehold.it/300x280" alt="...">
-              <div class="caption">
-                <p>APRIL 17, 2015 FASHION</p>
-                <h3>Thumbnail label</h3>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.
-                   Nullam id dolor id nibh ultricies vehicula ut id elit. <a href="" class="pull-right"><strong>see more</strong></a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-              <img src="http://placehold.it/300x280" alt="...">
-              <div class="caption">
-                <p>APRIL 17, 2015 FASHION</p>
-                <h3>Thumbnail label</h3>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.
-                   Nullam id dolor id nibh ultricies vehicula ut id elit. <a href="" class="pull-right"><strong>see more</strong></a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-              <img src="http://placehold.it/300x280" alt="...">
-              <div class="caption">
-                <p>APRIL 17, 2015 FASHION</p>
-                <h3>Thumbnail label</h3>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.
-                   Nullam id dolor id nibh ultricies vehicula ut id elit. <a href="" class="pull-right"><strong>see more</strong></a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-              <img src="http://placehold.it/300x280" alt="...">
-              <div class="caption">
-                <p>APRIL 17, 2015 FASHION</p>
-                <h3>Thumbnail label</h3>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.
-                   Nullam id dolor id nibh ultricies vehicula ut id elit. <a href="" class="pull-right"><strong>see more</strong></a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-              <img src="http://placehold.it/300x280" alt="...">
-              <div class="caption">
-                <p>APRIL 17, 2015 FASHION</p>
-                <h3>Thumbnail label</h3>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.
-                   Nullam id dolor id nibh ultricies vehicula ut id elit. <a href="" class="pull-right"><strong>see more</strong></a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-              <img src="http://placehold.it/300x280" alt="...">
-              <div class="caption">
-                <p>APRIL 17, 2015 FASHION</p>
-                <h3>Thumbnail label</h3>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.
-                   Nullam id dolor id nibh ultricies vehicula ut id elit. <a href="" class="pull-right"><strong>see more</strong></a></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4 col-md-3">
-            <div class="thumbnail">
-              <img src="http://placehold.it/300x280" alt="...">
-              <div class="caption">
-                <p>APRIL 17, 2015 FASHION</p>
-                <h3>Thumbnail label</h3>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.
-                   Nullam id dolor id nibh ultricies vehicula ut id elit. <a href="" class="pull-right"><strong>see more</strong></a></p>
-              </div>
-            </div>
-          </div>
+
         </div>
+        <a href="/blogs.html" class="btn btn-default pull-right">See All Posts</a>
       </div>
     </div>
   </div>
@@ -221,19 +146,31 @@ Dan euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi eni
     $(document).ready(
       function(){
         console.log("hi");
-        $.get("http://localhost:3000/blogsAll/0", function(data, status){
-          $.each(data, function(index, element) {
-                 console.log(element.body);
-
+        $.get("/top-blog", function(data, status){
+            if(data.status==1){
+              $("#top-blog img").attr('src',"/upload/"+data.blog._id);
+              $("#top-blog h1").html(data.blog.title);
+              $("#top-blog p").html(data.blog.body);
+              $("#top-blog .content-link").attr('href','post.html?id='+data.blog._id);
+            }
           });
-        });
-        $("#addPost").click(
-          function(){
-            $.post("http://localhost:3000/blogs",{ title: "Mai Insaaf Karunga", time: "2pm" }, function(data, status){
-                     console.log(data);
+        $.get("/blogsAll/"+0, function(data, status){
+            $.each(data, function(index, element) {
+              var img_src="/upload/"+element._id;
+              var alt_img_src="https://placehold.it/350x150";
+              var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/380x220\";'"
+                   $(".posts").append("   <div class='col-sm-4 col-md-3'>"+
+                      "<div class='thumbnail'>"+
+                    "<img  class='img-responsive' src='"+img_src+"'"+on_error_string+"  alt=''>"+
+                      "<div class='caption'>"+
+                      "<p>"+element.date+"</p>"+
+                      "<h3>"+element.title+"</h3>"+
+                      "<p>"+element.body+"</p>"+
+                      "</div>"+
+                      "</div>"+
+                      "</div>");
             });
-          }
-        );
+        });             
       }
     );
   </script>
