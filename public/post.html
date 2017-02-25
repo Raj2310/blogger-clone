@@ -168,7 +168,7 @@
 }
   $(document).ready(function(){
     var id=param("id");
-     $.get("http://localhost:3000/blog/"+id, function(data, status){
+     $.get("/blog/"+id, function(data, status){
          $("#postTitle").html(data.title);
          $("#postDate").html(data.date);
          $("#postAuthor").html(data.author.firstName);
@@ -176,7 +176,7 @@
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
         }
       );
-     $.get("http://localhost:3000/blogsAll/0", function(data, status){
+     $.get("/blogsAll/0", function(data, status){
         $.each(data, function(index, element) {
               var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/380x220\";'"
                $("#suggestedPosts").append("<div class='media'>"+
