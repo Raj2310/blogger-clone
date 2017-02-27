@@ -125,7 +125,7 @@ $(document).ready(
       function(){
         $.get('/userinfo',function(data,status){
             if(data.status==0){
-              window.location.replace("http://localhost:3000/login.html");
+              window.location.replace("login.html");
             }
             else{
               console.log(data);
