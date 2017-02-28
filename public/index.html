@@ -123,7 +123,7 @@
             $.get("/top-blog", function(data, status){
                 if(data.status==1){
                    var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/380x220\";'"
-                  $("#top-blog").append("<img src='/upload"+data.blog._id+".jpg' class='img-responsive' alt='Responsive image'"+ 
+                  $("#top-blog").append("<img src='/upload/"+data.blog._id+".jpg' class='img-responsive' alt='Responsive image'"+ 
                     on_error_string+"/>"+
                     "<div class='hero-content-body'>"+
 
