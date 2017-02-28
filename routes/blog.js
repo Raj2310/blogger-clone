@@ -6,7 +6,7 @@ var Server = mongo.Server,
     BSON = mongo.BSONPure;
 var objectId=mongo.ObjectId;
 var MongoClient = mongo.MongoClient;
-var server = new Server('mongodb://admin:nljtmvmkhk@ds157549.mlab.com', 57549, {auto_reconnect: true});
+var database_url="mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website";
 /*db = new Db('blog_website', server);
 
 db.open(function(err, db) {
@@ -23,7 +23,7 @@ db.open(function(err, db) {
 });*/
 
 exports.topBlog=function(req,res){
-  MongoClient.connect('mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website',function(err, db) {
+  MongoClient.connect(database_url,function(err, db) {
       db.collection('blogs', function(err, collection) {
         if(err){
             res.send({status:0});
@@ -52,7 +52,7 @@ exports.topBlog=function(req,res){
 exports.addFromJsonData = function(){
 
   jsonfile.readFile(file, function(err, obj) {
-    MongoClient.connect('mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website',function(err, db) {
+    MongoClient.connect(database_url,function(err, db) {
       if(err){
         console.log("Error coccurres in db "+error);
       }
@@ -78,7 +78,7 @@ exports.addFromJsonData = function(){
 exports.findById = function(req, res) {
     var id = req.params.id;
     console.log('Retrieving blog: ' + id);
-    MongoClient.connect('mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website',function(err, db) {
+    MongoClient.connect(database_url,function(err, db) {
       db.collection('blogs', function(err, collection) {
         if(err){
             res.send("here");
@@ -99,18 +99,17 @@ exports.findByTag = function(req, res) {
     var tag = req.params.tag;
     var num=Number(req.params.num);
     console.log('Retrieving  tag: ' + tag);
-    MongoClient.connect('mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website',function(err, db) {
+    MongoClient.connect(database_url,function(err, db) {
       db.collection('blogs', function(err, collection) {
         if(err){
             res.send("here");
             console.log(err);
         }
         else {
-          collection.find({tag:tag}).skip(num).limit(5).toArray(function(err, items) {
+          collection.find({tag:tag}).skip(num).limit(10).toArray(function(err, items) {
               res.send(items);
           });
         }
-
       });
        db.close();
     });
@@ -151,7 +150,7 @@ exports.newUserSignup = function(req,res){
      return;
   }
    var age=user.age;
-    MongoClient.connect('mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website',function(err, db) {
+    MongoClient.connect(database_url,function(err, db) {
       db.collection('users', function(err, collection) {
         if(err){
             res.send({status:0,msg:'An error has occurred'});
@@ -200,14 +199,14 @@ exports.newUserSignup = function(req,res){
 
 exports.findAll = function(req, res) {
    var num=Number(req.params.num);
-   MongoClient.connect('mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website',function(err, db) {
+   MongoClient.connect(database_url,function(err, db) {
      console.log("Connected successfully to server");
      db.collection('blogs', function(err, collection) {
         if(err){
           console.log(err);
         }
         else{
-          collection.find({}).skip(num).limit(5).toArray(function(err, items) {
+          collection.find({}).skip(num).limit(10).toArray(function(err, items) {
             res.send(items);
           }); 
         }
@@ -223,7 +222,7 @@ exports.addblog = function(req, res) {
     var blog = req.body;
     blog.date=new Date()/*.getDate()*/;
     console.log('Adding blog: ' + JSON.stringify(blog));
-    MongoClient.connect('mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website',function(err, db) {
+    MongoClient.connect(database_url,function(err, db) {
 
       db.collection('blogs', function(err, collection) {
 
@@ -247,7 +246,7 @@ exports.updateblog = function(req, res) {
     //console.log('Updating blog: ' + id);
     blog._id=new mongo.ObjectID(id);
     //console.log(JSON.stringify(blog));
-    MongoClient.connect('mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website',function(err, db) {
+    MongoClient.connect(database_url,function(err, db) {
       db.collection('blogs', function(err, collection) {
           collection.update({_id:new mongo.ObjectID(id)}, blog, {safe:true}, function(err, result) {
               if (err) {
@@ -266,7 +265,7 @@ exports.updateblog = function(req, res) {
 exports.deleteblog = function(req, res) {
     var id = req.params.id;
     console.log('Deleting blog: ' + id);
-    MongoClient.connect('mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website',function(err, db) {
+    MongoClient.connect(database_url,function(err, db) {
      console.log("Connected successfully to server");
      db.collection('blogs', function(err, collection) {
         collection.remove({'_id':new mongo.ObjectID(id)}, {safe:true}, function(err, result) {
@@ -288,7 +287,7 @@ exports.deleteblog = function(req, res) {
 exports.authorDashboard = function(req,res){
   if(req.session.id){
      var author_id=req.session.id;
-     MongoClient.connect('mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website',function(err, db) {
+     MongoClient.connect(database_url,function(err, db) {
      console.log("Connected successfully to server");
        db.collection('blogs', function(err, collection) {
            collection.find({'author.id':author_id}).toArray(function(err, items) {

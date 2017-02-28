@@ -84,6 +84,11 @@
 
     <script type="text/javascript">
     $(document).ready(function(){
+    	 $.get('/userinfo',function(data,status){
+            if(data.status==1){
+              window.location.replace("newStory.html");
+            }
+        });
     	$("#signUpButton").click(function(){
     		var signUpKey=$("#signUpKey").val();
     		var firstName=$("#firstName").val();
@@ -97,6 +102,10 @@
     				if(data.status===0){
     					alert(data.msg);
 						
+    				}
+    				else{
+    					window.location.replace("newStory.html");
+
     				}
     			});
     		}

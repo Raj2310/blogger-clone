@@ -81,10 +81,10 @@
                 
                 <label for="tags">Select list:</label>
                 <select class="form-control" id="tags">
-                  <option value="fashion">Fashion</option>
-                  <option value="food">Food</option>
-                  <option value="fitness">Fitness</option>
-                  <option value="politics">Politics</option>
+                   <option value="trend_feed">Trend Feed</option>
+                    <option value="gossip">Gossip</option>
+                    <option value="this_is_desi">THis is Desi</option>
+                    <option value="wtf_i_go">WTF I GO</option>
                 </select>
                 
                 <label for="exampleInputPassword1">Write the post</label>
@@ -174,7 +174,7 @@ $(document).ready(
         });
         $("#logout").click(function () {
           $.post( "logout",function( data ) {
-              window.location.replace("/login.html");
+              window.location.replace("login.html");
         } );
   });
 

@@ -27,12 +27,18 @@
 .footer-company-name{
   /*text-decoration: underline;*/
 }
-.hero-bontent-body p{
+.hero-content-body p{
   line-height: 1.5;
   word-spacing: 10px;
   font-size: 20px;
   font-family: cursive;
 }
+.hero-content img{
+   max-height: 400px;
+  margin: auto;
+}
+
+
 .similar-readings img{
   max-width: 250px;
   max-height: 250px;
@@ -40,6 +46,16 @@
 .space-bottom-20{
   margin-bottom:20px;
 }
+.thumbnail-img{
+  width:380px !important;
+  height:220px !important;
+}
+
+#top-blog img{
+  max-height: 400px;
+  margin: auto;
+}
+
 body { padding-top: 70px; }
 .navbar li { color: #000 }
 @media screen and (min-width: 1200px) {

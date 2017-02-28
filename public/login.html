@@ -22,6 +22,7 @@
   <input name="password"  id="password" />
   <div class="help">Use upper and lowercase lettes as well</div>
   <button type="button" id="loginButton">Login</button>
+  <a type="button" href="signup.html" class="btn btn-default" id="signupLink">Sign Up</a>
 </form>
 <script
   src="https://code.jquery.com/jquery-3.1.1.js"
@@ -33,7 +34,7 @@
     var password=$("#password").val();
     $.post( "login_attempt", { email:email, password: password },function( data ) {
         if(data.status==1){
-             window.location.replace("http://localhost:3000/newStory.html");
+             window.location.replace("newStory.html");
         }
         else{
             alert(data.msg);

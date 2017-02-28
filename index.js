@@ -11,7 +11,8 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var fileUpload = require('express-fileupload');
-app.set('port', (process.env.PORT || 5000));
+var database_url="mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website";
+app.set('port', (process.env.PORT || 3000));
 //app.configure(function () {
   //  app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
   //  app.use(express.bodyParser());
@@ -78,7 +79,7 @@ app.post('/login_attempt', function(req, res){
               var email=req.body.email;
                var password=req.body.password;
               // console.log(req.body);
-              MongoClient.connect('mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website',function(err, db) {
+              MongoClient.connect(database_url,function(err, db) {
                 db.collection('users', function(err, collection) {
                   if(err){
                       res.send({status:0,msg:'An error occured'});
@@ -123,12 +124,6 @@ app.post('logout',function(req,res){
   })
 });*/
 app.get('/blogsAll/:num', blog.findAll);
-/*app.post('/blogs',function(request,response){
-var query1=request.body.var1;
-var query2=request.body.var2;
-console.log(request.body.fname);
-});*/
-app.get('/top-blog',blog.topBlog);
 app.get('/byTag/:tag/:num',blog.findByTag);
 app.get('/blog/:id/', blog.findById);
 /*app.get('/addFromJsonData',blog.addFromJsonData);*/
