@@ -123,6 +123,7 @@ app.post('logout',function(req,res){
     // cannot access session here
   })
 });*/
+app.get('/top-blog',blog.topBlog);
 app.get('/blogsAll/:num', blog.findAll);
 app.get('/byTag/:tag/:num',blog.findByTag);
 app.get('/blog/:id/', blog.findById);
