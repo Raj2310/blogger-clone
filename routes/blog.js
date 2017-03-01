@@ -7,6 +7,7 @@ var Server = mongo.Server,
 var objectId=mongo.ObjectId;
 var MongoClient = mongo.MongoClient;
 var database_url="mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website";
+var moment = require('moment');
 /*db = new Db('blog_website', server);
 
 db.open(function(err, db) {
@@ -220,7 +221,7 @@ exports.findAll = function(req, res) {
 
 exports.addblog = function(req, res) {
     var blog = req.body;
-    blog.date=new Date()/*.getDate()*/;
+    blog.date=moment().fromNow()/*.getDate()*/;
     console.log('Adding blog: ' + JSON.stringify(blog));
     MongoClient.connect(database_url,function(err, db) {
 
