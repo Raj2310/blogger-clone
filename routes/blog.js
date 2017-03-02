@@ -7,7 +7,6 @@ var Server = mongo.Server,
 var objectId=mongo.ObjectId;
 var MongoClient = mongo.MongoClient;
 var database_url="mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website";
-var moment = require('moment');
 /*db = new Db('blog_website', server);
 
 db.open(function(err, db) {
@@ -221,7 +220,7 @@ exports.findAll = function(req, res) {
 
 exports.addblog = function(req, res) {
     var blog = req.body;
-    blog.date=moment().fromNow()/*.getDate()*/;
+    blog.date=new Date()/*.getDate()*/;
     console.log('Adding blog: ' + JSON.stringify(blog));
     MongoClient.connect(database_url,function(err, db) {
 
@@ -311,6 +310,25 @@ exports.authorDashboard = function(req,res){
     }
 }
 
+
+exports.blogSearch = function(req,res){
+  var text=req.params.searchText;
+  MongoClient.connect(database_url,function(err, db) {
+     console.log("Connected successfully to server");
+     db.collection('blogs', function(err, collection) {
+        if(err){
+          console.log(err);
+        }
+        else{
+          collection.find({$text:{$search:text}}).toArray(function(err, items) {
+            res.send(items);
+          }); 
+        }
+      });
+    //console.log(req.params);
+      db.close();
+  });
+}
 /*--------------------------------------------------------------------------------------------------------------------*/
 // Populate database with sample data -- Only used once: the first time the application is started.
 // You'd typically not find this code in a real-life app, since the database would already exist.

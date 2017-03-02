@@ -84,6 +84,7 @@
                    <option value="trend_feed">Trend Feed</option>
                     <option value="gossip">Gossip</option>
                     <option value="this_is_desi">THis is Desi</option>
+                    <option value="hera_pheri">Hera Pheri</option>
                     <option value="wtf_i_go">WTF I GO</option>
                 </select>
                 
@@ -105,7 +106,7 @@
                   
                   <input type="file" name="sampleFile" id="fileUploadField" />
                   
-                  <input type='submit' id="fileUploadButton" value='Upload!' />
+                  <input type='submit' id="fileUploadButton" value='Upload!' disabled/>
               </form>
             </div>
         </div>
@@ -146,6 +147,9 @@ $(document).ready(
                      console.log(data);
                      //data returned is the inserted id
                      $("#fileUploadName").val(data);
+                     $("#fileUploadButton").prop('disabled',false);
+                     $("#submitPost").prop('disabled',true);
+                     alert("Post has been submitted now submit a jpeg image");
             });
           }
         );
@@ -166,7 +170,9 @@ $(document).ready(
             contentType: false,
             processData: false,
             success: function (returndata) {
-              console.log(returndata);
+            
+              $("#fileUploadButton").prop('disabled',true);
+              alert("Image for post has been submitted");
             }
           });
          
