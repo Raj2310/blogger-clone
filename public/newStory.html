@@ -28,7 +28,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <!-- include summernote css/js-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
 </head>
 
 <body>
@@ -90,7 +92,7 @@
                 
                 <label for="exampleInputPassword1">Write the post</label>
                 <textarea id="postContent" class="form-control"></textarea>
-                
+                <div id="summernote">Hello Summernote</div>
                 <button id="submitPost"  class="btn btn-default">Submit</button>
             </div>
             <div class="col-lg-4 col-md-4 form-group">
@@ -120,10 +122,17 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
     <script>
 var writer={};
 $(document).ready(
       function(){
+        $('#summernote').summernote({
+  height: 300,                 // set editor height
+  minHeight: null,             // set minimum height of editor
+  maxHeight: null,             // set maximum height of editor
+  focus: true                  // set focus to editable area after initializing summernote
+});
         $.get('/userinfo',function(data,status){
             if(data.status==0){
               window.location.replace("login.html");
@@ -140,7 +149,7 @@ $(document).ready(
           function(){
             var postTitle=$("#postTitle").val();
             var postAuthor=$("#postAuthor").val();
-            var postContent=$("#postContent").val();
+            var postContent= $('#summernote').summernote('code');//$("#postContent").val();
             var tag=$("#tags").val();
             //var fileName=$("#fileUploadName").attr("name");
             $.post("/blog",{ title:postTitle,tag:tag,body:postContent,author:writer}, function(data, status){
