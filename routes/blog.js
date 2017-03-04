@@ -218,6 +218,28 @@ exports.findAll = function(req, res) {
     
 };
 
+
+exports.newsletterSignup = function(req,res){
+  var user=req.body;
+   MongoClient.connect(database_url,function(err, db) {
+
+      db.collection('signups', function(err, collection) {
+
+          collection.insert(user, {safe:true}, function(err, result) {
+              if (err) {
+                  res.send({'error':'An error has occurred'});
+              } else {
+                var inserted_id=result.insertedIds[0];
+                  console.log('Success: ' + JSON.stringify(inserted_id));
+                  res.send("Success");
+              }
+          });
+      });
+       db.close();
+    });
+}
+
+
 exports.addblog = function(req, res) {
     var blog = req.body;
     blog.date=new Date()/*.getDate()*/;

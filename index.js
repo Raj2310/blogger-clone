@@ -130,6 +130,7 @@ app.get('/blog/:id/', blog.findById);
 /*app.get('/addFromJsonData',blog.addFromJsonData);*/
 app.get('/blog-search/:searchText',blog.blogSearch);
 app.post('/blog', blog.addblog);
+app.post('/newsletterSignup',blog.newsletterSignup);
 app.post('/signup',blog.newUserSignup);
 app.put('/blog/:id', blog.updateblog);
 app.get('/userinfo',blog.sendUserInfo);

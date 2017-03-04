@@ -56,6 +56,16 @@
   margin: auto;
 }
 
+#message {
+    position: fixed;
+    top: 100px;
+    right: 0px;
+    z-index: 999;
+}
+#inner-message {
+    margin: 0 auto;
+}
+
 body { padding-top: 70px; }
 .navbar li { color: #000 }
 @media screen and (min-width: 1200px) {
