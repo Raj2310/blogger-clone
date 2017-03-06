@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>BLog Website</title>
+  <title>Blog Website</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
   <meta charset="utf-8">
@@ -133,6 +133,7 @@
   <script></script>
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="js/moment.js"></script>
   <script>
   function param(name) {//gets parameters from the url
         return (location.search.split(name + '=')[1] || '').split('&')[0];
@@ -167,7 +168,7 @@
                           "<div class='thumbnail'>"+
                         "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                           "<div class='caption'>"+
-                          "<p>"+element.date+"</p>"+
+                          "<p>"+moment(element.date).fromNow()+"</p>"+
                           "<h4><a href='post.html?id="+element._id+"'>"+getSubstring(element.title,15)+"</a></h4>"+
                           "<p>"+getSubstring(element.body,50)+"</p>"+
                           "</div>"+
@@ -187,7 +188,7 @@
                               "<div class='thumbnail'>"+
                             "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                               "<div class='caption'>"+
-                              "<p>"+element.date+"</p>"+
+                              "<p>"+moment(element.date).fromNow()+"</p>"+
                               "<h4><a href='post.html?id="+element._id+"'>"+getSubstring(element.title,15)+"</a></h4>"+
                               "<p>"+getSubstring(element.body,50)+"</p>"+
                               "</div>"+

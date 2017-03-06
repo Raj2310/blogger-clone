@@ -4,11 +4,18 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
+  <title>Blog Website</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="When Great Minds Don’t Think Alike" />
+<meta property="og:description"        content="How much does culture influence creative thinking?" />
+<meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -80,6 +87,8 @@
 
           <h1><center ><span id="postTitle"></span></center></h1>
           <h4><center><span id="postDate"></span>  <span id="postAuthor"></span></center></h4>
+          <a href="#" class="btn btn-info pull-right" id="facebook_share"><i class="fa fa-facebook"></i> Share</a>
+          <a href="https://twitter.com/share" class="twitter-share-button pull-right" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
           <p id="postBody">
 
 
@@ -148,7 +157,7 @@
   <script></script>
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
- 
+  <script type="text/javascript" src="js/moment.js"></script>
   <script>
   function param(name) {//gets parameters from the url
     return (location.search.split(name + '=')[1] || '').split('&')[0];
@@ -157,10 +166,11 @@
     var id=param("id");
      $.get("/blog/"+id, function(data, status){
          $("#postTitle").html(data.title);
-         $("#postDate").html(data.date);
-         $("#postAuthor").html(data.author.firstName);
+         $("#postDate").html(moment(data.date).fromNow());
+         $("#postAuthor").html("by "+"<em>"+data.author.firstName+"</em>");
          $("#postBody").html(data.body);
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
+          $("#facebook_share").prop("href","http://www.facebook.com/sharer.php?u="+encodeURI('https://murmuring-fortress-10024.herokuapp.com/post.html?id='+data._id));
         }
       );
      $.get("/blogsAll/0", function(data, status){
@@ -185,5 +195,6 @@
       window.location.replace('blogs.html?search='+searchText);
     });
   </script>
+</script>
 </body>
 </html>
