@@ -27,7 +27,7 @@
 <body>
   <div class="main-outer-container">
 
-     <nav class="navbar navbar-default ">
+     <nav class="navbar navbar-default tranparent-background" id="main-nav">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -196,7 +196,15 @@
       var searchText=$("#searchBar").val();
       window.location.replace('blogs.html?search='+searchText);
     });
+   $(window).bind('scroll', function () {
+    if ($(window).scrollTop() > 50) {
+        $('#main-nav').addClass('navbar-fixed-top');
+        $('#main-nav').removeClass('tranparent-background');
+    } else {
+        $('#main-nav').removeClass('navbar-fixed-top');
+         $('#main-nav').addClass('tranparent-background');
+    }
+  });
   </script>
-</script>
 </body>
 </html>
