@@ -87,8 +87,10 @@
 
           <h1><center ><span id="postTitle"></span></center></h1>
           <h4><center><span id="postDate"></span>  <span id="postAuthor"></span></center></h4>
-          <a href="#" class="btn btn-info pull-right" id="facebook_share"><i class="fa fa-facebook"></i> Share</a>
-          <a href="https://twitter.com/share" class="twitter-share-button pull-right" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <div class="btn-group" role="group" aria-label="...">
+            <a href="#" class="btn btn-info pull-right" id="facebook_share"><i class="fa fa-facebook"></i> Share</a>
+            <a href="https://twitter.com/share" class="btn btn-info pull-right" data-show-count="false">Tweet</a>
+          </div>
           <p id="postBody">
 
 
@@ -122,10 +124,9 @@
         Gallery Post
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
       </div>
-    </div> -->
-    
-    </div>
-
+    </div> -->  
+  </div>
+   <a href="/blogs.html" class="btn btn-success pull-right space-bottom-20" >See All Posts</a>
 
 
   </div>
@@ -158,6 +159,7 @@
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/moment.js"></script>
+  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script>
   function param(name) {//gets parameters from the url
     return (location.search.split(name + '=')[1] || '').split('&')[0];
