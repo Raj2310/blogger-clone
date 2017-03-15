@@ -1,6 +1,6 @@
-var express = require('express'),
-    blog = require('./routes/blog');
-var bodyParser     =        require("body-parser");
+var express = require('express');
+var  blog = require('./routes/blog');
+var bodyParser =  require("body-parser");
 var app = express();
 var cookieParser = require('cookie-parser')
 var expressSession = require('express-session');
@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var fileUpload = require('express-fileupload');
 var database_url="mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website";
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 3000));
 //app.configure(function () {
   //  app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
   //  app.use(express.bodyParser());
@@ -130,11 +130,14 @@ app.get('/blog/:id/', blog.findById);
 /*app.get('/addFromJsonData',blog.addFromJsonData);*/
 app.get('/blog-search/:searchText',blog.blogSearch);
 app.post('/blog', blog.addblog);
+app.post('/admin/updateBlog/:id',blog.updateBlog);
 app.post('/newsletterSignup',blog.newsletterSignup);
 app.post('/signup',blog.newUserSignup);
-app.put('/blog/:id', blog.updateblog);
+//app.put('/blog/:id', blog.updateblog);
 app.get('/userinfo',blog.sendUserInfo);
 app.get('/dashboard',blog.authorDashboard);
+app.get('/adminBlogs',blog.adminBlogs);
+app.get('/admin/editPost/:id',blog.editPost);
 app.delete('/blog/:id', blog.deleteblog);
 app.post('/upload', function(req, res) {
   var sampleFile;

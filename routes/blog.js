@@ -130,7 +130,29 @@ exports.sendUserInfo = function(req,res){
 
 }
 
-
+exports.adminBlogs=function(req,res){
+  if(req.session.id){
+    let user={};
+    usertype(req.session.id,function(user){
+      if(user.type==="writer"){
+          getUserBlogs(user.id,function(blogs){
+        res.send(blogs);
+            
+          });
+      }else if(user.type==="admin"){
+          getAllBlogs(function(blogs){
+        res.send(blogs);
+            
+          });
+      }
+      else{
+        res.send();
+      }
+    });
+  }else{
+    res.send("Sorry You are mot logged in");
+  }
+}
 
 
 
@@ -262,15 +284,20 @@ exports.addblog = function(req, res) {
     });
 }
 
-exports.updateblog = function(req, res) {
+exports.updateBlog = function(req, res) {
     var id = /*"587b53314e78291b00b3bca4";*/req.params.id;
     var blog = req.body;
     //console.log('Updating blog: ' + id);
-    blog._id=new mongo.ObjectID(id);
     //console.log(JSON.stringify(blog));
     MongoClient.connect(database_url,function(err, db) {
-      db.collection('blogs', function(err, collection) {
-          collection.update({_id:new mongo.ObjectID(id)}, blog, {safe:true}, function(err, result) {
+       if(err){
+          console.log("err1"+err);
+        }
+      db.collection('blogs', function(err1, collection) {
+        if(err1){
+          console.log("err1"+err1);
+        }
+          collection.update({_id:objectId(id)}, blog, {safe:true}, function(err, result) {
               if (err) {
                   console.log('Error updating blog: ' + err);
                   res.send({'error':'An error has occurred'});
@@ -304,6 +331,24 @@ exports.deleteblog = function(req, res) {
     
 }
 
+
+exports.editPost=function(req,res){
+  let post_id=req.params.id;
+  let session_id=req.session.id;
+  usertype(session_id,function(user){
+    getBlogById(post_id,function(blog){
+      if(blog.author.id.toString()==user.id || user.type=="admin"){
+        console.log("Blog Here");
+        console.log(blog)
+        res.send(blog);
+      }
+      else{
+        res.send("Not Authorized");
+      }
+    });
+  });
+
+}
 
 
 exports.authorDashboard = function(req,res){
@@ -350,6 +395,75 @@ exports.blogSearch = function(req,res){
     //console.log(req.params);
       db.close();
   });
+}
+
+function usertype(session_id,callback){
+  var return_obj={};
+  MongoClient.connect(database_url,function(err, db) {
+      db.collection('users', function(err, collection) {
+        if(err){
+            return;
+        }
+        else {
+          collection.find({_id:objectId(session_id)}).limit(1).toArray(function(err, item) {
+           // console.log(item);
+              callback({id:item[0]._id,type:item[0].type});
+          });
+        }
+      });
+       db.close();
+    });
+}
+
+function getBlogById(blogid,callback){
+    MongoClient.connect(database_url,function(err, db) {
+      db.collection('blogs', function(err, collection) {
+        if(err){
+            return("here");
+            //console.log(err);
+        }
+        else {
+          collection.findOne({_id:objectId(blogid)}, function(err, item) {
+            //console.log(item);
+              callback(item);
+          });
+        }
+
+      });
+       db.close();
+    });
+};
+function getAllBlogs(callback){
+   MongoClient.connect(database_url,function(err, db) {
+      db.collection('blogs', function(err, collection) {
+        if(err){
+            return;
+        }
+        else {
+          collection.find({}).toArray(function(err, items) {
+            console.log(items);
+              callback(items);
+          });
+        }
+      });
+       db.close();
+    });
+}
+function getUserBlogs(userid,callback){
+   MongoClient.connect(database_url,function(err, db) {
+      db.collection('blogs', function(err, collection) {
+        if(err){
+            return;
+        }
+        else {
+          collection.find({"author.id":userid.toString()}).toArray(function(err, items) {
+            console.log(items);
+              callback(items);
+          });
+        }
+      });
+       db.close();
+    });
 }
 /*--------------------------------------------------------------------------------------------------------------------*/
 // Populate database with sample data -- Only used once: the first time the application is started.
