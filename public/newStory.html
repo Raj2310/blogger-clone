@@ -109,10 +109,16 @@
                   
                   <input type='submit' id="fileUploadButton" value='Upload!' disabled/>
               </form>
+              <input type="url" name="Posturl" id="url" placeholder="Enter url to add post">
+              <a type="btn" class="btn btn-success" id="submitForeignBlog">Submit</a>
             </div>
         </div>
         <!-- /.row -->
-
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            
+          </div>
+        </div>
     </div>
     <!-- /.container -->
 
@@ -189,11 +195,24 @@ $(document).ready(
         $("#logout").click(function () {
           $.post( "logout",function( data ) {
               window.location.replace("login.html");
-        } );
-  });
-
-      }
-    );
+          } );
+        });
+        $("#submitForeignBlog").click(function(){
+          let link=$("#url").val();
+var expression= /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=] *)?/gi;
+          var regex = new RegExp(expression);
+          if(link!="" && link.match(regex)){
+            $.post('/admin/addExternalArticle',{url:link},function(data,status){
+              $("#submitForeignBlog").prop('disabled',true);
+              alert("Your blog has successfully published to our website");
+            })
+          }
+          else{
+            alert("Please enter a valid url");
+          }
+          
+        });
+    });
 
 </script>
 

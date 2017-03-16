@@ -50,7 +50,9 @@ background-color: transparent;
   width:380px !important;
   height:220px !important;
 }
-
+.reduce-padding-right{
+  padding-right: 10px;
+}
 #top-blog img{
   max-height: 400px;
   margin: auto;

@@ -7,20 +7,6 @@ var Server = mongo.Server,
 var objectId=mongo.ObjectId;
 var MongoClient = mongo.MongoClient;
 var database_url="mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website";
-/*db = new Db('blog_website', server);
-
-db.open(function(err, db) {
-    if(!err) {
-        console.log("Connected to 'blog_website' database");
-        db.collection('blogs', {strict:true}, function(err, collection) {
-            if (err) {
-                console.log("The 'blogs' collection doesn't exist. Creating it with sample data...");
-              //  populateDB();
-            }
-        });
-        db.collection('blogs').ensureIndex( { url: 1 }, { url: true } )
-    }
-});*/
 
 exports.topBlog=function(req,res){
   MongoClient.connect(database_url,function(err, db) {
@@ -75,6 +61,7 @@ exports.addFromJsonData = function(){
    });
   });
 }
+
 exports.findById = function(req, res) {
     var id = req.params.id;
     console.log('Retrieving blog: ' + id);
@@ -285,10 +272,8 @@ exports.addblog = function(req, res) {
 }
 
 exports.updateBlog = function(req, res) {
-    var id = /*"587b53314e78291b00b3bca4";*/req.params.id;
+    var id = req.params.id;
     var blog = req.body;
-    //console.log('Updating blog: ' + id);
-    //console.log(JSON.stringify(blog));
     MongoClient.connect(database_url,function(err, db) {
        if(err){
           console.log("err1"+err);
@@ -314,20 +299,29 @@ exports.updateBlog = function(req, res) {
 exports.deleteblog = function(req, res) {
     var id = req.params.id;
     console.log('Deleting blog: ' + id);
-    MongoClient.connect(database_url,function(err, db) {
-     console.log("Connected successfully to server");
-     db.collection('blogs', function(err, collection) {
-        collection.remove({'_id':new mongo.ObjectID(id)}, {safe:true}, function(err, result) {
-            if (err) {
-                res.send({'error':'An error has occurred - ' + err});
-            } else {
-                console.log('' + result + ' document(s) deleted');
-                res.send(req.body);
-            }
+    let session_id=req.session.id;
+    usertype(session_id,function(user){
+      if(user.type=="admin"){
+         MongoClient.connect(database_url,function(err, db) {
+         console.log("Connected successfully to server");
+         db.collection('blogs', function(err, collection) {
+            collection.remove({'_id':objectId(id)}, {safe:true}, function(err, result) {
+                if (err) {
+                    res.send({'error':'An error has occurred - ' + err});
+                } else {
+                    console.log('' + result + ' document(s) deleted');
+                    res.send("Post Deleted");
+                }
+            });
+          });
+           db.close();
         });
-      });
-       db.close();
-    });
+      }
+      else{
+        console.log("Not authorzed to delete");
+        res.send("Not Authorized");
+      }
+    }); 
     
 }
 
@@ -337,9 +331,10 @@ exports.editPost=function(req,res){
   let session_id=req.session.id;
   usertype(session_id,function(user){
     getBlogById(post_id,function(blog){
-      if(blog.author.id.toString()==user.id || user.type=="admin"){
-        console.log("Blog Here");
-        console.log(blog)
+      
+      if(blog && ( blog.author.id.toString()==user.id || user.type=="admin")){
+        //console.log("Blog Here");
+        //console.log(blog)
         res.send(blog);
       }
       else{

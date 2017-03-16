@@ -1,5 +1,6 @@
 var express = require('express');
 var  blog = require('./routes/blog');
+var articles=require('./routes/articles');
 var bodyParser =  require("body-parser");
 var app = express();
 var cookieParser = require('cookie-parser')
@@ -125,12 +126,15 @@ app.post('logout',function(req,res){
 });*/
 app.get('/top-blog',blog.topBlog);
 app.get('/blogsAll/:num', blog.findAll);
+app.get('/publishes/:num',articles.articles);
 app.get('/byTag/:tag/:num',blog.findByTag);
 app.get('/blog/:id/', blog.findById);
 /*app.get('/addFromJsonData',blog.addFromJsonData);*/
 app.get('/blog-search/:searchText',blog.blogSearch);
 app.post('/blog', blog.addblog);
 app.post('/admin/updateBlog/:id',blog.updateBlog);
+app.post('/admin/deleteblog/:id',blog.deleteblog);
+app.post('/admin/addExternalArticle',articles.addArticle);
 app.post('/newsletterSignup',blog.newsletterSignup);
 app.post('/signup',blog.newUserSignup);
 //app.put('/blog/:id', blog.updateblog);
@@ -138,7 +142,7 @@ app.get('/userinfo',blog.sendUserInfo);
 app.get('/dashboard',blog.authorDashboard);
 app.get('/adminBlogs',blog.adminBlogs);
 app.get('/admin/editPost/:id',blog.editPost);
-app.delete('/blog/:id', blog.deleteblog);
+//app.delete('/blog/:id', blog.deleteblog);
 app.post('/upload', function(req, res) {
   var sampleFile;
  
