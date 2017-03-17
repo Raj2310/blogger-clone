@@ -64,3 +64,6 @@
 [0309/152316:ERROR:crash_report_database_win.cc(562)] CreateDirectory C:\Program Files (x86)\Gofat\Reports\Dump: The system cannot find the path specified. (0x3)
 [0309/152316:ERROR:registration_protocol_win.cc(82)] TransactNamedPipe: The pipe has been ended. (0x6D)
 [0309/152316:ERROR:crash_report_database_win.cc(562)] CreateDirectory C:\Program Files (x86)\Gofat\Reports\Dump: The system cannot find the path specified. (0x3)
+[0317/000024.403:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\Cansuck\settings.dat: Access is denied. (0x5)
+[0317/000024.422:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: The pipe has been ended. (0x6D)
+[0317/000024.424:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\Cansuck\settings.dat: Access is denied. (0x5)

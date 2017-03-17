@@ -53,6 +53,9 @@ background-color: transparent;
 .reduce-padding-right{
   padding-right: 10px;
 }
+.hide-extra-content{
+  overflow: hidden;
+}
 #top-blog img{
   max-height: 400px;
   margin: auto;

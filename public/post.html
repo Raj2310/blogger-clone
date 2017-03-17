@@ -10,7 +10,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
+<meta property="og:url" content="http://localhost:3000post.html?id=58b552e31788a90004e914fa" />
 <meta property="og:type"               content="article" />
 <meta property="og:title"              content="When Great Minds Don’t Think Alike" />
 <meta property="og:description"        content="How much does culture influence creative thinking?" />
@@ -33,6 +33,8 @@
   js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=124336507997973";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+
   <div class="main-outer-container">
 
      <nav class="navbar navbar-default tranparent-background" id="main-nav">
@@ -80,15 +82,6 @@
            THE FOX MAGAZINE
         </center>
       </div>
-     <!--  <center class="company-mantra">
-        NEWSPAPER FOR CREATORS & INNOVATORS. MADE BY WITHEMES
-      </center> -->
-      <!--<hr class="below-company-name"/>
-      <div class="editor-pick">
-        <center>
-          Editors’ Picks
-        </center>
-      </div>-->
       <div class="hero-content">
         <img  class="img-responsive" alt="Responsive image" id="mainPostImage" onerror='this.onerror=null;this.src="https://placehold.it/800x400"'/>
         <div class="hero-content-body">
@@ -96,10 +89,13 @@
           <h1><center ><span id="postTitle"></span></center></h1>
           <h4><center><span id="postDate"></span>  <span id="postAuthor"></span></center></h4>
           <div class="btn-group" role="group" aria-label="...">
-            <a href="#" class="btn btn-info pull-right" id="facebook_share"><i class="fa fa-facebook"></i> Share</a>
-            <a href="https://twitter.com/share" class="btn btn-info pull-right" data-show-count="false">Tweet</a>
-          </div>
-          <p id="postBody">
+           
+            <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank">Tweet</a>
+             <a role="button" href="#" class="btn btn-default" id="facebook_share"><i class="fa fa-facebook" target="_blank"></i> Share</a></a>
+            <a href="#" class="btn btn-default" id="google-share"><i class="fa fa-google-plus" aria-hidden="true" target="_blank"></i></a>
+            <!-- <a href="#" class="btn btn-default" id="pinterest-share"><i class="fa fa-pinterest" aria-hidden="true" target="_blank"></i></a>-->
+          </div> 
+                    <p id="postBody">
 
 
  </p>
@@ -112,29 +108,13 @@
 
     </div>
   </div>
-  <div class="main-outer-container similar-readings container-fluid" style="border-top-width:0px" id="suggestedPosts">
-    <div>
+  <div class="main-outer-container similar-readings container-fluid" style="border-top-width:0px" >
+    <div id="suggestedPosts">
       <h2><center><span class="label label-default">Similar Readings</span></center></h2>
     </div>
-    <!-- <div class="media">
-      <div class="media-left media-middle">
-        <a href="#">
-          <img class="media-object" src="resources/hero-small.jpg" alt="...">
-        </a>
-      </div>
-      <div class="media-body">
-        <h3 class="media-heading">Middle aligned media</h3>
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-
-        Morning in the city
-        Gorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-
-        Gallery Post
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-      </div>
-    </div> -->  
+     <a href="/blogs.html" class="btn btn-success pull-right space-bottom-20" >See All Posts</a>
   </div>
-   <a href="/blogs.html" class="btn btn-success pull-right space-bottom-20" >See All Posts</a>
+  
 
 
   </div>
@@ -183,13 +163,14 @@
          $("#postAuthor").html("by "+"<em>"+data.author.firstName+"</em>");
          $("#postBody").html(data.body);
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
-          $("#facebook_share").prop("href","http://www.facebook.com/sharer.php?u="+encodeURI('https://murmuring-fortress-10024.herokuapp.com/post.html?id='+data._id));
+          $("#facebook_share").prop("href","http://www.facebook.com/sharer.php");
+          $("#google-share").prop("href","https://plus.google.com/share");
         }
       );
      $.get("/blogsAll/0", function(data, status){
         $.each(data, function(index, element) {
               var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/380x220\";'"
-               $("#suggestedPosts").append("<div class='media'>"+
+               $("#suggestedPosts").append("<div class='media hide-extra-content'>"+
       "<div class='media-left media-middle'>"+
         "<a href='#'>"+
           "<img class='media-object' src='upload/"+element._id+".jpg"+"' "+on_error_string+" alt='...'>"+
@@ -197,7 +178,7 @@
       "</div>"+
       "<div class='media-body'>"+
         "<h3 class='media-heading'><a href='post.html?id="+element._id+"'>"+ element.title+"</a></h3>"+
-       element.body+
+       element.body.substr(0,400)+
       "</div>"+
     "</div>");
         });
