@@ -96,12 +96,14 @@
                 <!-- Blog Search Well -->
                 <div class="well">
                     <h4>Blog Search</h4>
-                    <input type="text" class="form-control" id="searchBar" placeholder="Search">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" id="searchBtn">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="searchBar" placeholder="Search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" id="searchBtn">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span> 
+                    </div>
                     <!-- /.input-group -->
                 </div>
 
@@ -124,7 +126,7 @@
 
                 <!-- Side Widget Well -->
                 <div class="well">
-                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                    <div class="fb-like" data-href="https://www.facebook.com/feedcob2017" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                 </div>
 
             </div>
@@ -268,7 +270,7 @@
 
     $("#searchBtn").click(function(){
       var searchText=$("#searchBar").val();
-      window.location.href('blogs.html?search='+searchText);
+      window.location.href='blogs.html?search='+searchText;
     });
     </script>
 </body>
