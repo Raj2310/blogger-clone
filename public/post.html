@@ -37,7 +37,7 @@
 
   <div class="main-outer-container">
 
-     <nav class="navbar navbar-default tranparent-background" id="main-nav">
+     <nav class="navbar navbar-default tranparent-background reduce-margin-bottom" id="main-nav">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -53,7 +53,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-
+                <li><a href="/">Home</a></li>
                  <li><a href="/?tag=trend_feed" class="text-uppercase">Trend Feed</a></li>
             <li><a href="/?tag=gossip" class="text-uppercase">Gossip</a></li>
             <li><a href="/?tag=this_is_desi" class="text-uppercase">This is Desi</a></li>
@@ -170,7 +170,7 @@
      $.get("/blogsAll/0", function(data, status){
         $.each(data, function(index, element) {
               var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/380x220\";'"
-               $("#suggestedPosts").append("<div class='media hide-extra-content'>"+
+               $("#suggestedPosts").append("<div class='col-sm-4 col-md-3 hide-extra-content'>"+
       "<div class='media-left media-middle'>"+
         "<a href='#'>"+
           "<img class='media-object' src='upload/"+element._id+".jpg"+"' "+on_error_string+" alt='...'>"+
