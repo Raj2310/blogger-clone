@@ -157,9 +157,9 @@
                     "<div class='hero-content-body'>"+
 
                       "<h2><center>"+data.blog.title+"</center></h2>"+
-                      "<p>"+
+                     /* "<p>"+
                       data.blog.body+
-                     "</p>"+
+                     "</p>"+*/
                      "<a  href='post.html?id="+data.blog._id+"' class='pull-right content-link'>Keep Reading</a>"+
                     "</div>");
                 }
@@ -167,15 +167,16 @@
             $.get("/blogsAll/"+0, function(data, status){
                 $.each(data, function(index, element) {
                   var img_src="/upload/"+element._id+".jpg";
-                  var alt_img_src="https://placehold.it/350x150";
-                  var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/380x220\";'"
-                       $(".posts").append("   <div class='col-sm-4 col-md-3'>"+
+                  var alt_img_src="https://placehold.it/90x130";
+                  var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
+                       $(".posts").append("   <div class='col-sm-3 col-md-2'>"+
                           "<div class='thumbnail'>"+
                         "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                           "<div class='caption'>"+
                           "<p>"+moment(element.date).fromNow()+"</p>"+
-                          "<h4><a href='post.html?id="+element._id+"'>"+getSubstring(element.title,15)+"</a></h4>"+
-                          "<p>"+getSubstring(element.body,50)+"</p>"+
+                          "<h6><a href='post.html?id="+element._id+"'>"+element.title+
+                          "</a></h6>"+
+                          /*"<p>"+getSubstring(element.body,50)+"</p>"+*/
                           "</div>"+
                           "</div>"+
                           "</div>");
@@ -187,15 +188,16 @@
                 $.get("/byTag/"+tag+"/"+0, function(data, status){
                     $.each(data, function(index, element) {
                       var img_src="/upload/"+element._id+".jpg";
-                      var alt_img_src="https://placehold.it/350x150";
-                      var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/380x220\";'"
-                           $(".posts").append("   <div class='col-sm-4 col-md-3'>"+
+                      var alt_img_src="https://placehold.it/90x130";
+                      var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
+                           $(".posts").append("   <div class='col-sm-3 col-md-2'>"+
                               "<div class='thumbnail'>"+
                             "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                               "<div class='caption'>"+
                               "<p>"+moment(element.date).fromNow()+"</p>"+
-                              "<h4><a href='post.html?id="+element._id+"'>"+getSubstring(element.title,15)+"</a></h4>"+
-                              "<p>"+getSubstring(element.body,50)+"</p>"+
+                              "<h6><a href='post.html?id="+element._id+"'>"+element.title+
+                              "</a></h6>"+
+                              /*"<p>"+getSubstring(element.body,50)+"</p>"+*/
                               "</div>"+
                               "</div>"+
                               "</div>");

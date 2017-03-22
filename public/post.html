@@ -91,15 +91,21 @@
           <div class="btn-group" role="group" aria-label="...">
            
             <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank">Tweet</a>
-             <a role="button" href="#" class="btn btn-default" id="facebook_share"><i class="fa fa-facebook" target="_blank"></i> Share</a></a>
-            <a href="#" class="btn btn-default" id="google-share"><i class="fa fa-google-plus" aria-hidden="true" target="_blank"></i></a>
-            <!-- <a href="#" class="btn btn-default" id="pinterest-share"><i class="fa fa-pinterest" aria-hidden="true" target="_blank"></i></a>-->
+             <a role="button" href="#" class="btn btn-info facebook_share" id=""><i class="fa fa-facebook" target="_blank"></i> Share</a></a>
+            <a href="#" class="btn btn-success google-share" id=""><i class="fa fa-google-plus" aria-hidden="true" target="_blank"></i></a>
+            <a href="#" class="btn btn-primary pinterest-share" id=""><i class="fa fa-pinterest" aria-hidden="true" target="_blank"></i></a>
           </div> 
                     <p id="postBody">
 
 
  </p>
-
+ <div class="btn-group" role="group" aria-label="...">
+           
+            <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank">Tweet</a>
+             <a role="button" href="#" class="btn btn-info facebook_share" id=""><i class="fa fa-facebook" target="_blank"></i> Share</a></a>
+            <a href="#" class="btn btn-success google-share" id=""><i class="fa fa-google-plus" aria-hidden="true" target="_blank"></i></a>
+            <a href="#" class="btn btn-primary pinterest-share" id=""><i class="fa fa-pinterest" aria-hidden="true" target="_blank"></i></a>
+          </div> 
         </div>
       </div>
      <br/>
@@ -166,22 +172,27 @@
          $("#postAuthor").html("by "+"<em>"+data.author.firstName+"</em>");
          $("#postBody").html(data.body);
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
-          $("#facebook_share").prop("href","http://www.facebook.com/sharer.php");
-          $("#google-share").prop("href","https://plus.google.com/share");
+          $(".facebook_share").prop("href","http://www.facebook.com/sharer.php");
+          $(".google-share").prop("href","https://plus.google.com/share");
+          $(".pinterest-share").prop("href","http://pinterest.com/pin/create/button/?url="+
+            "http://localhost:5000/post.html?id="+data._id+
+            "&media=http://localhost:5000/upload/"+data._id+".jpg&description="+
+            data.title);
         }
       );
      $.get("/blogsAll/0", function(data, status){
         $.each(data, function(index, element) {
            var img_src="/upload/"+element._id+".jpg";
                   var alt_img_src="https://placehold.it/350x150";
-              var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/380x220\";'"
-               $("#suggestedPosts").append("   <div class='col-sm-4 col-md-3'>"+
+              var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
+               $("#suggestedPosts").append("   <div class='col-sm-3 col-md-2'>"+
                           "<div class='thumbnail'>"+
                         "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                           "<div class='caption'>"+
                           "<p>"+moment(element.date).fromNow()+"</p>"+
-                          "<h4><a href='post.html?id="+element._id+"'>"+getSubstring(element.title,15)+"</a></h4>"+
-                          "<p>"+getSubstring(element.body,50)+"</p>"+
+                          "<h4><a href='post.html?id="+element._id+"'>"+element.tite+
+                          "</a></h4>"+
+                          /*"<p>"+getSubstring(element.body,50)+"</p>"+*/
                           "</div>"+
                           "</div>"+
                           "</div>");
