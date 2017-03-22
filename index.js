@@ -142,6 +142,7 @@ app.get('/userinfo',blog.sendUserInfo);
 app.get('/dashboard',blog.authorDashboard);
 app.get('/adminBlogs',blog.adminBlogs);
 app.get('/admin/editPost/:id',blog.editPost);
+app.post('/suggestionRecieve',blog.suggestionRecieve);
 //app.delete('/blog/:id', blog.deleteblog);
 app.post('/upload', function(req, res) {
   var sampleFile;

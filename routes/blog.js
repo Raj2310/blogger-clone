@@ -7,7 +7,7 @@ var Server = mongo.Server,
 var objectId=mongo.ObjectId;
 var MongoClient = mongo.MongoClient;
 var database_url="mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website";
-
+var nodemailer = require('nodemailer');
 exports.topBlog=function(req,res){
   MongoClient.connect(database_url,function(err, db) {
       db.collection('blogs', function(err, collection) {
@@ -206,6 +206,16 @@ exports.newUserSignup = function(req,res){
     });  
 };
 
+exports.suggestionRecieve=function(req,res){
+  const name=req.body.name;
+  const email=req.body.email;
+  const subject=req.body.subject;
+  const msg=req.body.msg;
+  const mailCompose="Name: "+name+"\n Email: "+email+"\n"+msg;
+  mailer('blogwebsite2302@gmail.com',mailCompose,subject);
+  res.redirect('/');
+}
+
 exports.findAll = function(req, res) {
    var num=Number(req.params.num);
    MongoClient.connect(database_url,function(err, db) {
@@ -263,6 +273,7 @@ exports.addblog = function(req, res) {
               } else {
                 var inserted_id=result.insertedIds[0];
                   console.log('Success: ' + JSON.stringify(inserted_id));
+                  sendMailForNewPost(inserted_id,"Feedcop")
                   res.send(inserted_id);
               }
           });
@@ -460,6 +471,51 @@ function getUserBlogs(userid,callback){
        db.close();
     });
 }
-/*--------------------------------------------------------------------------------------------------------------------*/
-// Populate database with sample data -- Only used once: the first time the application is started.
-// You'd typically not find this code in a real-life app, since the database would already exist.
+function sendMailForNewPost(id,title){
+   const registration_link='http://feedcop.com/post.html?id='+id;
+  const mailText='<h3>Hello Friend</h3>'+
+  '<p>Here is link to our new blog post : <a href="'+registration_link+'">'+title+'</a></p>';
+  MongoClient.connect(database_url,function(err, db) {
+      db.collection('signups', function(err, collection) {
+        if(err){
+            return;
+        }
+        else {
+          collection.find({}).toArray(function(err, items) {
+            for(item of items){
+              mailer(item.email,mailText,'New blog post in feedcop');
+            }
+              
+          });
+        }
+      });
+       db.close();
+    });
+ 
+  
+}
+function mailer(email,text,sub){
+  var transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+      user: 'blogwebsite2302@gmail.com', // Your email id
+      pass: 'sahirblog2302' // Your password
+    }
+  });
+  
+  var mailOptions = {
+    from: 'blogwebsite2302@gmail.com', // sender address
+    to: email, // list of receivers
+    subject: sub, // Subject line
+    html: text //, // plaintext body
+    // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
+  };
+  transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+        console.log(error);
+        
+    }else{
+        console.log('Message sent: ' + info.response);
+    };
+  });
+}

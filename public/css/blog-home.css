@@ -15,3 +15,8 @@ footer {
     width: 100%;                   /* IE6 needs any width */
     overflow-wrap: break-word;/* "overflow" value must be different from  visible"*/
 }
+
+#blogContainer img{
+	max-width: 380px;
+	max-height: 220px;
+}
