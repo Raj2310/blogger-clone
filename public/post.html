@@ -37,10 +37,13 @@
 
   <div class="main-outer-container">
 
-     <nav class="navbar navbar-default tranparent-background reduce-margin-bottom" id="main-nav">
+    <nav class="arial-font navbar navbar-default tranparent-background reduce-margin-bottom" id="main-nav">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+        <a class="navbar-brand no-padding" href="/">
+          <img alt="Brand" class="logo-image " src="images/logo.jpg">
+        </a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -53,13 +56,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
-                 <li><a href="/?tag=trend_feed" class="text-uppercase">Trend Feed</a></li>
-            <li><a href="/?tag=gossip" class="text-uppercase">Gossip</a></li>
-            <li><a href="/?tag=this_is_desi" class="text-uppercase">This is Desi</a></li>
-             <li><a href="/?tag=hera_pheri" class="text-uppercase">HeraPheri</a></li>
-            <li><a href="/?tag=wtf_i_go" class="text-uppercase">WTF I GO</a></li>
-             <li><a href="publish.html" class="text-uppercase reduce-padding-right">Publish</a></li>
+          <!-- <li><a href="/">Home</a></li> -->
+            <li><a href="/?tag=trend_feed" class="text-uppercase reduce-padding-right">Trend Feed</a></li>
+            <li><a href="/?tag=gossip" class="text-uppercase reduce-padding-right">Gossip</a></li>
+            <li><a href="/?tag=this_is_desi" class="text-uppercase reduce-padding-right">This is Desi</a></li>
+             <li><a href="/?tag=hera_pheri" class="text-uppercase reduce-padding-right">HeraPheri</a></li>
+            <li><a href="/?tag=wtf_i_go" class="text-uppercase reduce-padding-right">WTF I GO</a></li>
+            <li><a href="publish.html" class="text-uppercase reduce-padding-right">Publish</a></li>
+            
           </ul>
           <form class="navbar-form navbar-left">
             <div class="form-group">
@@ -69,9 +73,13 @@
           </form>
           <ul class="nav navbar-nav navbar-right">
 
-              <li><a href="https://www.instagram.com/feedcob/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
-            <li><a href="https://twitter.com/Feedcobofficial"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></span></a></li>
-            <li><a href="https://www.facebook.com/Feedcob-766691663508464/"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></span></a></li>
+            
+            <li><a href="https://www.facebook.com/Feedcob-766691663508464/"><img src="images/fb-icon.jpg" class="nav-icon-image"></span></a></li>
+            <li><a href="https://twitter.com/Feedcobofficial"><img src="images/twitter-icon.png"class="nav-icon-image"></span></a></li>
+            <li><a href="https://www.instagram.com/feedcob/"><img src="images/google_plus.png" class="nav-icon-image"></a></li>
+            <li><a href="https://www.instagram.com/feedcob/"><img src="images/instagram-icon.jpg" class="nav-icon-image"></a></li>
+
+            
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -88,23 +96,27 @@
 
           <h1><center ><span id="postTitle"></span></center></h1>
           <h4><center><span id="postDate"></span>  <span id="postAuthor"></span></center></h4>
+           <center>
           <div class="btn-group" role="group" aria-label="...">
-           
+          
             <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank">Tweet</a>
              <a role="button" href="#" class="btn btn-info facebook_share" id=""><i class="fa fa-facebook" target="_blank"></i> Share</a></a>
             <a href="#" class="btn btn-success google-share" id=""><i class="fa fa-google-plus" aria-hidden="true" target="_blank"></i></a>
             <a href="#" class="btn btn-primary pinterest-share" id=""><i class="fa fa-pinterest" aria-hidden="true" target="_blank"></i></a>
-          </div> 
+
+          </div>
+          </center>
                     <p id="postBody">
 
 
  </p>
+ <center>
  <div class="btn-group" role="group" aria-label="...">
-           
-            <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank">Tweet</a>
+             <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank">Tweet</a>
              <a role="button" href="#" class="btn btn-info facebook_share" id=""><i class="fa fa-facebook" target="_blank"></i> Share</a></a>
             <a href="#" class="btn btn-success google-share" id=""><i class="fa fa-google-plus" aria-hidden="true" target="_blank"></i></a>
             <a href="#" class="btn btn-primary pinterest-share" id=""><i class="fa fa-pinterest" aria-hidden="true" target="_blank"></i></a>
+            </center>
           </div> 
         </div>
       </div>
@@ -185,7 +197,8 @@
            var img_src="/upload/"+element._id+".jpg";
                   var alt_img_src="https://placehold.it/350x150";
               var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
-               $("#suggestedPosts").append("   <div class='col-sm-3 col-md-2'>"+
+               $("#suggestedPosts").append("<a href='/post.html?id="+element._id+"'>"+
+                "   <div class='col-sm-3 col-md-2'>"+
                           "<div class='thumbnail'>"+
                         "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                           "<div class='caption'>"+
@@ -195,7 +208,7 @@
                           /*"<p>"+getSubstring(element.body,50)+"</p>"+*/
                           "</div>"+
                           "</div>"+
-                          "</div>");
+                          "</div></a>");
         });
       });
   });

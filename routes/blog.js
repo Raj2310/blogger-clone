@@ -33,6 +33,31 @@ exports.topBlog=function(req,res){
     });
 }
 
+exports.topBlogs=function(req,res){
+  MongoClient.connect(database_url,function(err, db) {
+      db.collection('blogs', function(err, collection) {
+        if(err){
+            res.send({status:0});
+            console.log("Error in topBlog function "+err);
+        }
+        else {
+          collection.find({}).limit(3).toArray(function(err, items) {
+              if (err) {
+                 console.log("Error in topBlog function "+err);
+                  res.send({status:0});
+
+              } else{
+                  res.send({status:1,blog:items});
+              };
+              
+          });
+        }
+
+      });
+       db.close();
+    });
+}
+
 
 
 exports.addFromJsonData = function(){

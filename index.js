@@ -129,6 +129,7 @@ app.get('/blogsAll/:num', blog.findAll);
 app.get('/publishes/:num',articles.articles);
 app.get('/byTag/:tag/:num',blog.findByTag);
 app.get('/blog/:id/', blog.findById);
+app.get('/topBlogs',blog.topBlogs);
 /*app.get('/addFromJsonData',blog.addFromJsonData);*/
 app.get('/blog-search/:searchText',blog.blogSearch);
 app.post('/blog', blog.addblog);
