@@ -48,11 +48,11 @@ exports.topBlogs=function(req,res){
 
               } else{
                   res.send({status:1,blog:items});
+				  
               };
               
           });
         }
-
       });
        db.close();
     });
@@ -120,6 +120,7 @@ exports.findByTag = function(req, res) {
         else {
           collection.find({tag:tag}).skip(num).limit(10).toArray(function(err, items) {
               res.send(items);
+			  console.log(items);
           });
         }
       });
@@ -298,7 +299,7 @@ exports.addblog = function(req, res) {
               } else {
                 var inserted_id=result.insertedIds[0];
                   console.log('Success: ' + JSON.stringify(inserted_id));
-                  sendMailForNewPost(inserted_id,"Feedcop")
+                  sendMailForNewPost(inserted_id,"Feedcob")
                   res.send(inserted_id);
               }
           });
@@ -508,7 +509,7 @@ function sendMailForNewPost(id,title){
         else {
           collection.find({}).toArray(function(err, items) {
             for(item of items){
-              mailer(item.email,mailText,'New blog post in feedcop');
+              mailer(item.email,mailText,'New blog post in feedcob');
             }
               
           });

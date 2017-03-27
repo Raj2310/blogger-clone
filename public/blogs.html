@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="css/blog-home.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -32,24 +33,29 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                
-            </div>
+        <a class="navbar-brand no-padding" href="/">
+          <img alt="Brand" class="logo-image " src="images/logo.jpg">
+        </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         <!--  <a class="navbar-brand" href="#">Brand</a> -->
+        </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/?tag=trend_feed">Trend Feed</a></li>
-                    <li><a href="/?tag=gossip">Gossip</a></li>
-                    <li><a href="/?tag=this_is_desi">THis is Desi</a></li>
-                    <li><a href="/?tag=hera_pheri">Hera Pheri</a></li>
-                    <li><a href="/?tag=wtf_i_go">WTF I GO</a></li>
-                </ul>
+            <ul class="nav navbar-nav">
+          <!-- <li><a href="/">Home</a></li> -->
+            <li><a href="/?tag=trend_feed" class="text-uppercase reduce-padding-right">Trend Feed</a></li>
+            <li><a href="/?tag=gossip" class="text-uppercase reduce-padding-right">Gossip</a></li>
+            <li><a href="/?tag=this_is_desi" class="text-uppercase reduce-padding-right">This is Desi</a></li>
+             <li><a href="/?tag=hera_pheri" class="text-uppercase reduce-padding-right">HeraPheri</a></li>
+            <li><a href="/?tag=wtf_i_go" class="text-uppercase reduce-padding-right">FeedMore</a></li>
+            <li><a href="publish.html" class="text-uppercase reduce-padding-right">FeedTales</a></li>
+            
+          </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -65,8 +71,7 @@
             <div class="col-md-8" >
 
                 <h1 class="page-header">
-                    Page Heading
-                    <small>Secondary Text</small>
+                    Blogs
                 </h1>
                 <div id="blogContainer">
                     
@@ -110,7 +115,7 @@
                               <li><a href="/blogs.html?tag=gossip">Gossip</a></li>
                               <li><a href="/blogs.html?tag=this_is_desi">THis is Desi</a></li>
                               <li><a href="/blogs.html?tag=hera_pheri">Hera Pheri</a></li>
-                              <li><a href="blogs.html?tag=wtf_i_go">WTF I GO</a></li>
+                              <li><a href="blogs.html?tag=wtf_i_go">FeedMore</a></li>
                         </div>
                        
                     </div>
@@ -133,7 +138,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Feedcob.com 2017</p>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

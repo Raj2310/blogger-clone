@@ -20,6 +20,9 @@
         padding-top: 70px;
         /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     }
+	#logout{
+		margin-left:10px;
+	}
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -80,7 +83,7 @@
                     <option value="gossip">Gossip</option>
                     <option value="this_is_desi">THis is Desi</option>
                     <option value="hera_pheri">Hera Pheri</option>
-                    <option value="wtf_i_go">WTF I GO</option>
+                    <option value="wtf_i_go">FeedMore</option>
                 </select>
                 
                 <label for="exampleInputPassword1">Write the post</label>
@@ -141,7 +144,7 @@ $(document).ready(
               writer.firstName=data.firstName;
               writer.lastName=data.lastName;
               writer.id=data.id;
-              $("#userNamePlaceholder").html('hello '+writer.firstName);
+              $("#userNamePlaceholder").html('Hello '+writer.firstName);
             }
         });
         $("#submitPost").click(
@@ -157,7 +160,7 @@ $(document).ready(
                      $("#fileUploadName").val(data);
                      $("#fileUploadButton").prop('disabled',false);
                      $("#submitPost").prop('disabled',true);
-                     alert("Post has been submitted now submit a jpeg image");
+                     alert("Post has been submitted, now submit a jpeg image");
             });
           }
         );

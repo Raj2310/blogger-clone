@@ -19,6 +19,9 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+  #postBody,#postTitle { word-wrap: break-word; }
+  </style
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
@@ -61,8 +64,8 @@
             <li><a href="/?tag=gossip" class="text-uppercase reduce-padding-right">Gossip</a></li>
             <li><a href="/?tag=this_is_desi" class="text-uppercase reduce-padding-right">This is Desi</a></li>
              <li><a href="/?tag=hera_pheri" class="text-uppercase reduce-padding-right">HeraPheri</a></li>
-            <li><a href="/?tag=wtf_i_go" class="text-uppercase reduce-padding-right">WTF I GO</a></li>
-            <li><a href="publish.html" class="text-uppercase reduce-padding-right">Publish</a></li>
+            <li><a href="/?tag=wtf_i_go" class="text-uppercase reduce-padding-right">FeedMore</a></li>
+            <li><a href="publish.html" class="text-uppercase reduce-padding-right">FeedTales</a></li>
             
           </ul>
           <form class="navbar-form navbar-left">
@@ -74,10 +77,10 @@
           <ul class="nav navbar-nav navbar-right">
 
             
-            <li><a href="https://www.facebook.com/Feedcob-766691663508464/"><img src="images/fb-icon.jpg" class="nav-icon-image"></span></a></li>
-            <li><a href="https://twitter.com/Feedcobofficial"><img src="images/twitter-icon.png"class="nav-icon-image"></span></a></li>
-            <li><a href="https://www.instagram.com/feedcob/"><img src="images/google_plus.png" class="nav-icon-image"></a></li>
-            <li><a href="https://www.instagram.com/feedcob/"><img src="images/instagram-icon.jpg" class="nav-icon-image"></a></li>
+            <li><a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="images/fb-icon.jpg" class="nav-icon-image"></span></a></li>
+            <li><a href="https://twitter.com/Feedcobofficial" target="_blank"><img src="images/twitter-icon.png"class="nav-icon-image"></span></a></li>
+            <li><a href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="images/google_plus.png" class="nav-icon-image"></a></li>
+            <li><a href="https://www.instagram.com/feedcob/" target="_blank"><img src="images/instagram-icon.jpg" class="nav-icon-image"></a></li>
 
             
           </ul>
@@ -87,7 +90,7 @@
     <div class="container-fluid">
       <div class="company-name">
         <center>
-           THE FOX MAGAZINE
+           Feedcob
         </center>
       </div>
       <div class="hero-content">
@@ -142,20 +145,20 @@
       <div class="row">
         <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
           <h1 class="footer-company-name">
-            <center>The Fox Magazine</center>
+            <center>Feedcob</center>
             <hr class="below-editor-pick"/>
 
           </h1>
-          <center>LIFE IS SHORT TO TRY SO MANY THEMES</center>
+          <center>GOSSIPS.TRENDING.HUMOR</center>
           <div>
             <center>
-               <a href="https://www.instagram.com/feedcob/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
-            <a href="https://twitter.com/Feedcobofficial"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
-            <a href="https://www.facebook.com/Feedcob-766691663508464/"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+               <a href="https://www.instagram.com/feedcob/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/Feedcobofficial" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
             </center>
           <div>
           <div>
-            <center><a href="">Contact Us</a>
+            <center><a href="contact.html">Contact Us</a>
           </div>
         </div>
          <div class="col-lg-4 col-md-3 col-sm-2 col-xs-12">
@@ -201,7 +204,7 @@
                 "   <div class='col-sm-3 col-md-2'>"+
                           "<div class='thumbnail'>"+
                         "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
-                          "<div class='caption'>"+
+                          "<div class='caption' style='word-wrap:break-word;'>"+
                           "<p>"+moment(element.date).fromNow()+"</p>"+
                           "<h4><a href='post.html?id="+element._id+"'>"+element.tite+
                           "</a></h4>"+
