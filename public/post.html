@@ -19,10 +19,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/styles.css">
-  <style>
-  #postBody,#postTitle { word-wrap: break-word; }
-  </style
-  <!--[if lt IE 9]>
+    <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 </head>
@@ -102,25 +99,30 @@
            <center>
           <div class="btn-group" role="group" aria-label="...">
           
-            <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank">Tweet</a>
-             <a role="button" href="#" class="btn btn-info facebook_share" id=""><i class="fa fa-facebook" target="_blank"></i> Share</a></a>
-            <a href="#" class="btn btn-success google-share" id=""><i class="fa fa-google-plus" aria-hidden="true" target="_blank"></i></a>
-            <a href="#" class="btn btn-primary pinterest-share" id=""><i class="fa fa-pinterest" aria-hidden="true" target="_blank"></i></a>
-
+            <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank"><img src="images/twitter-icon.png" class="nav-icon-image"></a>
+            <a role="button" href="#" class="btn btn-default facebook_share" target="_blank" id=""><img src="images/fb-icon.jpg" class="nav-icon-image"></a>
+            <a href="#" class="btn btn-default google-share" id="" target="_blank"><img src="images/google_plus.png" class="nav-icon-image"></a>
+            <a href="#" class="btn btn-default pinterest-share" id="" target="_blank"><img src="images/pinterest.png" class="nav-icon-image"></a>
+			<a href="#" class="btn btn-default tumblr-share" id="" target="_blank"><img src="images/tumblr.png" class="nav-icon-image"></a>
+			<a href="#" class="btn btn-default email-share" id="" target="_blank"><img src="images/email.png" class="nav-icon-image"></a>
+			<a href="javascript:;" onclick="window.print()" class="btn btn-default print-share" id="" target="_blank"><img src="images/print.png" class="nav-icon-image"></a>
           </div>
           </center>
                     <p id="postBody">
 
 
- </p>
+					</p>
  <center>
- <div class="btn-group" role="group" aria-label="...">
-             <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank">Tweet</a>
-             <a role="button" href="#" class="btn btn-info facebook_share" id=""><i class="fa fa-facebook" target="_blank"></i> Share</a></a>
-            <a href="#" class="btn btn-success google-share" id=""><i class="fa fa-google-plus" aria-hidden="true" target="_blank"></i></a>
-            <a href="#" class="btn btn-primary pinterest-share" id=""><i class="fa fa-pinterest" aria-hidden="true" target="_blank"></i></a>
-            </center>
-          </div> 
+			<div class="btn-group" role="group" aria-label="...">
+          
+            <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank"><img src="images/twitter-icon.png" class="nav-icon-image"></a>
+            <a role="button" href="#" class="btn btn-default facebook_share" target="_blank" id=""><img src="images/fb-icon.jpg" class="nav-icon-image"></a>
+            <a href="#" class="btn btn-default google-share" id="" target="_blank"><img src="images/google_plus.png" class="nav-icon-image"></a>
+            <a href="#" class="btn btn-default pinterest-share" id="" target="_blank"><img src="images/pinterest.png" class="nav-icon-image"></a>
+			<a href="#" class="btn btn-default tumblr-share" id="" target="_blank"><img src="images/tumblr.png" class="nav-icon-image"></a>
+			<a href="#" class="btn btn-default email-share" id="" target="_blank"><img src="images/email.png" class="nav-icon-image"></a>
+			<a href="javascript:;" onclick="window.print()" class="btn btn-default print-share" id="" target="_blank"><img src="images/print.png" class="nav-icon-image"></a>
+          </div>
         </div>
       </div>
      <br/>
@@ -144,11 +146,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
-          <h1 class="footer-company-name">
-            <center>Feedcob</center>
-            <hr class="below-editor-pick"/>
-
-          </h1>
+          
           <center>GOSSIPS.TRENDING.HUMOR</center>
           <div>
             <center>
@@ -184,15 +182,16 @@
      $.get("/blog/"+id, function(data, status){
          $("#postTitle").html(data.title);
          $("#postDate").html(moment(data.date).fromNow());
-         $("#postAuthor").html("by "+"<em>"+data.author.firstName+"</em>");
+         //$("#postAuthor").html("by "+"<em>"+data.author.firstName+"</em>");
          $("#postBody").html(data.body);
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
-          $(".facebook_share").prop("href","http://www.facebook.com/sharer.php");
-          $(".google-share").prop("href","https://plus.google.com/share");
-          $(".pinterest-share").prop("href","http://pinterest.com/pin/create/button/?url="+
-            "http://localhost:5000/post.html?id="+data._id+
-            "&media=http://localhost:5000/upload/"+data._id+".jpg&description="+
+          $(".facebook_share").prop("href","http://www.facebook.com/sharer/sharer.php?url="+window.location.href);
+          $(".google-share").prop("href","https://plus.google.com/share?url="+window.location.href);
+          $(".pinterest-share").prop("href","http://pinterest.com/pin/create/button/?url="+window.location.href+
+            "&media="+window.location.hostname+"/upload/"+data._id+".jpg&description="+
             data.title);
+			$(".tumblr-share").prop("href","https://tumblr.com/share/link?url="+window.location.href+"&amp;title="+data.title);
+			$(".email-share").prop("href","mailto:?Subject=Check out this&amp;Body=I%20saw%20this%20and%20thought%20to%20share%20with%20you%20 "+window.location.href);
         }
       );
      $.get("/blogsAll/0", function(data, status){

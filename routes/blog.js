@@ -98,7 +98,7 @@ exports.findById = function(req, res) {
         }
         else {
           collection.findOne({_id:objectId(id)}, function(err, item) {
-            console.log(item);
+            //console.log(item);
               res.send(item);
           });
         }
@@ -120,7 +120,7 @@ exports.findByTag = function(req, res) {
         else {
           collection.find({tag:tag}).skip(num).limit(10).toArray(function(err, items) {
               res.send(items);
-			  console.log(items);
+			  //console.log(items);
           });
         }
       });

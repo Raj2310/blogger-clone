@@ -49,7 +49,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
           <!-- <li><a href="/">Home</a></li> -->
-            <li><a href="/?tag=trend_feed" class="text-uppercase reduce-padding-right">Trend Feed</a></li>
+            <li><a href="/?tag=trend_feed" class="text-uppercase reduce-padding-right">TrendFeed</a></li>
             <li><a href="/?tag=gossip" class="text-uppercase reduce-padding-right">Gossip</a></li>
             <li><a href="/?tag=this_is_desi" class="text-uppercase reduce-padding-right">This is Desi</a></li>
              <li><a href="/?tag=hera_pheri" class="text-uppercase reduce-padding-right">HeraPheri</a></li>
@@ -57,12 +57,12 @@
             <li><a href="publish.html" class="text-uppercase reduce-padding-right">FeedTales</a></li>
             
           </ul>
-          <form class="navbar-form navbar-left">
+          <div class="navbar-form navbar-left">
             <div class="form-group">
               <input type="text" class="form-control" id="searchBar" placeholder="Search">
             </div>
             <a id="searchBtn" class="btn btn-default">Go</a>
-          </form>
+          </div>
           <ul class="nav navbar-nav navbar-right">
 
             
@@ -74,7 +74,7 @@
             
           </ul>
         </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+    </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid" >
       <div class="row hero">
@@ -90,14 +90,16 @@
                  GOSSIPS.TRENDING.HUMOR
               </center>             
             </div>
-            <div>
-            <a class="pull-right" href="https://www.instagram.com/feedcob/" target="_blank"><img src="images/instagram-icon.jpg" class="share-icon-image"></a>
-            <a class="pull-right" href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="images/google_plus.png" class="share-icon-image"></a>
-                 <a class="pull-right" href="https://twitter.com/Feedcobofficial" target="_blank"><img src="images/twitter-icon.png" class="share-icon-image"></a>
-                <a class="pull-right" href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="images/fb-icon.jpg" class="share-icon-image"></a>
-            </div>
+            <div class="social-links">
+			<center>
+			<a class="sl" href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="images/fb-icon.jpg" class="share-icon-image"></a>
+            <a class="sl" href="https://twitter.com/Feedcobofficial" target="_blank"><img src="images/twitter-icon.png" class="share-icon-image"></a>
+			<a class="sl" href="https://www.instagram.com/feedcob/" target="_blank"><img src="images/instagram-icon.jpg" class="share-icon-image"></a>
+            <a class="sl" href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="images/google_plus.png" class="share-icon-image"></a>           
+            <center>
+			</div>
           <br>
-<br>
+			<br>
 
             <br>
             <div id="carousel-top-blogs" class="carousel slide" data-ride="carousel">
@@ -142,7 +144,7 @@
                 SIGNUP TO OUR NEWSLETTER
               </h3>
               <center class="comic-font white">
-                Get weeklystories & more
+                Get weekly stories & more
               </center>
               <h2>
                 <center class="comic-font white">
@@ -151,15 +153,15 @@
               </h2>
               <div class="input-group">
                   <input type="text" class="form-control" placeholder="Enter email" aria-describedby="basic-addon2">
-                  <span class="input-group-addon" id="basic-addon2" onClick='submitNewsletterRequest()'>register</span>
+                  <span class="input-group-addon feedme-button" id="basic-addon2" onClick='submitNewsletterRequest()'>Feedme</span>
               </div>
             </div>
             <div class="feedtales-section">
               <h3>
-                <center>Read moreblog stories</center>
+                <center class="feedtales-info">See What Writers Have To Share ...</center>
                 <br>
                 <center>
-                    <a class="btn btn-md" href="/publish.html">Feedtales</a>
+                    <a class="btn btn-md " href="/publish.html">Feedtales</a>
                 </center>
               </h3>
             </div>
@@ -185,31 +187,26 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
-          <h1 class="footer-company-name">
-            <center>Feedcob</center>
-            <hr class="below-editor-pick"/>
-
-          </h1>
+          
 		  <center>GOSSIPS.TRENDING.HUMOR</center>
-          <div>
             <center>
               <a href="https://www.instagram.com/feedcob/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
             <a href="https://twitter.com/Feedcobofficial" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
             <a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
             </center>
-          <div>
+          
           <div>
             <center><a href="contact.html">Contact Us</a>
 
           </div>
-        </div>
+        
         <div class="col-lg-4 col-md-3 col-sm-2 col-xs-12">
           <div class="fb-like" data-href="https://www.facebook.com/feedcob2017" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
         </div>
-      </div>
     </div>
-  </div
-
+  </div>
+</div>
+</div>
   <script></script>
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -314,6 +311,12 @@
                      
       }
     );
+	$(document).keypress(function(e) {
+		if(e.which == 13&&$("#searchBar").is(":focus")) {
+			var searchText=$("#searchBar").val();
+			window.location.replace('blogs.html?search='+searchText);
+		}
+	});
     $("#searchBtn").click(function(){
       var searchText=$("#searchBar").val();
       window.location.replace('blogs.html?search='+searchText);
@@ -332,11 +335,11 @@
     }
     $(window).bind('scroll', function () {
     if ($(window).scrollTop() > 50) {
-        $('#main-nav').addClass('navbar-fixed-top');
-        $('#main-nav').removeClass('tranparent-background');
+        //$('#main-nav').addClass('navbar-fixed-top');
+        //$('#main-nav').removeClass('tranparent-background');
     } else {
-        $('#main-nav').removeClass('navbar-fixed-top');
-         $('#main-nav').addClass('tranparent-background');
+        //$('#main-nav').removeClass('navbar-fixed-top');
+        // $('#main-nav').addClass('tranparent-background');
     }
   });
   </script>
