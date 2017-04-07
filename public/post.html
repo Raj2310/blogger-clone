@@ -11,9 +11,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="Your Website Title" />
-  <meta property="og:description"   content="Your description" />
-  <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
+  <meta property="og:title"         content="Feedcob" />
+  <meta property="og:description"   content="New Post" />
+  <meta property="og:image"         content="https://murmuring-fortress-10024.herokuapp.com/images/fb-share-dialog.png" />
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -186,7 +186,7 @@
          $("#postBody").html(data.body);
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
           $(".facebook_share").prop("href","http://www.facebook.com/sharer/sharer.php?url="+window.location.href);
-          $(".google-share").prop("href","https://plus.google.com/share?url="+window.location.href);
+          $(".google-share").prop("href","https://plus.google.com/share?u="+window.location.href);
           $(".pinterest-share").prop("href","http://pinterest.com/pin/create/button/?url="+window.location.href+
             "&media="+window.location.hostname+"/upload/"+data._id+".jpg&description="+
             data.title);
