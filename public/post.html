@@ -185,8 +185,8 @@
          //$("#postAuthor").html("by "+"<em>"+data.author.firstName+"</em>");
          $("#postBody").html(data.body);
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
-          $(".facebook_share").prop("href","http://www.facebook.com/sharer/sharer.php?url="+window.location.href);
-          $(".google-share").prop("href","https://plus.google.com/share?u="+window.location.href);
+          $(".facebook_share").prop("href","http://www.facebook.com/sharer/sharer.php?u="+window.location.href);
+          $(".google-share").prop("href","https://plus.google.com/share?url="+window.location.href);
           $(".pinterest-share").prop("href","http://pinterest.com/pin/create/button/?url="+window.location.href+
             "&media="+window.location.hostname+"/upload/"+data._id+".jpg&description="+
             data.title);
