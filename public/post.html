@@ -10,6 +10,7 @@
   <meta name="author" content="SitePoint">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:url"          content="https://murmuring-fortress-10024.herokuapp.com/post.html?id=58b552e31788a90004e914fa" />
   <meta property="og:type"          content="website" />
   <meta property="og:title"         content="Feedcob" />
   <meta property="og:description"   content="New Post" />
@@ -98,7 +99,7 @@
           <div class="btn-group" role="group" aria-label="...">
           
             <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank"><img src="images/twitter-icon.png" class="nav-icon-image"></a>
-            <a role="button" href="#" class="btn btn-default facebook_share" target="_blank" id=""><img src="images/fb-icon.jpg" class="nav-icon-image"></a>
+            <a role="button" href="http://www.facebook.com/sharer/sharer.php" class="btn btn-default facebook_share" target="_blank" id=""><img src="images/fb-icon.jpg" class="nav-icon-image"></a>
             <a href="#" class="btn btn-default google-share" id="" target="_blank"><img src="images/google_plus.png" class="nav-icon-image"></a>
             <a href="#" class="btn btn-default pinterest-share" id="" target="_blank"><img src="images/pinterest.png" class="nav-icon-image"></a>
 			<a href="#" class="btn btn-default tumblr-share" id="" target="_blank"><img src="images/tumblr.png" class="nav-icon-image"></a>
@@ -185,7 +186,7 @@
          //$("#postAuthor").html("by "+"<em>"+data.author.firstName+"</em>");
          $("#postBody").html(data.body);
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
-          $(".facebook_share").prop("href","http://www.facebook.com/sharer/sharer.php?u="+window.location.href);
+          //$(".facebook_share").prop("href","http://www.facebook.com/sharer/sharer.php?u="+window.location.href);
           $(".google-share").prop("href","https://plus.google.com/share?url="+window.location.href);
           $(".pinterest-share").prop("href","http://pinterest.com/pin/create/button/?url="+window.location.href+
             "&media="+window.location.hostname+"/upload/"+data._id+".jpg&description="+
