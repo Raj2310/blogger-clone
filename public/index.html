@@ -5,15 +5,9 @@
   <meta charset="utf-8">
 
   <title>Feedcob</title>
-<<<<<<< HEAD
   <link rel="icon" href="images/logo.jpg" type="image/gif" sizes="16x16">
   <meta name="description" content="GOSSIPS.TRENDING.HUMOR">
   <meta name="author" content="Feedcob">
-=======
-  <link rel="icon" href="images/favicon-16x16.png" type="image/gif" sizes="16x16">
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
->>>>>>> origin/master
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -230,21 +224,10 @@
           if(param("tag")===""){
             $.get("/topBlogs", function(data, status){
                 if(data.status==1){
-<<<<<<< HEAD
                   $.each(data.blog,function(index,element){
 				  var img_src="/upload/"+element._id+".jpg";
                   var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/870x300\";'"
 				  $(".carousel-inner").append("<div class='item'><a href='post.html?id="+element._id+"'><img src='"+img_src+"'"+on_error_string+" alt=''><div class='carousel-caption'><h3 style='color:black'>"+element.title+"</h3></div></a></div>");				  
-=======
-                  $.each(data,function(index,element){
-                    let on_error_string=`onerror='this.onerror=null;this.src=\"https://placehold.it/870x300\";'`;
-                     $(".carousel-inner").append(`<div class="item">
-                    <img src="/upload`+element._id+`/logo.jpg" alt="..."`+on_error_string+`>
-                    <div class="carousel-caption">
-                      <h3 style="color:black"><a href="post.html?id="></a></h3>
-                    </div>
-                  </div>`);
->>>>>>> origin/master
                   });
                   $(".carousel-inner .item:first-child").addClass("active");
                    
@@ -279,20 +262,13 @@
                 }
             });
             $.get("/blogsAll/"+0, function(data, status){
-<<<<<<< HEAD
 			
-=======
->>>>>>> origin/master
                 $.each(data, function(index, element) {
                   var img_src="/upload/"+element._id+".jpg";
                   var alt_img_src="https://placehold.it/90x130";
                   var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
                        $(".posts").append("<a href='/post.html?id="+element._id+"'>"+   
-<<<<<<< HEAD
                         "<div class='col-sm-3 col-md-2 col-xs-6'>"+
-=======
-                        "<div class='col-sm-3 col-md-2 col-xs-offset-1 col-xs-6'>"+
->>>>>>> origin/master
                           "<div class='thumbnail'>"+
                         "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                           "<div class='caption' style='word-wrap:break-word;'>"+
@@ -315,11 +291,7 @@
                       var alt_img_src="https://placehold.it/90x130";
                       var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
                            $(".posts").append("<a href='/post.html?id="+element._id+"'>"+
-<<<<<<< HEAD
                             "   <div class='col-sm-3 col-md-2 col-xs-6'>"+
-=======
-                            "   <div class='col-sm-3 col-md-2 col-xs-offset-1 col-xs-6'>"+
->>>>>>> origin/master
                               "<div class='thumbnail'>"+
                             "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                               "<div class='caption' style='word-wrap:break-word;'>"+
