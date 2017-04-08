@@ -1,0 +1,233 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Feedcob | Posts</title>
+  <link rel="icon" href="images/logo.jpg" type="image/gif" sizes="16x16">
+  <meta name="description" content="GOSSIPS.TRENDING.HUMOR">
+  <meta name="author" content="Feedcob">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Feedcob" />
+  <meta property="og:description"   content="New Post" />
+  <meta property="og:image"         content="https://murmuring-fortress-10024.herokuapp.com/images/fb-share-dialog.png" />
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=124336507997973";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+
+  <div class="main-outer-container">
+
+    <nav class="arial-font navbar navbar-default tranparent-background reduce-margin-bottom" id="main-nav">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+        <a class="navbar-brand no-padding" href="/">
+          <img alt="Brand" class="logo-image " src="images/logo.jpg">
+        </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         <!--  <a class="navbar-brand" href="#">Brand</a> -->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+          <!-- <li><a href="/">Home</a></li> -->
+            <li><a href="/?tag=trend_feed" class="text-uppercase reduce-padding-right">Trend Feed</a></li>
+            <li><a href="/?tag=gossip" class="text-uppercase reduce-padding-right">Gossip</a></li>
+            <li><a href="/?tag=this_is_desi" class="text-uppercase reduce-padding-right">This is Desi</a></li>
+             <li><a href="/?tag=hera_pheri" class="text-uppercase reduce-padding-right">HeraPheri</a></li>
+            <li><a href="/?tag=wtf_i_go" class="text-uppercase reduce-padding-right">FeedMore</a></li>
+            <li><a href="publish.html" class="text-uppercase reduce-padding-right">FeedTales</a></li>
+            
+          </ul>
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" id="searchBar" placeholder="Search">
+            </div>
+            <a id="searchBtn" class="btn btn-default">Go</a>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+
+            
+            <li><a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="images/fb-icon.jpg" class="nav-icon-image"></span></a></li>
+            <li><a href="https://twitter.com/Feedcobofficial" target="_blank"><img src="images/twitter-icon.png"class="nav-icon-image"></span></a></li>
+            <li><a href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="images/google_plus.png" class="nav-icon-image"></a></li>
+            <li><a href="https://www.instagram.com/feedcob/" target="_blank"><img src="images/instagram-icon.jpg" class="nav-icon-image"></a></li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid">
+      <div class="company-name">
+        <center>
+           Feedcob
+        </center>
+      </div>
+      <div class="hero-content">
+        <img  class="img-responsive" alt="Responsive image" id="mainPostImage" onerror='this.onerror=null;this.src="https://placehold.it/800x400"'/>
+        <div class="hero-content-body">
+
+          <h1><center ><span id="postTitle"></span></center></h1>
+          <h4><center><span id="postDate"></span>  <span id="postAuthor"></span></center></h4>
+           <center>
+          <div class="btn-group" role="group" aria-label="...">
+          
+            <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank"><img src="images/twitter-icon.png" class="nav-icon-image"></a>
+            <a role="button" href="#" class="btn btn-default facebook_share" target="_blank" id=""><img src="images/fb-icon.jpg" class="nav-icon-image"></a>
+            <a href="#" class="btn btn-default google-share" id="" target="_blank"><img src="images/google_plus.png" class="nav-icon-image"></a>
+            <a href="#" class="btn btn-default pinterest-share" id="" target="_blank"><img src="images/pinterest.png" class="nav-icon-image"></a>
+			<a href="#" class="btn btn-default tumblr-share" id="" target="_blank"><img src="images/tumblr.png" class="nav-icon-image"></a>
+			<a href="#" class="btn btn-default email-share" id="" target="_blank"><img src="images/email.png" class="nav-icon-image"></a>
+			<a href="javascript:;" onclick="window.print()" class="btn btn-default print-share" id="" target="_blank"><img src="images/print.png" class="nav-icon-image"></a>
+            <a href="whatsapp://send?text=encodeURIComponent(document.URL)" data-action="share/whatsapp/share" class="btn btn-default whatsapp-share"><img src="images/whastapp-icon.jpg" class="nav-icon-image"></a>
+          </div>
+          </center>
+                    <p id="postBody">
+
+
+					</p>
+ <center>
+			<div class="btn-group" role="group" aria-label="...">
+          
+            <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank"><img src="images/twitter-icon.png" class="nav-icon-image"></a>
+            <a role="button" href="#" class="btn btn-default facebook_share" target="_blank" id=""><img src="images/fb-icon.jpg" class="nav-icon-image"></a>
+            <a href="#" class="btn btn-default google-share" id="" target="_blank"><img src="images/google_plus.png" class="nav-icon-image"></a>
+            <a href="#" class="btn btn-default pinterest-share" id="" target="_blank"><img src="images/pinterest.png" class="nav-icon-image"></a>
+			<a href="#" class="btn btn-default tumblr-share" id="" target="_blank"><img src="images/tumblr.png" class="nav-icon-image"></a>
+			<a href="#" class="btn btn-default email-share" id="" target="_blank"><img src="images/email.png" class="nav-icon-image"></a>
+			<a href="javascript:;" onclick="window.print()" class="btn btn-default email-share" class="btn btn-default print-share" id="" target="_blank"><img src="images/print.png" class="nav-icon-image"></a>
+      <a href="whatsapp://send?text=encodeURIComponent(document.URL)" data-action="share/whatsapp/share" class="btn btn-default whatsapp-share"><img src="images/whastapp-icon.jpg" class="nav-icon-image"></a>
+          </div>
+        </div>
+      </div>
+     <br/>
+     <br/>
+      <hr class="below-editor-pick"/>
+
+    </div>
+  </div>
+  <div class="main-outer-container similar-readings container-fluid" style="border-top-width:0px" >
+    <div id="suggestedPosts">
+      <h2><center><span class="label label-default">Similar Readings</span></center></h2>
+    </div>
+     <a href="/blogs.html" class="btn btn-success pull-right space-bottom-20" >See All Posts</a>
+  </div>
+  
+
+
+  </div>
+  <div class="main-outer-container container-fluid" style="border-top-width:0px">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+          
+          <center>GOSSIPS.TRENDING.HUMOR</center>
+          <div>
+            <center>
+               <a href="https://www.instagram.com/feedcob/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/Feedcobofficial" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+            </center>
+          <div>
+          <div>
+            <center><a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+         <div class="col-lg-4 col-md-3 col-sm-2 col-xs-12">
+          <div class="fb-like" data-href="https://www.facebook.com/feedcob2017" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+      </div>
+    </div>
+  </div
+  <script></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/moment.js"></script>
+  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <script>
+  function param(name) {//gets parameters from the url
+    return (location.search.split(name + '=')[1] || '').split('&')[0];
+}
+ function getSubstring(string,size){
+          return string.length>size?(string.substring(0,size))+"...":string;
+    }
+  $(document).ready(function(){
+    var id=param("id");
+     $.get("/blog/"+id, function(data, status){
+         $("#postTitle").html(data.title);
+         $("#postDate").html(moment(data.date).fromNow());
+         //$("#postAuthor").html("by "+"<em>"+data.author.firstName+"</em>");
+         $("#postBody").html(data.body);
+          $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
+          $(".facebook_share").prop("href","http://www.facebook.com/sharer/sharer.php?u="+window.location.href);
+          $(".google-share").prop("href","https://plus.google.com/share?url="+window.location.href);
+          $(".pinterest-share").prop("href","http://pinterest.com/pin/create/button/?url="+window.location.href+
+            "&media="+window.location.hostname+"/upload/"+data._id+".jpg&description="+
+            data.title);
+			$(".tumblr-share").prop("href","https://tumblr.com/share/link?url="+window.location.href+"&amp;title="+data.title);
+			$(".email-share").prop("href","mailto:?Subject=Check out this&amp;Body=I%20saw%20this%20and%20thought%20to%20share%20with%20you%20 "+window.location.href);
+        }
+      );
+     $(".whatsapp-share").prop("href","whatsapp://send?text="+encodeURIComponent(document.href));
+     $.get("/blogsAll/0", function(data, status){
+        $.each(data, function(index, element) {
+           var img_src="/upload/"+element._id+".jpg";
+                  var alt_img_src="https://placehold.it/350x150";
+              var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
+               $("#suggestedPosts").append("<a href='/post.html?id="+element._id+"'>"+
+                "   <div class='col-sm-3 col-md-2'>"+
+                          "<div class='thumbnail'>"+
+                        "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
+                          "<div class='caption' style='word-wrap:break-word;'>"+
+                          "<p>"+moment(element.date).fromNow()+"</p>"+
+                          "<h4><a href='post.html?id="+element._id+"'>"+element.title+
+                          "</a></h4>"+
+                          /*"<p>"+getSubstring(element.body,50)+"</p>"+*/
+                          "</div>"+
+                          "</div>"+
+                          "</div></a>");
+        });
+      });
+  });
+   $("#searchBtn").click(function(){
+      var searchText=$("#searchBar").val();
+      window.location.replace('blogs.html?search='+searchText);
+    });
+   $(window).bind('scroll', function () {
+    if ($(window).scrollTop() > 50) {
+        $('#main-nav').addClass('navbar-fixed-top');
+        $('#main-nav').removeClass('tranparent-background');
+    } else {
+        $('#main-nav').removeClass('navbar-fixed-top');
+         $('#main-nav').addClass('tranparent-background');
+    }
+  });
+  </script>
+</body>
+</html>
