@@ -52,7 +52,11 @@
   margin-bottom:20px;
 }
 .thumbnail-img{
+<<<<<<< HEAD
   width:100%;
+=======
+  width:130px !important;
+>>>>>>> origin/master
   height:90px !important;
 }
 .reduce-padding-right{
@@ -145,9 +149,12 @@ body { /*padding-top: 70px;*/ }
 	.signup-section .upper-form h3{
 		font-size:21px;
 	}
+<<<<<<< HEAD
 	.carousel-caption h3{
 		font-size:15px;
 	}
+=======
+>>>>>>> origin/master
 	body{
 		
 		width:400px;
@@ -173,9 +180,13 @@ body { /*padding-top: 70px;*/ }
 .fb-like span,iframe{
 	width:300px !important;
 }
+<<<<<<< HEAD
 #postBody,#postTitle { word-wrap: break-word; }
 
 .carousel-inner .item img{
 	width:100%;
 	height:250px !important;
 }
+=======
+#postBody,#postTitle { word-wrap: break-word; }
+>>>>>>> origin/master

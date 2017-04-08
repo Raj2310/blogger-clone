@@ -41,15 +41,24 @@ exports.topBlogs=function(req,res){
             console.log("Error in topBlog function "+err);
         }
         else {
+<<<<<<< HEAD
           collection.find({}).skip(8).limit(3).toArray(function(err, items) {
+=======
+          collection.find({}).limit(3).toArray(function(err, items) {
+>>>>>>> origin/master
               if (err) {
                  console.log("Error in topBlog function "+err);
                   res.send({status:0});
 
               } else{
                   res.send({status:1,blog:items});
+<<<<<<< HEAD
 			  //console.log({blog:items});
               }
+=======
+				  
+              };
+>>>>>>> origin/master
               
           });
         }
