@@ -83,13 +83,44 @@
       </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid">
-      <div class="company-name">
-        <center>
-           Feedcob
-        </center>
-      </div>
+     <img src="images/heroFeedcob.jpg">
       <div class="hero-content">
-        <img  class="img-responsive" alt="Responsive image" id="mainPostImage" onerror='this.onerror=null;this.src="https://placehold.it/800x400"'/>
+        <div class="row">
+          <div class="col-md-8">
+            <img  class="img-responsive" alt="Responsive image" id="mainPostImage" onerror='this.onerror=null;this.src="https://placehold.it/800x400"'/>
+          </div>
+          <div class="col-md-4">
+            <div class="signup-section">
+            <div class="upper-form">
+              <h3>
+                SIGNUP TO OUR NEWSLETTER
+              </h3>
+              <center class="comic-font white">
+                Get weekly stories & more
+              </center>
+              <h2>
+                <center class="comic-font white">
+                  IN YOUR MAILBOX!
+                </center>
+              </h2>
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter email" aria-describedby="basic-addon2">
+                  <span class="input-group-addon feedme-button" id="basic-addon2" onClick='submitNewsletterRequest()'>Feedme</span>
+              </div>
+            </div>
+            <div class="feedtales-section">
+              <h3>
+                <center class="feedtales-info">See What Writers Have To Share ...</center>
+                <br>
+                <center>
+                    <a class="btn btn-md " href="/publish.html">Feedtales</a>
+                </center>
+              </h3>
+            </div>
+          </div>
+          </div>
+        </div>
+        
         <div class="hero-content-body">
 
           <h1><center ><span id="postTitle"></span></center></h1>
@@ -228,6 +259,17 @@
          $('#main-nav').addClass('tranparent-background');
     }
   });
+   function submitNewsletterRequest(){
+      var frm = $('#newsletterForm');
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+               $("#inner-message").html("Thank you! You are now registered to us.");
+            }
+        });
+    }
   </script>
 </body>
 </html>

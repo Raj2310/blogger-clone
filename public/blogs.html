@@ -70,10 +70,8 @@
 
             <!-- Blog Entries Column -->
             <div class="col-md-8" >
-
-                <h1 class="page-header">
-                    Blogs
-                </h1>
+                
+                  <img src="images/heroFeedcob.jpg">
                 <div id="blogContainer">
                     
                 </div>
@@ -91,6 +89,34 @@
 
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4">
+                <div class="signup-section">
+            <div class="upper-form">
+              <h3>
+                SIGNUP TO OUR NEWSLETTER
+              </h3>
+              <center class="comic-font white">
+                Get weekly stories & more
+              </center>
+              <h2>
+                <center class="comic-font white">
+                  IN YOUR MAILBOX!
+                </center>
+              </h2>
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter email" aria-describedby="basic-addon2">
+                  <span class="input-group-addon feedme-button" id="basic-addon2" onClick='submitNewsletterRequest()'>Feedme</span>
+              </div>
+            </div>
+            <div class="feedtales-section">
+              <h3>
+                <center class="feedtales-info">See What Writers Have To Share ...</center>
+                <br>
+                <center>
+                    <a class="btn btn-md " href="/publish.html">Feedtales</a>
+                </center>
+              </h3>
+            </div>
+          </div>
 
                 <!-- Blog Search Well -->
                 <div class="well">
@@ -282,6 +308,17 @@
       var searchText=$("#searchBar").val();
       window.location.href='blogs.html?search='+searchText;
     });
+     function submitNewsletterRequest(){
+      var frm = $('#newsletterForm');
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+               $("#inner-message").html("Thank you! You are now registered to us.");
+            }
+        });
+    }
     </script>
 </body>
 
