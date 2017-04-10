@@ -41,7 +41,7 @@ exports.topBlogs=function(req,res){
             console.log("Error in topBlog function "+err);
         }
         else {
-          collection.find({}).limit(3).toArray(function(err, items) {
+          collection.find({}).limit(3).sort('date', -1).toArray(function(err, items) {
               if (err) {
                  console.log("Error in topBlog function "+err);
                   res.send({status:0});
@@ -118,7 +118,7 @@ exports.findByTag = function(req, res) {
             console.log(err);
         }
         else {
-          collection.find({tag:tag}).skip(num).limit(10).toArray(function(err, items) {
+          collection.find({tag:tag}).sort('date', -1).skip(num).limit(10).toArray(function(err, items) {
               res.send(items);
 			  //console.log(items);
           });
@@ -251,7 +251,7 @@ exports.findAll = function(req, res) {
           console.log(err);
         }
         else{
-          collection.find({}).skip(num).limit(10).toArray(function(err, items) {
+          collection.find({}).sort('date', -1).skip(num).limit(10).toArray(function(err, items) {
             res.send(items);
           }); 
         }

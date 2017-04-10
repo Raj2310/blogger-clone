@@ -78,9 +78,10 @@
     </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid" >
-      <div class="row hero">
+      <div class="row ">
         <div class="col-md-8">
-            <div class="company-name">
+        <img src="images/heroFeedcob.jpg">
+<!--             <div class="company-name">
               <center>  
                 Feedcob
               </center>
@@ -91,7 +92,7 @@
                  GOSSIPS.TRENDING.HUMOR
               </center>             
             </div>
-            <div class="social-links">
+ -->            <div class="social-links">
 			<center>
 			<a class="sl" href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="images/fb-icon.jpg" class="share-icon-image"></a>
             <a class="sl" href="https://twitter.com/Feedcobofficial" target="_blank"><img src="images/twitter-icon.png" class="share-icon-image"></a>
@@ -103,7 +104,7 @@
 			<br>
 
             <br>
-            <div id="carousel-top-blogs" class="carousel slide" data-ride="carousel">
+            <div id="carousel-top-blogs hero" class="carousel slide" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
                 <li data-target="#carousel-top-blogs" data-slide-to="0" class="active"></li>
@@ -286,7 +287,7 @@
             });
         }
         else{
-          $(".hero").hide();
+          //$(".hero").hide();
                var tag=param("tag");
                 $.get("/byTag/"+tag+"/"+0, function(data, status){
                     $.each(data, function(index, element) {

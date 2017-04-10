@@ -94,12 +94,42 @@
 
             <!-- Blog Entries Column -->
             <div class="col-md-8" >
+                
+                <img src="images/heroFeedcob.jpg">
                 <div id="blogContainer">
                 </div>
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
             <div class="col-md-4">
+            <div class="signup-section">
+            <div class="upper-form">
+              <h3>
+                SIGNUP TO OUR NEWSLETTER
+              </h3>
+              <center class="comic-font white">
+                Get weekly stories & more
+              </center>
+              <h2>
+                <center class="comic-font white">
+                  IN YOUR MAILBOX!
+                </center>
+              </h2>
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter email" aria-describedby="basic-addon2">
+                  <span class="input-group-addon feedme-button" id="basic-addon2" onClick='submitNewsletterRequest()'>Feedme</span>
+              </div>
+            </div>
+            <div class="feedtales-section">
+              <h3>
+                <center class="feedtales-info">See What Writers Have To Share ...</center>
+                <br>
+                <center>
+                    <a class="btn btn-md " href="/publish.html">Feedtales</a>
+                </center>
+              </h3>
+            </div>
+          </div>
              <div class="well">
                     <div class="fb-like" data-href="https://www.facebook.com/feedcob2017" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                 </div>
@@ -171,6 +201,17 @@
               skip=skip+10;  
         }
     });
+    function submitNewsletterRequest(){
+      var frm = $('#newsletterForm');
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+               $("#inner-message").html("Thank you! You are now registered to us.");
+            }
+        });
+    }
     </script>
 </body>
 
