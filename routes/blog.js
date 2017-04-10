@@ -48,8 +48,8 @@ exports.topBlogs=function(req,res){
 
               } else{
                   res.send({status:1,blog:items});
-				  
-              };
+			  //console.log({blog:items});
+              }
               
           });
         }
@@ -472,7 +472,7 @@ function getAllBlogs(callback){
             return;
         }
         else {
-          collection.find({}).toArray(function(err, items) {
+          collection.find({}).sort('date', -1).toArray(function(err, items) {
             console.log(items);
               callback(items);
           });
