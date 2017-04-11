@@ -5,7 +5,7 @@
   <meta charset="utf-8">
 
   <title>Feedcob</title>
-  <link rel="icon" href="images/fav" type="image/gif">
+  <link rel="icon" href="images/logo.png" type="image/gif">
   <meta name="description" content="GOSSIPS.TRENDING.HUMOR">
   <meta name="author" content="Feedcob">
   <meta charset="utf-8">
@@ -30,12 +30,12 @@
 }(document, 'script', 'facebook-jssdk'));</script>
   <div class="main-outer-container">
 
-    <nav class="arial-font navbar navbar-default tranparent-background reduce-margin-bottom" id="main-nav">
+    <nav class="arial-font navbar navbar-default navbar-fixed-top tranparent-background reduce-margin-bottom" id="main-nav">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
         <a class="navbar-brand no-padding" href="/">
-          <img alt="Brand" class="logo-image " src="images/logo.jpg">
+          <img alt="Brand" class="logo-image " src="images/logo.png">
         </a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
@@ -51,8 +51,8 @@
           <ul class="nav navbar-nav">
           <!-- <li><a href="/">Home</a></li> -->
             <li><a href="/?tag=trend_feed" class="text-uppercase reduce-padding-right">TrendFeed</a></li>
-            <li><a href="/?tag=gossip" class="text-uppercase reduce-padding-right">Gossip</a></li>
-            <li><a href="/?tag=this_is_desi" class="text-uppercase reduce-padding-right">This is Desi</a></li>
+            <li><a href="/?tag=gossip" class="text-uppercase reduce-padding-right">Gossips</a></li>
+            <li><a href="/?tag=this_is_desi" class="text-uppercase reduce-padding-right">DesiFeed</a></li>
              <li><a href="/?tag=hera_pheri" class="text-uppercase reduce-padding-right">HeraPheri</a></li>
             <li><a href="/?tag=wtf_i_go" class="text-uppercase reduce-padding-right">FeedMore</a></li>
             <li><a href="publish.html" class="text-uppercase reduce-padding-right">FeedTales</a></li>
@@ -67,9 +67,9 @@
           <ul class="nav navbar-nav navbar-right">
 
             
-            <li><a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="images/fb-icon.jpg" class="nav-icon-image"></span></a></li>
-            <li><a href="https://twitter.com/Feedcobofficial" target="_blank"><img src="images/twitter-icon.png"class="nav-icon-image"></span></a></li>
-            <li><a href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="images/google_plus.png" class="nav-icon-image"></a></li>
+            <li><a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="images/fb.png" class="nav-icon-image"></span></a></li>
+            <li><a href="https://twitter.com/Feedcobofficial" target="_blank"><img src="images/tt.png"class="nav-icon-image"></span></a></li>
+            <li><a href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="images/gp.png" class="nav-icon-image"></a></li>
             <li><a href="https://www.instagram.com/feedcob/" target="_blank"><img src="images/instagram-icon.jpg" class="nav-icon-image"></a></li>
 
             
@@ -80,7 +80,7 @@
     <div class="container-fluid" >
       <div class="row ">
         <div class="col-md-8">
-        <img src="images/heroFeedcob.jpg">
+        <img src="images/heroFeedcob.png" class="banner">
 <!--             <div class="company-name">
               <center>  
                 Feedcob
@@ -94,17 +94,18 @@
             </div>
  -->            <div class="social-links">
 			<center>
-			<a class="sl" href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="images/fb-icon.jpg" class="share-icon-image"></a>
-            <a class="sl" href="https://twitter.com/Feedcobofficial" target="_blank"><img src="images/twitter-icon.png" class="share-icon-image"></a>
+			<a class="sl" href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="images/fb.png" class="share-icon-image"></a>
+            <a class="sl" href="https://twitter.com/Feedcobofficial" target="_blank"><img src="images/tt.png" class="share-icon-image"></a>
+			<a class="sl" href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="images/gp.png" class="share-icon-image"></a>
 			<a class="sl" href="https://www.instagram.com/feedcob/" target="_blank"><img src="images/instagram-icon.jpg" class="share-icon-image"></a>
-            <a class="sl" href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="images/google_plus.png" class="share-icon-image"></a>           
+                       
             <center>
 			</div>
           <br>
 			<br>
 
             <br>
-            <div id="carousel-top-blogs hero" class="carousel slide" data-ride="carousel">
+            <div id="carousel-top-blogs" class="carousel slide hero" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
                 <li data-target="#carousel-top-blogs" data-slide-to="0" class="active"></li>
@@ -203,7 +204,7 @@
           </div>
         
         <div class="col-lg-4 col-md-3 col-sm-2 col-xs-12">
-          <div class="fb-like" data-href="https://www.feedcob.com" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+          <div class="fb-like" data-href="https://www.feedcob.com/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
         </div>
     </div>
   </div>
@@ -228,7 +229,7 @@
                   $.each(data.blog,function(index,element){
 				  var img_src="/upload/"+element._id+".jpg";
                   var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/870x300\";'"
-				  $(".carousel-inner").append("<div class='item'><a href='post.html?id="+element._id+"'><img src='"+img_src+"'"+on_error_string+" alt=''><div class='carousel-caption'><h3 style='color:black'>"+element.title+"</h3></div></a></div>");				  
+				  $(".carousel-inner").append("<div class='item'><a href='post.html?id="+element._id+"'><img src='"+img_src+"'"+on_error_string+" alt=''><div class='carousel-caption'><h3 style='color:black' class='bg-success'>"+element.title+"</h3></div></a></div>");				  
                   });
                   $(".carousel-inner .item:first-child").addClass("active");
                    
@@ -268,23 +269,23 @@
                   var img_src="/upload/"+element._id+".jpg";
                   var alt_img_src="https://placehold.it/90x130";
                   var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
-                       $(".posts").append("<a href='/post.html?id="+element._id+"'>"+   
-                        "<div class='col-sm-3 col-md-2 col-xs-6'>"+
-                          "<div class='thumbnail'>"+
-                        "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
-                          "<div class='caption' style='word-wrap:break-word;'>"+
-                          "<p>"+moment(element.date).fromNow()+"</p>"+
-                          "<h4><a href='post.html?id="+element._id+"'>"+element.title+
-                          "</a></h4>"+
-                          /*"<p>"+getSubstring(element.body,50)+"</p>"+*/
-                          "</div>"+
-                          "</div>"+
-                          "</div></a>");
+                       $(".posts").append("<a href='/post.html?id="+element._id+"'>"+
+                            "   <div class='col-sm-3 col-md-2 col-xs-6'>"+
+                              "<div class='thumbnail posttile'>"+
+                            "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
+                              "<div class='caption' style='word-wrap:break-word;'>"+
+                              "<p>"+moment(element.date).fromNow()+"</p>"+
+                              "<h4><a href='post.html?id="+element._id+"'>"+element.title+
+                              "</a></h4>"+
+                              /*"<p>"+getSubstring(element.body,50)+"</p>"+*/
+                              "</div>"+
+                              "</div>"+
+                              "</div></a>");
                 });
             });
         }
         else{
-          //$(".hero").hide();
+          $(".hero").hide();
                var tag=param("tag");
                 $.get("/byTag/"+tag+"/"+0, function(data, status){
                     $.each(data, function(index, element) {
@@ -293,7 +294,7 @@
                       var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
                            $(".posts").append("<a href='/post.html?id="+element._id+"'>"+
                             "   <div class='col-sm-3 col-md-2 col-xs-6'>"+
-                              "<div class='thumbnail'>"+
+                              "<div class='thumbnail posttile'>"+
                             "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                               "<div class='caption' style='word-wrap:break-word;'>"+
                               "<p>"+moment(element.date).fromNow()+"</p>"+

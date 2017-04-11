@@ -9,7 +9,7 @@
     
 
     <title>Feedcob | Blogs</title>
-	<link rel="icon" href="images/fav" type="image/gif">
+	<link rel="icon" href="images/logo.png" type="image/gif">
 	<meta name="description" content="GOSSIPS.TRENDING.HUMOR">
 	<meta name="author" content="Feedcob">
     <!-- Bootstrap Core CSS -->
@@ -30,12 +30,12 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
     <!-- Navigation -->
-    <nav class="arial-font navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
+    <nav class="arial-font navbar navbar-default navbar-fixed-top tranparent-background reduce-margin-bottom" id="main-nav">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
         <a class="navbar-brand no-padding" href="/">
-          <img alt="Brand" class="logo-image " src="images/logo.jpg">
+          <img alt="Brand" class="logo-image " src="images/logo.png">
         </a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
@@ -45,33 +45,48 @@
           </button>
          <!--  <a class="navbar-brand" href="#">Brand</a> -->
         </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
           <!-- <li><a href="/">Home</a></li> -->
-            <li><a href="/?tag=trend_feed" class="text-uppercase reduce-padding-right">Trend Feed</a></li>
-            <li><a href="/?tag=gossip" class="text-uppercase reduce-padding-right">Gossip</a></li>
-            <li><a href="/?tag=this_is_desi" class="text-uppercase reduce-padding-right">This is Desi</a></li>
+            <li><a href="/?tag=trend_feed" class="text-uppercase reduce-padding-right">TrendFeed</a></li>
+            <li><a href="/?tag=gossip" class="text-uppercase reduce-padding-right">Gossips</a></li>
+            <li><a href="/?tag=this_is_desi" class="text-uppercase reduce-padding-right">DesiFeed</a></li>
              <li><a href="/?tag=hera_pheri" class="text-uppercase reduce-padding-right">HeraPheri</a></li>
             <li><a href="/?tag=wtf_i_go" class="text-uppercase reduce-padding-right">FeedMore</a></li>
             <li><a href="publish.html" class="text-uppercase reduce-padding-right">FeedTales</a></li>
             
           </ul>
+          <div class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" id="searchBar" placeholder="Search">
             </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
+            <a id="searchBtn" class="btn btn-default">Go</a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+
+            
+           <li><a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="images/fb.png" class="nav-icon-image"></span></a></li>
+            <li><a href="https://twitter.com/Feedcobofficial" target="_blank"><img src="images/tt.png"class="nav-icon-image"></span></a></li>
+            <li><a href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="images/gp.png" class="nav-icon-image"></a></li>
+            <li><a href="https://www.instagram.com/feedcob/" target="_blank"><img src="images/instagram-icon.jpg" class="nav-icon-image"></a></li>
+
+            
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container-fluid">
 
         <div class="row">
 
             <!-- Blog Entries Column -->
             <div class="col-md-8" >
                 
-                  <img src="images/heroFeedcob.jpg">
+                  <img src="images/heroFeedcob.png" class="banner">
                 <div id="blogContainer">
                     
                 </div>
@@ -120,7 +135,6 @@
 
                 <!-- Blog Search Well -->
                 <div class="well">
-                    <h4>Blog Search</h4>
                     <div class="input-group">
                         <input type="text" class="form-control" id="searchBar" placeholder="Search">
                         <span class="input-group-btn">
@@ -134,14 +148,14 @@
 
                 <!-- Blog Categories Well -->
                 <div class="well">
-                    <h4>Blog Categories</h4>
+                    <h4>Categories</h4>
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="list-unstyled">
-                              <li><a href="/blogs.html?tag=trend_feed">Trend Feed</a></li>
-                              <li><a href="/blogs.html?tag=gossip">Gossip</a></li>
-                              <li><a href="/blogs.html?tag=this_is_desi">THis is Desi</a></li>
-                              <li><a href="/blogs.html?tag=hera_pheri">Hera Pheri</a></li>
+                              <li><a href="/blogs.html?tag=trend_feed">TrendFeed</a></li>
+                              <li><a href="/blogs.html?tag=gossip">Gossips</a></li>
+                              <li><a href="/blogs.html?tag=this_is_desi">DesiFeed</a></li>
+                              <li><a href="/blogs.html?tag=hera_pheri">HeraPheri</a></li>
                               <li><a href="blogs.html?tag=wtf_i_go">FeedMore</a></li>
                         </div>
                        
@@ -151,7 +165,7 @@
 
                 <!-- Side Widget Well -->
                 <div class="well">
-                    <div class="fb-like" data-href="https://www.feedcob.com" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+                    <div class="fb-like" data-href="https://www.feedcob.com/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
                 </div>
 
             </div>
@@ -198,9 +212,9 @@
                          element.tag+"</a>"+
                      "</p>"+
                      "<p><span class='glyphicon glyphicon-time'> </span> "+moment(element.date).fromNow()+" </p>"+
-                     "<hr>"+
+                     ""+
                      "<img id='element._id' class='img-responsive' src='"+img_src+"' "+on_error_string+" alt=''>"+
-                     "<hr>"+
+                     ""+
                      "<p>"+getSubstring(element.body,50)+"</p>"+
                      "<a class='btn btn-primary' href='post.html?id="+element._id+"'>Read More <span class='glyphicon glyphicon-chevron-righ'></span></a>"+
                      "<hr>");

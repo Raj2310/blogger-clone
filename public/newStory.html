@@ -9,7 +9,7 @@
     
 
     <title>Feedcob | New Story</title>
-	<link rel="icon" href="images/fav" type="image/gif">
+	<link rel="icon" href="images/logo.png" type="image/gif">
 	<meta name="description" content="GOSSIPS.TRENDING.HUMOR">
 	<meta name="author" content="Feedcob">
 
@@ -81,10 +81,10 @@
                 
                 <label for="tags">Select list:</label>
                 <select class="form-control" id="tags">
-                   <option value="trend_feed">Trend Feed</option>
-                    <option value="gossip">Gossip</option>
-                    <option value="this_is_desi">THis is Desi</option>
-                    <option value="hera_pheri">Hera Pheri</option>
+                   <option value="trend_feed">TrendFeed</option>
+                    <option value="gossip">Gossips</option>
+                    <option value="this_is_desi">DesiFeed</option>
+                    <option value="hera_pheri">HeraPheri</option>
                     <option value="wtf_i_go">FeedMore</option>
                 </select>
                 
@@ -101,7 +101,7 @@
                       method='post' 
                       encType="multipart/form-data">
                   
-                  <label for="fileUploadName">upload The Image</label>
+                  <label for="fileUploadName">Post id</label>
                   <input type="text" id="fileUploadName" name="fileUploadName" />
                   
                   <input type="file" name="sampleFile" id="fileUploadField" />
@@ -110,6 +110,14 @@
               </form>
               <input type="url" name="Posturl" id="url" placeholder="Enter url to add post">
               <a type="btn" class="btn btn-success" id="submitForeignBlog">Submit</a>
+			  
+			  <div class="well">
+			  <h3>Information</h3><br>
+			  <ol>
+			  <li>First submit the post , then upload the image of it</li> 
+			  <li> Maximum characters in "Title of the Post" is 63 characters including space.</li>			  
+			  </ol>
+			  <div>
             </div>
         </div>
         <!-- /.row -->

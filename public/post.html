@@ -4,8 +4,16 @@
 <head>
   <meta charset="utf-8">
 
+	<!--Facebook meta tags-->
+	<meta class="fbtag-url" property="og:url"                content="#" />
+	<meta class="fbtag-type" property="og:type"               content="Post" />
+	<meta class="fbtag-title" property="og:title"              content="#" />
+	<meta class="fbtag-description" property="og:description"        content="#" />
+	<meta class="fbtag-image" property="og:image"              content="#" />
+	<!--Facebook meta tags-->
+  
   <title>Feedcob | Posts</title>
-  <link rel="icon" href="images/fav" type="image/gif">
+  <link rel="icon" href="images/logo.png" type="image/gif">
   <meta name="description" content="GOSSIPS.TRENDING.HUMOR">
   <meta name="author" content="Feedcob">
   <meta charset="utf-8">
@@ -36,12 +44,12 @@
 
   <div class="main-outer-container">
 
-    <nav class="arial-font navbar navbar-default tranparent-background reduce-margin-bottom" id="main-nav">
+    <nav class="arial-font navbar navbar-default navbar-fixed-top tranparent-background reduce-margin-bottom" id="">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
         <a class="navbar-brand no-padding" href="/">
-          <img alt="Brand" class="logo-image " src="images/logo.jpg">
+          <img alt="Brand" class="logo-image " src="images/logo.png">
         </a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
@@ -56,38 +64,40 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
           <!-- <li><a href="/">Home</a></li> -->
-            <li><a href="/?tag=trend_feed" class="text-uppercase reduce-padding-right">Trend Feed</a></li>
-            <li><a href="/?tag=gossip" class="text-uppercase reduce-padding-right">Gossip</a></li>
-            <li><a href="/?tag=this_is_desi" class="text-uppercase reduce-padding-right">This is Desi</a></li>
+            <li><a href="/?tag=trend_feed" class="text-uppercase reduce-padding-right">TrendFeed</a></li>
+            <li><a href="/?tag=gossip" class="text-uppercase reduce-padding-right">Gossips</a></li>
+            <li><a href="/?tag=this_is_desi" class="text-uppercase reduce-padding-right">DesiFeed</a></li>
              <li><a href="/?tag=hera_pheri" class="text-uppercase reduce-padding-right">HeraPheri</a></li>
             <li><a href="/?tag=wtf_i_go" class="text-uppercase reduce-padding-right">FeedMore</a></li>
             <li><a href="publish.html" class="text-uppercase reduce-padding-right">FeedTales</a></li>
             
           </ul>
-          <form class="navbar-form navbar-left">
+          <div class="navbar-form navbar-left">
             <div class="form-group">
               <input type="text" class="form-control" id="searchBar" placeholder="Search">
             </div>
             <a id="searchBtn" class="btn btn-default">Go</a>
-          </form>
+          </div>
           <ul class="nav navbar-nav navbar-right">
 
             
-            <li><a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="images/fb-icon.jpg" class="nav-icon-image"></span></a></li>
-            <li><a href="https://twitter.com/Feedcobofficial" target="_blank"><img src="images/twitter-icon.png"class="nav-icon-image"></span></a></li>
-            <li><a href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="images/google_plus.png" class="nav-icon-image"></a></li>
+            <li><a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="images/fb.png" class="nav-icon-image"></span></a></li>
+            <li><a href="https://twitter.com/Feedcobofficial" target="_blank"><img src="images/tt.png"class="nav-icon-image"></span></a></li>
+            <li><a href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="images/gp.png" class="nav-icon-image"></a></li>
             <li><a href="https://www.instagram.com/feedcob/" target="_blank"><img src="images/instagram-icon.jpg" class="nav-icon-image"></a></li>
 
+            
           </ul>
         </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+    </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid">
-     <img src="images/heroFeedcob.jpg">
+     
       <div class="hero-content">
         <div class="row">
           <div class="col-md-8">
-            <img  class="img-responsive" alt="Responsive image" id="mainPostImage" onerror='this.onerror=null;this.src="https://placehold.it/800x400"'/>
+		  <img src="images/heroFeedcob.png" class="banner">
+            <img class="img-responsive" alt="Responsive image" id="mainPostImage" onerror='this.onerror=null;this.src="https://placehold.it/800x400"'/>
           </div>
           <div class="col-md-4">
             <div class="signup-section">
@@ -126,34 +136,37 @@
           <h1><center ><span id="postTitle"></span></center></h1>
           <h4><center><span id="postDate"></span>  <span id="postAuthor"></span></center></h4>
            <center>
-          <div class="btn-group" role="group" aria-label="...">
+          <div class="btn-group share-bar" role="group" aria-label="...">
           
-            <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank"><img src="images/twitter-icon.png" class="nav-icon-image"></a>
-            <a role="button" href="#" class="btn btn-default facebook_share" target="_blank" id=""><img src="images/fb-icon.jpg" class="nav-icon-image"></a>
-            <a href="#" class="btn btn-default google-share" id="" target="_blank"><img src="images/google_plus.png" class="nav-icon-image"></a>
-            <a href="#" class="btn btn-default pinterest-share" id="" target="_blank"><img src="images/pinterest.png" class="nav-icon-image"></a>
-			<a href="#" class="btn btn-default tumblr-share" id="" target="_blank"><img src="images/tumblr.png" class="nav-icon-image"></a>
-			<a href="#" class="btn btn-default email-share" id="" target="_blank"><img src="images/email.png" class="nav-icon-image"></a>
-			<a href="javascript:;" onclick="window.print()" class="btn btn-default print-share" id="" target="_blank"><img src="images/print.png" class="nav-icon-image"></a>
-            <a href="whatsapp://send?text=encodeURIComponent(document.URL)" data-action="share/whatsapp/share" class="btn btn-default whatsapp-share"><img src="images/whastapp-icon.jpg" class="nav-icon-image"></a>
+			<a role="button" href="#" class="btn facebook_share" target="_blank" id=""><img src="images/fb.png" class="share-icon-image"></a>
+            <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn" target="_blank"><img src="images/tt.png" class="share-icon-image"></a>
+            <a href="#" class="btn pinterest-share" id="" target="_blank"><img src="images/pp.png" class="share-icon-image"></a>
+			<a href="#" class="btn google-share" id="" target="_blank"><img src="images/gp.png" class="share-icon-image"></a>            
+			<a href="#" class="btn tumblr-share" id="" target="_blank"><img src="images/t.png" class="share-icon-image"></a>
+			<a href="whatsapp://send?text=encodeURIComponent(document.URL)" data-action="share/whatsapp/share" class="btn whatsapp-share"><img src="images/wa.png" class="share-icon-image"></a>
+			<a href="#" class="btn email-share" id="" target="_blank"><img src="images/em.png" class="share-icon-image"></a>
+			<a href="javascript:;" onclick="window.print()" class="btn print-share" id="" target="_blank"><img src="images/pt.png" class="share-icon-image"></a>
+            
           </div>
           </center>
                     <p id="postBody">
 
 
 					</p>
- <center>
-			<div class="btn-group" role="group" aria-label="...">
+			<center>
+			<div class="btn-group share-bar" role="group" aria-label="...">
           
-            <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn btn-default" target="_blank"><img src="images/twitter-icon.png" class="nav-icon-image"></a>
-            <a role="button" href="#" class="btn btn-default facebook_share" target="_blank" id=""><img src="images/fb-icon.jpg" class="nav-icon-image"></a>
-            <a href="#" class="btn btn-default google-share" id="" target="_blank"><img src="images/google_plus.png" class="nav-icon-image"></a>
-            <a href="#" class="btn btn-default pinterest-share" id="" target="_blank"><img src="images/pinterest.png" class="nav-icon-image"></a>
-			<a href="#" class="btn btn-default tumblr-share" id="" target="_blank"><img src="images/tumblr.png" class="nav-icon-image"></a>
-			<a href="#" class="btn btn-default email-share" id="" target="_blank"><img src="images/email.png" class="nav-icon-image"></a>
-			<a href="javascript:;" onclick="window.print()" class="btn btn-default email-share" class="btn btn-default print-share" id="" target="_blank"><img src="images/print.png" class="nav-icon-image"></a>
-      <a href="whatsapp://send?text=encodeURIComponent(document.URL)" data-action="share/whatsapp/share" class="btn btn-default whatsapp-share"><img src="images/whastapp-icon.jpg" class="nav-icon-image"></a>
+			<a role="button" href="#" class="btn facebook_share" target="_blank" id=""><img src="images/fb.png" class="share-icon-image"></a>
+            <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn" target="_blank"><img src="images/tt.png" class="share-icon-image"></a>
+            <a href="#" class="btn pinterest-share" id="" target="_blank"><img src="images/pp.png" class="share-icon-image"></a>
+			<a href="#" class="btn google-share" id="" target="_blank"><img src="images/gp.png" class="share-icon-image"></a>            
+			<a href="#" class="btn tumblr-share" id="" target="_blank"><img src="images/t.png" class="share-icon-image"></a>
+			<a href="whatsapp://send?text=encodeURIComponent(document.URL)" data-action="share/whatsapp/share" class="btn whatsapp-share"><img src="images/wa.png" class="share-icon-image"></a>
+			<a href="#" class="btn email-share" id="" target="_blank"><img src="images/em.png" class="share-icon-image"></a>
+			<a href="javascript:;" onclick="window.print()" class="btn print-share" id="" target="_blank"><img src="images/pt.png" class="share-icon-image"></a>
+            
           </div>
+		  </center>
         </div>
       </div>
      <br/>
@@ -191,7 +204,7 @@
           </div>
         </div>
          <div class="col-lg-4 col-md-3 col-sm-2 col-xs-12">
-          <div class="fb-like" data-href="https://www.feedcob.com" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+          <div class="fb-like" data-href="https://www.feedcob.com/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
         </div>
       </div>
     </div>
@@ -215,6 +228,14 @@
          $("#postDate").html(moment(data.date).fromNow());
          //$("#postAuthor").html("by "+"<em>"+data.author.firstName+"</em>");
          $("#postBody").html(data.body);
+		 
+		 //fb tags
+		 $(".fbtag-url").attr("content",""+window.location.href);
+		 $(".fbtag-type").attr("content","Post");
+		 $(".fbtag-title").attr("content",""+data.title);
+		 $(".fbtag-description").attr("content",""+data.body);
+		 $(".fbtag-image").attr("content","https://"+window.location.hostname+"upload/"+data._id+".jpg");
+		 
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
           $(".facebook_share").prop("href","http://www.facebook.com/sharer/sharer.php?u="+window.location.href);
           $(".google-share").prop("href","https://plus.google.com/share?url="+window.location.href);
@@ -233,7 +254,7 @@
               var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
                $("#suggestedPosts").append("<a href='/post.html?id="+element._id+"'>"+
                 "   <div class='col-sm-3 col-md-2'>"+
-                          "<div class='thumbnail'>"+
+                          "<div class='thumbnail posttile'>"+
                         "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                           "<div class='caption' style='word-wrap:break-word;'>"+
                           "<p>"+moment(element.date).fromNow()+"</p>"+

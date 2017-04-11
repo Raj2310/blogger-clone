@@ -237,7 +237,7 @@ exports.suggestionRecieve=function(req,res){
   const email=req.body.email;
   const subject=req.body.subject;
   const msg=req.body.msg;
-  const mailCompose="Name: "+name+"\n Email: "+email+"\n"+msg;
+  const mailCompose="Name: "+name+"<br> Email: "+email+"<br>Message: "+msg+"";
   mailer('blogwebsite2302@gmail.com',mailCompose,subject);
   res.redirect('/');
 }
@@ -251,7 +251,7 @@ exports.findAll = function(req, res) {
           console.log(err);
         }
         else{
-          collection.find({}).sort('date', -1).skip(num).limit(10).toArray(function(err, items) {
+          collection.find({}).sort('date', -1).skip(num).limit(12).toArray(function(err, items) {
             res.send(items);
           }); 
         }
@@ -299,7 +299,7 @@ exports.addblog = function(req, res) {
               } else {
                 var inserted_id=result.insertedIds[0];
                   console.log('Success: ' + JSON.stringify(inserted_id));
-                  sendMailForNewPost(inserted_id,"Feedcob")
+                  sendMailForNewPost(inserted_id,""+blog.title+"")
                   res.send(inserted_id);
               }
           });
@@ -498,9 +498,9 @@ function getUserBlogs(userid,callback){
     });
 }
 function sendMailForNewPost(id,title){
-   const registration_link='http://feedcop.com/post.html?id='+id;
-  const mailText='<h3>Hello Friend</h3>'+
-  '<p>Here is link to our new blog post : <a href="'+registration_link+'">'+title+'</a></p>';
+   const registration_link='http://feedcob.com/post.html?id='+id;
+  const mailText='<h3>Hello Friend ,</h3>'+
+  '<p>Greetings from Feedcob<p>Check out our new post here : <a href="'+registration_link+'">'+title+'</a></p></p>';
   MongoClient.connect(database_url,function(err, db) {
       db.collection('signups', function(err, collection) {
         if(err){

@@ -55,6 +55,9 @@
   width:100%;
   height:90px !important;
 }
+.posttile{
+	height:220px;
+}
 .reduce-padding-right{
   padding-right: 10px;
 }
@@ -90,8 +93,11 @@
 .nav-icon-image{
   height: 25px;
 }
+.share-bar a{
+	padding:0 0 0 0;
+}
 .share-icon-image{
-  height: 30px;
+  height: 40px;
 }
 .signup-section .upper-form{
   background-color: #fec200; 
@@ -102,13 +108,14 @@
   font-weight: bold;
 }
 .feedtales-section{
-  background: linear-gradient(to bottom right, grey, white);
+  border:1px dashed grey;
+  background: #331c00;
   margin-top: 5px;
   padding: 5px 0px 10px 0px;
 }
 .feedtales-section .feedtales-info{
 	font-family:Comic Sans MS;
-	color:#000;
+	color:#FFF;
 	font-size:20px;
 	/*text-transform: uppercase;*/
 }
@@ -129,11 +136,11 @@
     margin: 0 auto;
 }*/
 
-body { /*padding-top: 70px;*/ }
+body { padding-top: 70px; }
 .navbar li { color: #000 }
 @media screen and (min-width: 1200px) {
   .main-outer-container{
-    border:2px solid #333;
+    /*border:2px solid #333;*/
     margin-left:auto;
     margin-right:auto;
     /*margin-top:50px;*/
@@ -159,10 +166,13 @@ body { /*padding-top: 70px;*/ }
 	
 } 
 
-.company-banner .banner{
+.banner{
 	width:100%;
 }
-
+.img-responsive{
+	margin-top:10px;
+	width:100%;
+}
 
 .social-links{
 	margin-top:20px;
@@ -172,7 +182,7 @@ body { /*padding-top: 70px;*/ }
 }
 
 .feedme-button{
-	background-color:#ff0000;
+	background-color:#331c00;
 	color:white;
 }
 #postBody{
@@ -190,3 +200,5 @@ body { /*padding-top: 70px;*/ }
 	height: 250px;
 	max-height: 250px
 }
+
+
