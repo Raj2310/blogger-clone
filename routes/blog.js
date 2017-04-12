@@ -299,7 +299,9 @@ exports.addblog = function(req, res) {
               } else {
                 var inserted_id=result.insertedIds[0];
                   console.log('Success: ' + JSON.stringify(inserted_id));
-                  sendMailForNewPost(inserted_id,""+blog.title+"")
+                  if(blog.sendmail==1){
+					sendMailForNewPost(inserted_id,""+blog.title+"");  
+				  }
                   res.send(inserted_id);
               }
           });

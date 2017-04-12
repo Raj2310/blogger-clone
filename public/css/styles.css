@@ -1,9 +1,4 @@
 
-.tranparent-background{
-/*background-color: grey;
-   background: transparent;
-   border-color: transparent;
-*/}
 .company-name{
   font-size: 72px;
   font-family:  Comic Sans MS;
@@ -36,7 +31,6 @@
   line-height: 1.5;
   word-spacing: 10px;
   font-size: 20px;
-  font-family: cursive;
 }
 .hero-content img{
    max-height: 400px;
@@ -80,8 +74,8 @@
   padding: 0px!important;
 }
 .arial-font{
-  font-family: Comic Sans MS;
-  font-size: 16px;
+  font-family: uni sans;
+  font-size: 17px;
   font-weight: bold;
 }
 .white{
@@ -106,6 +100,7 @@
 }
 .signup-section .upper-form h3{
   font-weight: bold;
+  font-size:21px;
 }
 .feedtales-section{
   border:1px dashed grey;
@@ -150,7 +145,13 @@ body { padding-top: 70px; }
 
 @media screen and (max-width: 450px){
 	.signup-section .upper-form h3{
-		font-size:21px;
+		font-size:18px;
+	}
+	.feedtales-section .feedtales-info{
+		font-size:16px;
+	}
+	.signup-section .upper-form .inyourmailbox{
+		font-size:18px;
 	}
 	.carousel-caption h3{
 		font-size:15px;
@@ -201,4 +202,6 @@ body { padding-top: 70px; }
 	max-height: 250px
 }
 
-
+#postBody iframe{
+	
+}

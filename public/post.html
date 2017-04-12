@@ -81,10 +81,10 @@
           <ul class="nav navbar-nav navbar-right">
 
             
-            <li><a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="images/fb.png" class="nav-icon-image"></span></a></li>
-            <li><a href="https://twitter.com/Feedcobofficial" target="_blank"><img src="images/tt.png"class="nav-icon-image"></span></a></li>
-            <li><a href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="images/gp.png" class="nav-icon-image"></a></li>
-            <li><a href="https://www.instagram.com/feedcob/" target="_blank"><img src="images/instagram-icon.jpg" class="nav-icon-image"></a></li>
+            <li><a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="images/nfb.png" class="nav-icon-image"></span></a></li>
+            <li><a href="https://twitter.com/Feedcobofficial" target="_blank"><img src="images/ntt.png"class="nav-icon-image"></span></a></li>
+            <li><a href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="images/ngp.png" class="nav-icon-image"></a></li>
+            <li><a href="https://www.instagram.com/feedcob/" target="_blank"><img src="images/nig.png" class="nav-icon-image"></a></li>
 
             
           </ul>
@@ -99,22 +99,25 @@
 		  <img src="images/heroFeedcob.png" class="banner">
             <img class="img-responsive" alt="Responsive image" id="mainPostImage" onerror='this.onerror=null;this.src="https://placehold.it/800x400"'/>
           </div>
-          <div class="col-md-4">
-            <div class="signup-section">
+          <div class="col-sm-4">
+          <div class="signup-section alert alert-dismissable">
+		  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <div class="upper-form">
+			<center>
               <h3>
                 SIGNUP TO OUR NEWSLETTER
               </h3>
+			  </center>
               <center class="comic-font white">
                 Get weekly stories & more
               </center>
               <h2>
-                <center class="comic-font white">
+                <center class="comic-font white inyourmailbox">
                   IN YOUR MAILBOX!
                 </center>
               </h2>
               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Enter email" aria-describedby="basic-addon2">
+                  <input type="text" class="form-control" placeholder="Email (email@example.com)" aria-describedby="basic-addon2">
                   <span class="input-group-addon feedme-button" id="basic-addon2" onClick='submitNewsletterRequest()'>Feedme</span>
               </div>
             </div>
@@ -128,7 +131,7 @@
               </h3>
             </div>
           </div>
-          </div>
+        </div>
         </div>
         
         <div class="hero-content-body">
@@ -194,9 +197,10 @@
           <center>GOSSIPS.TRENDING.HUMOR</center>
           <div>
             <center>
-               <a href="https://www.instagram.com/feedcob/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
-            <a href="https://twitter.com/Feedcobofficial" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
             <a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/Feedcobofficial" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+			<a href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a>
+			<a href="https://www.instagram.com/feedcob/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
             </center>
           <div>
           <div>
@@ -247,7 +251,7 @@
         }
       );
      $(".whatsapp-share").prop("href","whatsapp://send?text="+encodeURIComponent(document.href));
-     $.get("/blogsAll/0", function(data, status){
+     $.get("/blogsAll/12", function(data, status){
         $.each(data, function(index, element) {
            var img_src="/upload/"+element._id+".jpg";
                   var alt_img_src="https://placehold.it/350x150";

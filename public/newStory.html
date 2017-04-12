@@ -90,8 +90,9 @@
                 
                 <label for="exampleInputPassword1">Write the post</label>
                 <!-- <textarea id="postContent" class="form-control"></textarea> -->
-                <div id="summernote">Hello Summernote</div>
+                <div id="summernote"></div>
                 <button id="submitPost"  class="btn btn-default">Submit</button>
+				<br><input type="checkbox" class="issendmail"> Send mail to subscribers
             </div>
             <div class="col-lg-4 col-md-4 form-group">
              <h3>Upload Image Here</h3>
@@ -112,10 +113,13 @@
               <a type="btn" class="btn btn-success" id="submitForeignBlog">Submit</a>
 			  
 			  <div class="well">
-			  <h3>Information</h3><br>
+			  <h3>Instructions</h3><br>
 			  <ol>
-			  <li>First submit the post , then upload the image of it</li> 
-			  <li> Maximum characters in "Title of the Post" is 63 characters including space.</li>			  
+			  <li>First submit the post , then upload the image of it.</li> 
+			  <li> Maximum characters in "Title of the Post" is 63 characters including space.</li>	
+			  <li><strong>For inserting picture</strong><br>Click the picture tab and insert the url of the picture.<br>Remember the picture has to be first uploaded to https://imgbb.com , then get the direct link of the picture and insert in the image url.<br><strong>Do not</strong> choose files , just only the url link.</li>
+			  <li><strong>For inserting video</strong><br>Copy the embeded code of the video from youtube and paste it in the summernote code view.<br>Before doing this take help of a technician.</li>
+			  <li><strong>This is for both picture or video inserting</strong><br>Before inserting the first video or picture, give text of atleast 60 characters and then give the video or picture.</li>
 			  </ol>
 			  <div>
             </div>
@@ -143,8 +147,10 @@ $(document).ready(
   height: 300,                 // set editor height
   minHeight: null,             // set minimum height of editor
   maxHeight: null,             // set maximum height of editor
-  focus: true                  // set focus to editable area after initializing summernote
+  focus: true,                  // set focus to editable area after initializing summernote
+  placeholder:'Please read the instructions carefully before uploading.' //placeholder
 });
+
         $.get('/userinfo',function(data,status){
             if(data.status==0){
               window.location.replace("login.html");
@@ -157,14 +163,20 @@ $(document).ready(
               $("#userNamePlaceholder").html('Hello '+writer.firstName);
             }
         });
+		
         $("#submitPost").click(
           function(){
             var postTitle=$("#postTitle").val();
             var postAuthor=$("#postAuthor").val();
             var postContent= $('#summernote').summernote('code');//$("#postContent").val();
             var tag=$("#tags").val();
+			var sm=0;
+			if($(".issendmail").is(':checked'))
+				sm=1;
+			else
+				sm=0;
             //var fileName=$("#fileUploadName").attr("name");
-            $.post("/blog",{ title:postTitle,tag:tag,body:postContent,author:writer}, function(data, status){
+            $.post("/blog",{ title:postTitle,tag:tag,body:postContent,author:writer,sendmail:sm}, function(data, status){
                      console.log(data);
                      //data returned is the inserted id
                      $("#fileUploadName").val(data);
