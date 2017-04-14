@@ -229,7 +229,7 @@
     var id=param("id");
      $.get("/blog/"+id, function(data, status){
          $("#postTitle").html(data.title);
-         $("#postDate").html(moment(data.date).fromNow());
+         $("#postDate").html(moment(data.date).format('MMMM Do YYYY'));
          //$("#postAuthor").html("by "+"<em>"+data.author.firstName+"</em>");
          $("#postBody").html(data.body);
 		 
