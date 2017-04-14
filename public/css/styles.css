@@ -1,9 +1,4 @@
 
-.tranparent-background{
-/*background-color: grey;
-   background: transparent;
-   border-color: transparent;
-*/}
 .company-name{
   font-size: 72px;
   font-family:  Comic Sans MS;
@@ -36,7 +31,6 @@
   line-height: 1.5;
   word-spacing: 10px;
   font-size: 20px;
-  font-family: cursive;
 }
 .hero-content img{
    max-height: 400px;
@@ -54,6 +48,9 @@
 .thumbnail-img{
   width:100%;
   height:90px !important;
+}
+.posttile{
+	height:220px;
 }
 .reduce-padding-right{
   padding-right: 10px;
@@ -77,8 +74,8 @@
   padding: 0px!important;
 }
 .arial-font{
-  font-family: Comic Sans MS;
-  font-size: 16px;
+  font-family: uni sans;
+  font-size: 17px;
   font-weight: bold;
 }
 .white{
@@ -90,8 +87,11 @@
 .nav-icon-image{
   height: 25px;
 }
+.share-bar a{
+	padding:0 0 0 0;
+}
 .share-icon-image{
-  height: 30px;
+  height: 40px;
 }
 .signup-section .upper-form{
   background-color: #fec200; 
@@ -100,15 +100,17 @@
 }
 .signup-section .upper-form h3{
   font-weight: bold;
+  font-size:21px;
 }
 .feedtales-section{
-  background: linear-gradient(to bottom right, grey, white);
+  border:1px dashed grey;
+  background: #331c00;
   margin-top: 5px;
   padding: 5px 0px 10px 0px;
 }
 .feedtales-section .feedtales-info{
 	font-family:Comic Sans MS;
-	color:#000;
+	color:#FFF;
 	font-size:20px;
 	/*text-transform: uppercase;*/
 }
@@ -129,11 +131,11 @@
     margin: 0 auto;
 }*/
 
-body { /*padding-top: 70px;*/ }
+body { padding-top: 70px; }
 .navbar li { color: #000 }
 @media screen and (min-width: 1200px) {
   .main-outer-container{
-    border:2px solid #333;
+    /*border:2px solid #333;*/
     margin-left:auto;
     margin-right:auto;
     /*margin-top:50px;*/
@@ -141,18 +143,37 @@ body { /*padding-top: 70px;*/ }
   }
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 450px){
 	.signup-section .upper-form h3{
-		font-size:21px;
+		font-size:18px;
+	}
+	.feedtales-section .feedtales-info{
+		font-size:16px;
+	}
+	.signup-section .upper-form .inyourmailbox{
+		font-size:18px;
 	}
 	.carousel-caption h3{
 		font-size:15px;
+	}
+	.carousel-inner .item img{
+		height: 150px !important;
+		max-height: 150px !important;
 	}
 	body{
 		
 		width:400px;
 	}
+	
 } 
+
+.banner{
+	width:100%;
+}
+.img-responsive{
+	margin-top:10px;
+	width:100%;
+}
 
 .social-links{
 	margin-top:20px;
@@ -162,7 +183,7 @@ body { /*padding-top: 70px;*/ }
 }
 
 .feedme-button{
-	background-color:#ff0000;
+	background-color:#331c00;
 	color:white;
 }
 #postBody{
@@ -177,5 +198,10 @@ body { /*padding-top: 70px;*/ }
 
 .carousel-inner .item img{
 	width:100%;
-	height:250px !important;
+	height: 250px;
+	max-height: 250px
+}
+
+#postBody iframe{
+	
 }
