@@ -33,13 +33,35 @@
 
 <body>
   <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=124336507997973";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '448071212193152',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();   
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+function fbcl() {
+		  console.log("sharing on fb");
+  FB.ui({
+    method: 'share',
+    display: 'popup',
+    href: window.location.href,
+  }, function(response){});
+}
+</script>
 <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
 
   <div class="main-outer-container">
@@ -97,7 +119,7 @@
         <div class="row">
           <div class="col-md-8">
 		  <img src="images/heroFeedcob.png" class="banner">
-            <img class="img-responsive" alt="Responsive image" id="mainPostImage" onerror='this.onerror=null;this.src="https://placehold.it/800x400"'/>
+            <h1><center ><span id="postTitle"></span></center></h1>
           </div>
           <div class="col-sm-4">
           <div class="signup-section alert alert-dismissable">
@@ -135,13 +157,14 @@
         </div>
         
         <div class="hero-content-body">
-
-          <h1><center ><span id="postTitle"></span></center></h1>
+			
+			<img class="img-responsive" alt="Responsive image" id="mainPostImage" onerror='this.onerror=null;this.src="https://placehold.it/800x400"'/>
+          
           <h4><center><span id="postDate"></span>  <span id="postAuthor"></span></center></h4>
            <center>
           <div class="btn-group share-bar" role="group" aria-label="...">
           
-			<a role="button" href="#" class="btn facebook_share" target="_blank" id=""><img src="images/fb.png" class="share-icon-image"></a>
+			<a role="button" href="#" class="btn facebook_share" id="" onclick="fbcl();"><img src="images/fb.png" class="share-icon-image"></a>
             <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn" target="_blank"><img src="images/tt.png" class="share-icon-image"></a>
             <a href="#" class="btn pinterest-share" id="" target="_blank"><img src="images/pp.png" class="share-icon-image"></a>
 			<a href="#" class="btn google-share" id="" target="_blank"><img src="images/gp.png" class="share-icon-image"></a>            
@@ -241,7 +264,8 @@
 		 $(".fbtag-image").attr("content","https://"+window.location.hostname+"upload/"+data._id+".jpg");
 		 
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
-          $(".facebook_share").prop("href","http://www.facebook.com/sharer/sharer.php?u="+window.location.href);
+		  
+          //$(".facebook_share").prop("href","http://www.facebook.com/sharer/sharer.php?u="+window.location.href);
           $(".google-share").prop("href","https://plus.google.com/share?url="+window.location.href);
           $(".pinterest-share").prop("href","http://pinterest.com/pin/create/button/?url="+window.location.href+
             "&media="+window.location.hostname+"/upload/"+data._id+".jpg&description="+
