@@ -256,6 +256,7 @@ window.fbAsyncInit = function() {
 		 $(".fbtag-image").attr("content","https://"+window.location.hostname+"upload/"+data._id+".jpg");
 		 
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
+		  
 		  $(".facebook_share").on('click',function() {
 			  console.log("sharing on fb");
 			  FB.ui({
@@ -264,7 +265,7 @@ window.fbAsyncInit = function() {
 				link: window.location.href,
 				picture: 'https://'+window.location.hostname+'/upload/'+data._id+'.jpg',
 				caption: window.location.hostname,
-				description: data.body,
+				description: $("#postBody").text(),
 				message: 'See this ! <br>Do not forget to visit our website<br>#Feedcob '+window.location.href
 			});
 		});
