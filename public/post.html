@@ -174,7 +174,7 @@ window.fbAsyncInit = function() {
 			<center>
 			<div class="btn-group share-bar" role="group" aria-label="...">
           
-			<a role="button" href="#" class="btn facebook_share" target="_blank" id=""><img src="images/fb.png" class="share-icon-image"></a>
+			<a role="button" href="#" class="btn facebook_share" id=""><img src="images/fb.png" class="share-icon-image"></a>
             <a role="button" href="https://twitter.com/share" id="twitter-share" class="btn" target="_blank"><img src="images/tt.png" class="share-icon-image"></a>
             <a href="#" class="btn pinterest-share" id="" target="_blank"><img src="images/pp.png" class="share-icon-image"></a>
 			<a href="#" class="btn google-share" id="" target="_blank"><img src="images/gp.png" class="share-icon-image"></a>            
@@ -258,15 +258,13 @@ window.fbAsyncInit = function() {
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
 		  
 		  $(".facebook_share").on('click',function() {
-			  console.log("sharing on fb");
 			  FB.ui({
 				method: 'feed',
 				name: data.title,
 				link: window.location.href,
 				picture: 'https://'+window.location.hostname+'/upload/'+data._id+'.jpg',
-				caption: window.location.hostname,
-				description: $("#postBody").text(),
-				message: 'See this ! <br>Do not forget to visit our website<br>#Feedcob '+window.location.href
+				caption: 'Do not forget to visit our website<br>#Feedcob '+window.location.hostname,
+				description: $("#postBody").text()				
 			});
 		});
           //$(".facebook_share").prop("href","http://www.facebook.com/sharer/sharer.php?u="+window.location.href);
