@@ -55,12 +55,16 @@ window.fbAsyncInit = function() {
 
 function fbcl() {
 		  console.log("sharing on fb");
-  FB.ui({
-    method: 'share',
-    display: 'popup',
-    href: window.location.href,
-	hashtag: 'share this',
-  }, function(response){});
+		  FB.ui({
+			method: 'feed',
+			name: 'This is the content of the "name" field.',
+			link: window.location.href,
+			picture: 'https://salty-ravine-24354.herokuapp.com/upload/58ebb2c62faf7e1864dffe95.jpg',
+			caption: 'Top 3 reasons why you should care about your finance',
+			description: "What happens when you don't take care of your finances? Just look at our country -- you spend irresponsibly, get in debt up to your eyeballs, and stress about how you're going to make ends meet. The difference is that you don't have a glut of taxpayers…",
+			message: ""
+		});
+
 }
 </script>
 <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
