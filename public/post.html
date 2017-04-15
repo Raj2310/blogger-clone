@@ -229,7 +229,7 @@
     var id=param("id");
      $.get("/blog/"+id, function(data, status){
          $("#postTitle").html(data.title);
-         $("#postDate").html(moment(data.date).fromNow());
+         $("#postDate").html(moment(data.date).format('MMMM Do YYYY'));
          //$("#postAuthor").html("by "+"<em>"+data.author.firstName+"</em>");
          $("#postBody").html(data.body);
 		 
@@ -250,7 +250,7 @@
 			$(".email-share").prop("href","mailto:?Subject=Check out this&amp;Body=I%20saw%20this%20and%20thought%20to%20share%20with%20you%20 "+window.location.href);
         }
       );
-     $(".whatsapp-share").prop("href","whatsapp://send?text="+encodeURIComponent(document.href));
+     $(".whatsapp-share").prop("href","whatsapp://send?text="+encodeURIComponent(document.location.href));
      $.get("/blogsAll/12", function(data, status){
         $.each(data, function(index, element) {
            var img_src="/upload/"+element._id+".jpg";
@@ -261,7 +261,7 @@
                           "<div class='thumbnail posttile'>"+
                         "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                           "<div class='caption' style='word-wrap:break-word;'>"+
-                          "<p>"+moment(element.date).fromNow()+"</p>"+
+                          "<p>"+moment(element.date).format('MMMM Do YYYY')+"</p>"+
                           "<h4><a href='post.html?id="+element._id+"'>"+element.title+
                           "</a></h4>"+
                           /*"<p>"+getSubstring(element.body,50)+"</p>"+*/

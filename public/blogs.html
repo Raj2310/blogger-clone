@@ -218,7 +218,7 @@
                          /*"by <a href='#'>"+element.author.firstName+"</a>"+*/" on <a href='blogs.html?tag="+element.tag+"'>"+
                          element.tag+"</a>"+
                      "</p>"+
-                     "<p><span class='glyphicon glyphicon-time'> </span> "+moment(element.date).fromNow()+" </p>"+
+                     "<p><span class='glyphicon glyphicon-time'> </span> "+moment(element.date).format('MMMM Do YYYY')+" </p>"+
                      ""+
                      "<img id='element._id' class='img-responsive' src='"+img_src+"' "+on_error_string+" alt=''>"+
                      ""+
@@ -241,7 +241,8 @@
                              /*"by <a href='#'>"+element.author.firstName+"</a>"+*/" on <a href='blogs.html?tag="+
                              element.tag+"'>"+element.tag+"</a>"+
                          "</p>"+
-                         "<p><span class='glyphicon glyphicon-time'> </span> "+moment(element.date).fromNow()+" </p>"+
+                    "<p><span class='glyphicon glyphicon-time'> </span> "+moment(element.date).format('MMMM Do YYYY')+
+                    " </p>"+
                          "<hr>"+
                          "<img id='element._id' class='img-responsive' src='"+img_src+"'"+on_error_string+" alt=''>"+
                          "<hr>"+
@@ -266,7 +267,8 @@
                     /*"by <a href='#'>"+element.author.firstName+"</a>"+*/" on <a href='blogs.html?tag="+element.tag+"'>"
                     +element.tag+"</a>"+
                          "</p>"+
-                         "<p><span class='glyphicon glyphicon-time'> </span> "+moment(element.date).fromNow()+" </p>"+
+                    "<p><span class='glyphicon glyphicon-time'> </span> "+moment(element.date).format('MMMM Do YYYY')+
+                    " </p>"+
                          "<hr>"+
                          "<img id='element._id' class='img-responsive' src='"+img_src+"'"+on_error_string+" alt=''>"+
                          "<hr>"+

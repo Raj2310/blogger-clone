@@ -313,6 +313,7 @@ exports.addblog = function(req, res) {
 exports.updateBlog = function(req, res) {
     var id = req.params.id;
     var blog = req.body;
+    blog.date=new Date()/*.getDate()*/;
     MongoClient.connect(database_url,function(err, db) {
        if(err){
           console.log("err1"+err);
