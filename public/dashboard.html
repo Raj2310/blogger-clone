@@ -104,7 +104,7 @@
               var img_src="/upload/"+element._id+".jpg";
                 var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/380x220\";'"
                    $("#blogContainer").append("  <h2 class='blogTitle'>"+
-                         "<a href='post.html?id="+element._id+"' >"+(element.title)+"</a>"+
+                         "<a href='post/"+element._id+"' >"+(element.title)+"</a>"+
                      "</h2>"+
                      "<p class='lead'>"+
                          "by <a href='#'>"+element.author.firstName+"</a>"+" on <a href='blogs.html?tag="+element.tag+"'>"+
@@ -115,7 +115,7 @@
                      "<img id='element._id' class='img-responsive' src='"+img_src+"' "+on_error_string+" alt=''>"+
                      "<hr>"+
                      "<p>"+ element.body+"</p>"+
-                     "<a class='btn btn-primary' href='post.html?id="+element._id+"'>Read More <span class='glyphicon glyphicon-chevron-righ'></span></a>"+
+                     "<a class='btn btn-primary' href='post/"+element._id+"'>Read More <span class='glyphicon glyphicon-chevron-righ'></span></a>"+
                      "<a href='admin/editPost.html?id="+element._id+"'>Edit</a>"+
                      "<hr>");
             });

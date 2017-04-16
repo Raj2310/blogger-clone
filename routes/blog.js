@@ -8,6 +8,7 @@ var objectId=mongo.ObjectId;
 var MongoClient = mongo.MongoClient;
 var database_url="mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website";
 var nodemailer = require('nodemailer');
+var moment = require('moment');
 exports.topBlog=function(req,res){
   MongoClient.connect(database_url,function(err, db) {
       db.collection('blogs', function(err, collection) {
@@ -175,6 +176,7 @@ exports.individualPost=function(req,res){
     <meta property='og:description'   content='`+mainPost_body+`' />
     <meta property='og:image'         content='`+mainPost_image_url+`' /> 
     <link rel='stylesheet' href='../css/bootstrap.min.css'>
+    <link rel='stylesheet' href='../css/bootstrap-social.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel='stylesheet' href='../css/styles.css'>
   </head>
@@ -211,14 +213,16 @@ exports.individualPost=function(req,res){
               <li><a href='/?tag=gossip' class='text-uppercase reduce-padding-right'>Gossips</a></li>
               <li><a href='/?tag=this_is_desi' class='text-uppercase reduce-padding-right'>DesiFeed</a></li>
                <li><a href='/?tag=hera_pheri' class='text-uppercase reduce-padding-right'>HeraPheri</a></li>
-              <li><a href='/?tag=wtf_i_go' class='text-uppercase reduce-padding-right'>FeedMore</a></li>
-              <li><a href='publish.html' class='text-uppercase reduce-padding-right'>FeedTales</a></li>    
+              <li><a href='/?tag=feed_more' class='text-uppercase reduce-padding-right'>FeedMore</a></li>
+              <li><a href='/publish.html' class='text-uppercase reduce-padding-right'>FeedTales</a></li>    
             </ul>
             <div class='navbar-form navbar-left'>
+              <form method="get" action="../blogs.html">
               <div class='form-group'>
-                <input type='text' class='form-control' id='searchBar' placeholder='Search'>
+                <input type='text' name="search" class='form-control' id='searchBar' placeholder='Search'>
               </div>
-              <a id='searchBtn' class='btn btn-default'>Go</a>
+              <button  class='btn btn-default' type="submit">Go</button>
+              </form>
             </div>
             <ul class='nav navbar-nav navbar-right'>  
               <li><a href='https://www.facebook.com/Feedcob-766691663508464/' target='_blank'><img src='../images/nfb.png' class='nav-icon-image'></span></a></li>
@@ -258,15 +262,6 @@ exports.individualPost=function(req,res){
                     <span class='input-group-addon feedme-button' id='basic-addon2' onClick='submitNewsletterRequest()'>Feedme</span>
                   </div>
                 </div>
-                <div class='feedtales-section'>
-                  <h3>
-                    <center class='feedtales-info'>See What Writers Have To Share ...</center>
-                    <br>
-                    <center>
-                      <a class='btn btn-md ' href='/publish.html'>Feedtales</a>
-                    </center>
-                  </h3>
-                </div>
               </div>
             </div>
           </div>
@@ -274,15 +269,16 @@ exports.individualPost=function(req,res){
             <h1><center ><span id='postTitle'>`+mainPost_title+`</span></center></h1>
             <h4><center><span id='postDate'></span>  <span id='postAuthor'></span></center></h4>
             <center>
-              <div class='btn-group share-bar' role='group' aria-label='...'>
-                <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn facebook_share' target='_blank'><img src='../images/fb.png' class='share-icon-image'></a>
-                <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn' target='_blank'><img src='../images/tt.png' class='share-icon-image'></a>
-                <a href='#' class='btn pinterest-share' id=' target='_blank'><img src='../images/pp.png' class='share-icon-image'></a>
-                <a href='#' class='btn google-share' id=' target='_blank'><img src='../images/gp.png' class='share-icon-image'></a>            
-                <a href='#' class='btn tumblr-share' id=' target='_blank'><img src='../images/t.png' class='share-icon-image'></a>
-                <a href='whatsapp://send?text=encodeURIComponent(document.URL)' data-action='share/whatsapp/share' class='btn whatsapp-share'><img src='../images/wa.png' class='share-icon-image'></a>
-                <a href='#' class='btn email-share' id=' target='_blank'><img src='../images/em.png' class='share-icon-image'></a>
-                <a href='javascript:;' onclick='window.print()' class='btn print-share' id=' target='_blank'><img src='../images/pt.png' class='share-icon-image'></a>
+              <div class='btn-group share-bar' role='group' aria-label='...'>      
+              <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-facebook facebook_share' target='_blank'><span class="fa fa-facebook-square"><span></a>
+              <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn btn-social-icon btn-twitter' target='_blank'><span class="fa fa-twitter"><span></a>
+              <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
+              &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`' class='btn btn-social-icon btn-pinterest pinterest-share' id=' target='_blank'><span class="fa fa-pinterest"><span></a>
+              <a href='https://plus.google.com/share?url=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-google google-share' id=' target='_blank'><span class="fa fa-google-plus"><span></a>            
+              <a href='https://tumblr.com/share/link?url=`+main_url+`/post/`+mainPost_id+`&amp;title=`+mainPost_title+`' class='btn btn-social-icon btn-tumblr tumblr-share' id=' target='_blank'><span class="fa fa-tumblr-square"><span></a>
+              <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class='btn btn-social-icon btn-tumblr whatsapp-share'><span class="fa fa-whatsapp"><span></a>
+              <a href='mailto:?Subject=Check out this&amp;Body=I%20saw%20this%20and%20thought%20to%20share%20with%20you%20`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-linkedin email-share' id=' target='_blank'><span class="fa fa-envelope"><span></a>
+              <a href='javascript:;' onclick='window.print()' class='btn btn-social-icon btn-reddit print-share' id=' target='_blank'><span class="fa fa-print"><span></a>
               </div>
             </center>
             <p id='postBody'>`
@@ -290,21 +286,56 @@ exports.individualPost=function(req,res){
             </p>
             <center>
               <div class='btn-group share-bar' role='group' aria-label='...'>      
-              <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn facebook_share' target='_blank'><img src='../images/fb.png' class='share-icon-image'></a>
-              <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn' target='_blank'><img src='../images/tt.png' class='share-icon-image'></a>
-              <a href='#' class='btn pinterest-share' id=' target='_blank'><img src='../images/pp.png' class='share-icon-image'></a>
-              <a href='#' class='btn google-share' id=' target='_blank'><img src='../images/gp.png' class='share-icon-image'></a>            
-              <a href='#' class='btn tumblr-share' id=' target='_blank'><img src='../images/t.png' class='share-icon-image'></a>
-              <a href='whatsapp://send?text=encodeURIComponent(document.URL)' data-action='share/whatsapp/share' class='btn whatsapp-share'><img src='../images/wa.png' class='share-icon-image'></a>
-              <a href='#' class='btn email-share' id=' target='_blank'><img src='../images/em.png' class='share-icon-image'></a>
-              <a href='javascript:;' onclick='window.print()' class='btn print-share' id=' target='_blank'><img src='../images/pt.png' class='share-icon-image'></a>
+              <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-facebook facebook_share' target='_blank'><span class="fa fa-facebook-square"><span></a>
+              <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn btn-social-icon btn-twitter' target='_blank'><span class="fa fa-twitter"><span></a>
+              <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
+              &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`' class='btn btn-social-icon btn-pinterest pinterest-share' id=' target='_blank'><span class="fa fa-pinterest"><span></a>
+              <a href='https://plus.google.com/share?url=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-google google-share' id=' target='_blank'><span class="fa fa-google-plus"><span></a>            
+              <a href='https://tumblr.com/share/link?url=`+main_url+`/post/`+mainPost_id+`&amp;title=`+mainPost_title+`' class='btn btn-social-icon btn-tumblr tumblr-share' id=' target='_blank'><span class="fa fa-tumblr-square"><span></a>
+              <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class='btn btn-social-icon btn-tumblr whatsapp-share'><span class="fa fa-whatsapp"><span></a>
+              <a href='mailto:?Subject=Check out this&amp;Body=I%20saw%20this%20and%20thought%20to%20share%20with%20you%20`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-linkedin email-share' id=' target='_blank'><span class="fa fa-envelope"><span></a>
+              <a href='javascript:;' onclick='window.print()' class='btn btn-social-icon btn-reddit print-share' id=' target='_blank'><span class="fa fa-print"><span></a>
             </div>
           </center>
         </div>
+        <br/>
+        <br/>
+        <hr class='below-editor-pick'/>
+        <div class='main-outer-container similar-readings container-fluid' style='border-top-width:0px' >
+          <div id='suggestedPosts'>
+            <h2><center><span class='label label-default'>Similar Readings</span></center></h2>
+          `;
+          html+=`
+          </div>
+          <a href='/blogs.html' class='btn btn-success pull-right space-bottom-20' >See All Posts</a>
+        </div>
+      </div>
+      <div class='main-outer-container container-fluid' style='border-top-width:0px'>
+        <div class='container-fluid'>
+          <div class='row'>
+            <div class='col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12'>  
+              <center>GOSSIPS.TRENDING.HUMOR</center>
+            <div>
+            <center>
+              <a href='https://www.facebook.com/Feedcob-766691663508464/' target='_blank'><i class='fa fa-facebook-square fa-2x' aria-hidden='true'></i></a>
+              <a href='https://twitter.com/Feedcobofficial' target='_blank'><i class='fa fa-twitter-square fa-2x' aria-hidden='true'></i></a>
+              <a href='https://plus.google.com/u/2/102020403779099888425' target='_blank'><i class='fa fa-google-plus fa-2x' aria-hidden='true'></i></a>
+              <a href='https://www.instagram.com/feedcob/' target='_blank'><i class='fa fa-instagram fa-2x' aria-hidden='true'></i></a>
+            </center>
+          <div>
+          <div>
+            <center><a href='contact.html'>Contact Us</a>
+          </div>
+        </div>
+        <div class='col-lg-4 col-md-3 col-sm-2 col-xs-12'>
+          <div class='fb-like' data-href='https://www.feedcob.com/' data-layout='standard' data-action='like' data-size='small' data-show-faces='true' data-share='true'></div>
+        </div>
       </div>
     </div>
+  </div>
   <script src='../js/jquery.js'></script>
   <script src='../js/bootstrap.min.js'></script>
+  <script src="../js/test.js"></script>
   <script type='text/javascript' src='../js/moment.js'></script>
   <script async src='//platform.twitter.com/widgets.js' charset='utf-8'></script>
   <script>
@@ -327,6 +358,25 @@ exports.individualPost=function(req,res){
       });
       $('.whatsapp-share').prop('href','whatsapp://send?text='+encodeURIComponent(document.location.href));
     });
+    $.get('/blogsAll/12', function(data, status){
+        $.each(data, function(index, element) {
+           var img_src='/upload/'+element._id+'.jpg';
+                  var alt_img_src='https://placehold.it/350x150';
+              var on_error_string='onerror='this.onerror=null;this.src=\'https://placehold.it/90x130\'32w
+               $('#suggestedPosts').append('<a href='/post.html?id='+element._id+''>'+
+                '   <div class='col-sm-3 col-md-2'>'+
+                          '<div class='thumbnail posttile'>'+
+                        '<img  class='img-responsive thumbnail-img' src=''+img_src+'''+on_error_string+'  alt=''>'+
+                          '<div class='caption' style='word-wrap:break-word;'>'+
+                          '<p class='date-style'>'+moment(element.date).format('MMMM Do YYYY')+'</p>'+
+                          '<h4><a href='post.html?id='+element._id+''>'+element.title+
+                          '</a></h4>'+
+                          /*'<p>'+getSubstring(element.body,50)+'</p>'+*/
+                          '</div>'+
+                          '</div>'+
+                          '</div></a>');
+        });
+      });
   </body>
 </html>`;
           res.send(html/*"<a href='"+image_url+"'>uhsbchuds</a>"*/);

@@ -54,7 +54,7 @@
             <li><a href="/?tag=gossip" class="text-uppercase reduce-padding-right">Gossips</a></li>
             <li><a href="/?tag=this_is_desi" class="text-uppercase reduce-padding-right">DesiFeed</a></li>
              <li><a href="/?tag=hera_pheri" class="text-uppercase reduce-padding-right">HeraPheri</a></li>
-            <li><a href="/?tag=wtf_i_go" class="text-uppercase reduce-padding-right">FeedMore</a></li>
+            <li><a href="/?tag=feed_more" class="text-uppercase reduce-padding-right">FeedMore</a></li>
             <li><a href="publish.html" class="text-uppercase reduce-padding-right">FeedTales</a></li>
             
           </ul>
@@ -234,7 +234,7 @@
                   $.each(data.blog,function(index,element){
 				  var img_src="/upload/"+element._id+".jpg";
                   var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/870x300\";'"
-				  $(".carousel-inner").append("<div class='item'><a href='post.html?id="+element._id+"'><img src='"+img_src+"'"+on_error_string+" alt=''><div class='carousel-caption'><h3 style='color:black' class='bg-success'>"+element.title+"</h3></div></a></div>");				  
+				  $(".carousel-inner").append("<div class='item'><a href='post/"+element._id+"'><img src='"+img_src+"'"+on_error_string+" alt=''><div class='carousel-caption'><h3 style='color:black' class='bg-success'>"+element.title+"</h3></div></a></div>");				  
                   });
                   $(".carousel-inner .item:first-child").addClass("active");
                    
@@ -274,13 +274,13 @@
                   var img_src="/upload/"+element._id+".jpg";
                   var alt_img_src="https://placehold.it/90x130";
                   var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
-                       $(".posts").append("<a href='/post.html?id="+element._id+"'>"+
+                       $(".posts").append("<a href='/post/"+element._id+"'>"+
                             "   <div class='col-sm-3 col-md-2 col-xs-6'>"+
                               "<div class='thumbnail posttile'>"+
                             "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                               "<div class='caption' style='word-wrap:break-word;'>"+
-                              "<p>"+moment(element.date).format('MMMM Do YYYY')+"</p>"+
-                              "<h4><a href='post.html?id="+element._id+"'>"+element.title+
+                              "<p class='date-style'>"+moment(element.date).format('MMMM Do YYYY')+"</p>"+
+                              "<h4><a href='post/"+element._id+"'>"+element.title+
                               "</a></h4>"+
                               /*"<p>"+getSubstring(element.body,50)+"</p>"+*/
                               "</div>"+
@@ -297,13 +297,13 @@
                       var img_src="/upload/"+element._id+".jpg";
                       var alt_img_src="https://placehold.it/90x130";
                       var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
-                           $(".posts").append("<a href='/post.html?id="+element._id+"'>"+
+                           $(".posts").append("<a href='/post/"+element._id+"'>"+
                             "   <div class='col-sm-3 col-md-2 col-xs-6'>"+
                               "<div class='thumbnail posttile'>"+
                             "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                               "<div class='caption' style='word-wrap:break-word;'>"+
-                              "<p>"+moment(element.date).format('MMMM Do YYYY')+"</p>"+
-                              "<h4><a href='post.html?id="+element._id+"'>"+element.title+
+                              "<p class='date-style'>"+moment(element.date).format('MMMM Do YYYY')+"</p>"+
+                              "<h4><a href='post/"+element._id+"'>"+element.title+
                               "</a></h4>"+
                               /*"<p>"+getSubstring(element.body,50)+"</p>"+*/
                               "</div>"+

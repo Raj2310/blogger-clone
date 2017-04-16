@@ -63,7 +63,7 @@
             <li><a href="/?tag=gossip" class="text-uppercase reduce-padding-right">Gossips</a></li>
             <li><a href="/?tag=this_is_desi" class="text-uppercase reduce-padding-right">DesiFeed</a></li>
              <li><a href="/?tag=hera_pheri" class="text-uppercase reduce-padding-right">HeraPheri</a></li>
-            <li><a href="/?tag=wtf_i_go" class="text-uppercase reduce-padding-right">FeedMore</a></li>
+            <li><a href="/?tag=feed_more" class="text-uppercase reduce-padding-right">FeedMore</a></li>
             <li><a href="publish.html" class="text-uppercase reduce-padding-right">FeedTales</a></li>
             
           </ul>
@@ -124,15 +124,6 @@
                   <span class="input-group-addon feedme-button" id="basic-addon2" onClick='submitNewsletterRequest()'>Feedme</span>
               </div>
             </div>
-            <div class="feedtales-section">
-              <h3>
-                <center class="feedtales-info">See What Writers Have To Share ...</center>
-                <br>
-                <center>
-                    <a class="btn btn-md " href="/publish.html">Feedtales</a>
-                </center>
-              </h3>
-            </div>
           </div>
              <div class="well">
                     <div class="fb-like" data-href="https://www.feedcob.com/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
@@ -182,7 +173,7 @@
                          " on <a href='#'>"+
                          element.source+"</a>"+
                      "</p>"+
-                     "<p><span class='glyphicon glyphicon-time'> </span> "+moment(element.publishedTime).fromNow()+" </p>"+
+                     "<p class='date-style'><span class='glyphicon glyphicon-time'> </span> "+moment(element.publishedTime).fromNow()+" </p>"+
                      "<hr>"+
                      "<img id='element._id' class='img-responsive' src='"+img_src+"' "+on_error_string+" alt=''>"+
                      "<hr>"+
