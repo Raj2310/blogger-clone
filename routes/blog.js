@@ -131,7 +131,216 @@ exports.addNewblog = function(req,res){
    console.log(req.query.color);
    console.log(req.query.handle);
 };
-
+exports.individualPost=function(req,res){
+  var id = req.params.id;
+  let html="";
+  const main_url="http://murmuring-fortress-10024.herokuapp.com";
+  console.log('Retrieving blog: ' + id);
+  MongoClient.connect(database_url,function(err, db) {
+    db.collection('blogs', function(err, collection) {
+      if(err){
+        res.redirect("/");
+        //console.log(err);
+      }
+      else {
+        collection.findOne({_id:objectId(id)}, function(err, item) {
+          //console.log(item);
+          const mainPost_id=item._id;
+          const mainPost_image_url="http://murmuring-fortress-10024.herokuapp.com/upload/"+item._id+".jpg";
+          const mainPost_title=item.title;
+          const mainPost_body=item.body;
+          const mainPost_date=item.date;
+          const mainPost_tag=item.tag;
+          html+=`
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <!--Facebook meta tags-->
+    <!-- <meta class='fbtag-url' property='og:url'                content='#' />
+    <meta class='fbtag-type' property='og:type'               content='Post' />
+    <meta class='fbtag-title' property='og:title'              content='#' />
+    <meta class='fbtag-description' property='og:description'        content='#' />
+    <meta class='fbtag-image' property='og:image'              content='#' /> -->
+    <!--Facebook meta tags-->
+    
+    <title>Feedcob | Posts</title>
+    <link rel='icon' href='../images/logo.png' type='image/gif'>
+    <meta name='description' content='GOSSIPS.TRENDING.HUMOR'>
+    <meta name='author' content='Feedcob'>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta property='og:type'          content='website' />
+    <meta property='og:title'         content='`+mainPost_title+`' />
+    <meta property='og:description'   content='`+mainPost_body+`' />
+    <meta property='og:image'         content='`+mainPost_image_url+`' /> 
+    <link rel='stylesheet' href='../css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='../css/styles.css'>
+  </head>
+  <body>
+    <div id='fb-root'></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = '//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=124336507997973';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <div class='main-outer-container'>
+      <nav class='arial-font navbar navbar-default navbar-fixed-top tranparent-background reduce-margin-bottom'>
+        <div class='container-fluid'>
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class='navbar-header'>
+            <a class='navbar-brand no-padding' href='/'>
+              <img alt='Brand' class='logo-image ' src='../images/logo.png'>
+            </a>
+            <button type='button' class='navbar-toggle collapsed' data-toggle='collapse'  data-target='#bs-example-navbar-collapse-1' aria-expanded='false'>
+              <span class='sr-only'>Toggle navigation</span>
+              <span class='icon-bar'></span>
+              <span class='icon-bar'></span>
+              <span class='icon-bar'></span>
+            </button>
+            <!--  <a class='navbar-brand' href='#'>Brand</a> -->
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+            <ul class='nav navbar-nav'>
+            <!-- <li><a href='/'>Home</a></li> -->
+              <li><a href='/?tag=trend_feed' class='text-uppercase reduce-padding-right'>TrendFeed</a></li>
+              <li><a href='/?tag=gossip' class='text-uppercase reduce-padding-right'>Gossips</a></li>
+              <li><a href='/?tag=this_is_desi' class='text-uppercase reduce-padding-right'>DesiFeed</a></li>
+               <li><a href='/?tag=hera_pheri' class='text-uppercase reduce-padding-right'>HeraPheri</a></li>
+              <li><a href='/?tag=wtf_i_go' class='text-uppercase reduce-padding-right'>FeedMore</a></li>
+              <li><a href='publish.html' class='text-uppercase reduce-padding-right'>FeedTales</a></li>    
+            </ul>
+            <div class='navbar-form navbar-left'>
+              <div class='form-group'>
+                <input type='text' class='form-control' id='searchBar' placeholder='Search'>
+              </div>
+              <a id='searchBtn' class='btn btn-default'>Go</a>
+            </div>
+            <ul class='nav navbar-nav navbar-right'>  
+              <li><a href='https://www.facebook.com/Feedcob-766691663508464/' target='_blank'><img src='../images/nfb.png' class='nav-icon-image'></span></a></li>
+              <li><a href='https://twitter.com/Feedcobofficial' target='_blank'><img src='../images/ntt.png'class='nav-icon-image'></span></a></li>
+              <li><a href='https://plus.google.com/u/2/102020403779099888425' target='_blank'><img src='../images/ngp.png' class='nav-icon-image'></a></li>
+              <li><a href='https://www.instagram.com/feedcob/' target='_blank'><img src='../images/nig.png' class='nav-icon-image'></a></li>      
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+      <div class='container-fluid'>
+        <div class='hero-content'>
+          <div class='row'>
+            <div class='col-md-8'>
+              <img src='../images/heroFeedcob.png' class='banner'>
+              <img class='img-responsive' alt='Responsive image' src="`+mainPost_image_url+`" id='mainPostImage' onerror="this.onerror=null;this.src='https://placehold.it/800x400'"/>
+            </div>
+            <div class='col-sm-4'>
+              <div class='signup-section alert alert-dismissable'>
+                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+                <div class='upper-form'>
+                  <center>
+                    <h3>
+                      SIGNUP TO OUR NEWSLETTER
+                    </h3>
+                  </center>
+                  <center class='comic-font white'>
+                    Get weekly stories & more
+                  </center>
+                  <h2>
+                    <center class='comic-font white inyourmailbox'>
+                      IN YOUR MAILBOX!
+                    </center>
+                  </h2>
+                  <div class='input-group'>
+                    <input type='text' class='form-control' placeholder='Email (email@example.com)' aria-describedby='basic-addon2'>
+                    <span class='input-group-addon feedme-button' id='basic-addon2' onClick='submitNewsletterRequest()'>Feedme</span>
+                  </div>
+                </div>
+                <div class='feedtales-section'>
+                  <h3>
+                    <center class='feedtales-info'>See What Writers Have To Share ...</center>
+                    <br>
+                    <center>
+                      <a class='btn btn-md ' href='/publish.html'>Feedtales</a>
+                    </center>
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class='hero-content-body'>
+            <h1><center ><span id='postTitle'>`+mainPost_title+`</span></center></h1>
+            <h4><center><span id='postDate'></span>  <span id='postAuthor'></span></center></h4>
+            <center>
+              <div class='btn-group share-bar' role='group' aria-label='...'>
+                <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn facebook_share' target='_blank'><img src='../images/fb.png' class='share-icon-image'></a>
+                <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn' target='_blank'><img src='../images/tt.png' class='share-icon-image'></a>
+                <a href='#' class='btn pinterest-share' id=' target='_blank'><img src='../images/pp.png' class='share-icon-image'></a>
+                <a href='#' class='btn google-share' id=' target='_blank'><img src='../images/gp.png' class='share-icon-image'></a>            
+                <a href='#' class='btn tumblr-share' id=' target='_blank'><img src='../images/t.png' class='share-icon-image'></a>
+                <a href='whatsapp://send?text=encodeURIComponent(document.URL)' data-action='share/whatsapp/share' class='btn whatsapp-share'><img src='../images/wa.png' class='share-icon-image'></a>
+                <a href='#' class='btn email-share' id=' target='_blank'><img src='../images/em.png' class='share-icon-image'></a>
+                <a href='javascript:;' onclick='window.print()' class='btn print-share' id=' target='_blank'><img src='../images/pt.png' class='share-icon-image'></a>
+              </div>
+            </center>
+            <p id='postBody'>`
+            +mainPost_body+`
+            </p>
+            <center>
+              <div class='btn-group share-bar' role='group' aria-label='...'>      
+              <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn facebook_share' target='_blank'><img src='../images/fb.png' class='share-icon-image'></a>
+              <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn' target='_blank'><img src='../images/tt.png' class='share-icon-image'></a>
+              <a href='#' class='btn pinterest-share' id=' target='_blank'><img src='../images/pp.png' class='share-icon-image'></a>
+              <a href='#' class='btn google-share' id=' target='_blank'><img src='../images/gp.png' class='share-icon-image'></a>            
+              <a href='#' class='btn tumblr-share' id=' target='_blank'><img src='../images/t.png' class='share-icon-image'></a>
+              <a href='whatsapp://send?text=encodeURIComponent(document.URL)' data-action='share/whatsapp/share' class='btn whatsapp-share'><img src='../images/wa.png' class='share-icon-image'></a>
+              <a href='#' class='btn email-share' id=' target='_blank'><img src='../images/em.png' class='share-icon-image'></a>
+              <a href='javascript:;' onclick='window.print()' class='btn print-share' id=' target='_blank'><img src='../images/pt.png' class='share-icon-image'></a>
+            </div>
+          </center>
+        </div>
+      </div>
+    </div>
+  <script src='../js/jquery.js'></script>
+  <script src='../js/bootstrap.min.js'></script>
+  <script type='text/javascript' src='../js/moment.js'></script>
+  <script async src='//platform.twitter.com/widgets.js' charset='utf-8'></script>
+  <script>
+    function param(name) {//gets parameters from the url
+      return (location.search.split(name + '=')[1] || '').split('&')[0];
+    }
+    function getSubstring(string,size){
+      return string.length>size?(string.substring(0,size))+'...':string;
+    }
+    $(document).ready(function(){
+      console.log("hi");
+      $('#mainPostImage').attr('src','upload/'+data._id+'.jpg');
+      $('.facebook_share').prop('href','http://www.facebook.com/sharer/sharer.php?u='+window.location.href);
+      $('.google-share').prop('href','https://plus.google.com/share?url='+window.location.href);
+      $('.pinterest-share').prop('href','http://pinterest.com/pin/create/button/?url='+window.location.href+
+            '&media='+window.location.hostname+'/upload/'+data._id+'.jpg&description='+
+            data.title);
+      $('.tumblr-share').prop('href','https://tumblr.com/share/link?url='+window.location.href+'&amp;title='+data.title);
+      $('.email-share').prop('href','mailto:?Subject=Check out this&amp;Body=I%20saw%20this%20and%20thought%20to%20share%20with%20you%20 '+window.location.href);
+      });
+      $('.whatsapp-share').prop('href','whatsapp://send?text='+encodeURIComponent(document.location.href));
+    });
+  </body>
+</html>`;
+          res.send(html/*"<a href='"+image_url+"'>uhsbchuds</a>"*/);
+        });
+      }
+    });
+    db.close();
+  });
+ /* if(req.params.id==="1"){
+    res.redirect("/");
+  }else{
+    res.send(req.params.id);
+  }*/
+}
 
 exports.sendUserInfo = function(req,res){
     if(req.session.id){
