@@ -21,7 +21,7 @@
   <meta property="og:type"          content="website" />
   <meta property="og:title"         content="Feedcob" />
   <meta property="og:description"   content="New Post" />
-  <!-- <meta property="og:image"         content="https://murmuring-fortress-10024.herokuapp.com/images/fb-share-dialog.png" /> -->
+  <meta property="og:image"         content="https://murmuring-fortress-10024.herokuapp.com/images/fb-share-dialog.png" />
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -239,7 +239,8 @@
 		 $(".fbtag-title").attr("content",""+data.title);
 		 $(".fbtag-description").attr("content",""+data.body);
 		 $(".fbtag-image").attr("content","https://"+window.location.hostname+"upload/"+data._id+".jpg");
-     $('meta[property=og:image]').attr("content","https://"+window.location.hostname+"upload/"+data._id+".jpg");
+     var metaTags=$('meta');
+     $('meta[property="og:image"]').attr("content","https://"+window.location.hostname+"upload/"+data._id+".jpg");
 		 
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
           $(".facebook_share").prop("href","http://www.facebook.com/sharer/sharer.php?u="+window.location.href);
