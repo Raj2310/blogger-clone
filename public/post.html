@@ -240,7 +240,7 @@
 		 $(".fbtag-description").attr("content",""+data.body);
 		 $(".fbtag-image").attr("content","https://"+window.location.hostname+"upload/"+data._id+".jpg");
      var metaTags=$('meta');
-     $('meta[property="og:image"]').attr("content","https://"+window.location.hostname+"upload/"+data._id+".jpg");
+     $('meta[property="og:image"]').attr("content","https://"+window.location.hostname+"/upload/"+data._id+".jpg");
 		 
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
           $(".facebook_share").prop("href","http://www.facebook.com/sharer/sharer.php?u="+window.location.href);
