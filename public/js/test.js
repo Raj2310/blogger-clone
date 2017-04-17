@@ -1,4 +1,5 @@
  $(document).ready(function(){
+  $(".whatsapp-share").prop("href","whatsapp://send?text="+encodeURIComponent(document.location.href));
       $.get("/blogsAll/12", function(data, status){
         $.each(data, function(index, element) {
            var img_src="/upload/"+element._id+".jpg";
