@@ -36,7 +36,10 @@
    max-height: 400px;
   
 }
-
+#mainPostImage{
+  margin: auto;
+  max-width: 600px;
+}
 
 .similar-readings img{
   max-width: 250px;

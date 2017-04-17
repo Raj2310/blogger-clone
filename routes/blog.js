@@ -176,10 +176,10 @@ exports.individualPost=function(req,res){
     <meta property='og:description'   content='`+mainPost_body+`' />
     <meta property='og:image'         content='`+mainPost_image_url+`' /> 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@flickr" />
-    <meta name="twitter:title" content="Small Island Developing States Photo Submission" />
-    <meta name="twitter:description" content="View the album on Flickr." />
-    <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
+    <meta name="twitter:site" content="@Feedcob" />
+    <meta name="twitter:title" content="`+mainPost_title+`" />
+    <meta name="twitter:description" content="View the post on Feedcob." />
+    <meta name="twitter:image" content="`+mainPost_image_url+`" />
     <link rel='stylesheet' href='../css/bootstrap.min.css'>
     <link rel='stylesheet' href='../css/bootstrap-social.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
@@ -243,7 +243,7 @@ exports.individualPost=function(req,res){
           <div class='row'>
             <div class='col-md-8'>
               <img src='../images/heroFeedcob.png' class='banner'>
-              <img class='img-responsive' alt='Responsive image' src="`+mainPost_image_url+`" id='mainPostImage' onerror="this.onerror=null;this.src='https://placehold.it/800x400'"/>
+              
             </div>
             <div class='col-sm-4'>
               <div class='signup-section alert alert-dismissable'>
@@ -286,6 +286,7 @@ exports.individualPost=function(req,res){
               <a href='javascript:;' onclick='window.print()' class='btn btn-social-icon btn-reddit print-share' id=' target='_blank'><span class="fa fa-print"><span></a>
               </div>
             </center>
+            <img class='img-responsive' alt='Responsive image' src="`+mainPost_image_url+`" id='mainPostImage' onerror="this.onerror=null;this.src='https://placehold.it/800x400'"/>
             <p id='postBody'>`
             +mainPost_body+`
             </p>
