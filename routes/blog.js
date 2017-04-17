@@ -175,6 +175,11 @@ exports.individualPost=function(req,res){
     <meta property='og:title'         content='`+mainPost_title+`' />
     <meta property='og:description'   content='`+mainPost_body+`' />
     <meta property='og:image'         content='`+mainPost_image_url+`' /> 
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@flickr" />
+    <meta name="twitter:title" content="Small Island Developing States Photo Submission" />
+    <meta name="twitter:description" content="View the album on Flickr." />
+    <meta name="twitter:image" content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg" />
     <link rel='stylesheet' href='../css/bootstrap.min.css'>
     <link rel='stylesheet' href='../css/bootstrap-social.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>

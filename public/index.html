@@ -291,6 +291,7 @@
         }
         else{
           $(".hero").hide();
+          $(".feedtales-section").hide();
                var tag=param("tag");
                 $.get("/byTag/"+tag+"/"+0, function(data, status){
                     $.each(data, function(index, element) {
