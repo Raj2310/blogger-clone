@@ -124,6 +124,20 @@
   width:300px;
   font-size:20px;
 }
+.floating-share{
+  position:fixed;
+  bottom: 0;
+
+}
+.floating-share > div{
+  margin: auto;
+  text-align: center;
+}
+.floating-share img{
+   display: inline-block;
+    margin: auto;
+    z-index: 100;
+}
 /*#message {
     position: fixed;
     top: 100px;
@@ -133,7 +147,9 @@
 #inner-message {
     margin: 0 auto;
 }*/
-
+#suggestedPosts div{
+  z-index: -1;
+}
 body { padding-top: 70px; }
 .navbar li { color: #000 }
 @media screen and (min-width: 1200px) {

@@ -238,6 +238,17 @@ exports.individualPost=function(req,res){
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
+      <div class="floating-share visible-xs">
+        <div>
+       
+        <a href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`'><img src="../images/facebook-share-mobile.jpg"/></a>
+        <a href="https://twitter.com/intent/tweet" role='button' ><img src="../images/twitter-share-mobile.jpg"/></a>
+        <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
+              &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`'><img src="../images/pinterest-share-mobile.jpg"/></a>
+        <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share'><img src="../images/whatsapp-share-mobile.jpg"/></a>
+
+        </div>
+      </div>
       <div class='container-fluid'>
         <div class='hero-content'>
           <div class='row'>
@@ -274,15 +285,15 @@ exports.individualPost=function(req,res){
             <h1><center ><span id='postTitle'>`+mainPost_title+`</span></center></h1>
             <h4><center><span id='postDate'></span>  <span id='postAuthor'></span></center></h4>
             <center>
-              <div class='btn-group share-bar' role='group' aria-label='...'>      
+              <div class='btn-group share-bar hidden-xs' role='group' aria-label='...'>      
               <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-facebook facebook_share' target='_blank'><span class="fa fa-facebook-square"><span></a>
               <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn btn-social-icon btn-twitter' target='_blank'><span class="fa fa-twitter"><span></a>
               <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
-              &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`' class='btn btn-social-icon btn-pinterest pinterest-share' id=' target='_blank'><span class="fa fa-pinterest"><span></a>
-              <a href='https://plus.google.com/share?url=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-google google-share' id=' target='_blank'><span class="fa fa-google-plus"><span></a>            
-              <a href='https://tumblr.com/share/link?url=`+main_url+`/post/`+mainPost_id+`&amp;title=`+mainPost_title+`' class='btn btn-social-icon btn-tumblr tumblr-share' id=' target='_blank'><span class="fa fa-tumblr-square"><span></a>
+              &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`' class='btn btn-social-icon btn-pinterest pinterest-share'  target='_blank'><span class="fa fa-pinterest"><span></a>
+              <a href='https://plus.google.com/share?url=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-google google-share'  target='_blank'><span class="fa fa-google-plus"><span></a>            
+              <a href='https://tumblr.com/share/link?url=`+main_url+`/post/`+mainPost_id+`&amp;title=`+mainPost_title+`' class='btn btn-social-icon btn-tumblr tumblr-share'  target='_blank'><span class="fa fa-tumblr-square"><span></a>
               <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class='btn btn-social-icon btn-tumblr whatsapp-share'><span class="fa fa-whatsapp"><span></a>
-              <a href='mailto:?Subject=Check out this&amp;Body=I%20saw%20this%20and%20thought%20to%20share%20with%20you%20`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-linkedin email-share' id=' target='_blank'><span class="fa fa-envelope"><span></a>
+              <a href='mailto:?Subject=Check out this&amp;Body=I%20saw%20this%20and%20thought%20to%20share%20with%20you%20`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-linkedin email-share'  target='_blank'><span class="fa fa-envelope"><span></a>
               <a href='javascript:;' onclick='window.print()' class='btn btn-social-icon btn-reddit print-share' id=' target='_blank'><span class="fa fa-print"><span></a>
               </div>
             </center>
@@ -291,7 +302,7 @@ exports.individualPost=function(req,res){
             +mainPost_body+`
             </p>
             <center>
-              <div class='btn-group share-bar' role='group' aria-label='...'>      
+              <div class='btn-group share-bar hidden-xs' role='group' aria-label='...'>      
               <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-facebook facebook_share' target='_blank'><span class="fa fa-facebook-square"><span></a>
               <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn btn-social-icon btn-twitter' target='_blank'><span class="fa fa-twitter"><span></a>
               <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
