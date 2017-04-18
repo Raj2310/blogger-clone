@@ -285,7 +285,7 @@ exports.individualPost=function(req,res){
             <h1><center ><span id='postTitle'>`+mainPost_title+`</span></center></h1>
             <h4><center><span id='postDate'></span>  <span id='postAuthor'></span></center></h4>
             <center>
-              <div class='btn-group share-bar hidden-xs' role='group' aria-label='...'>      
+              <div class='btn-group share-bar ' role='group' aria-label='...'>      
               <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-facebook facebook_share' target='_blank'><span class="fa fa-facebook-square"><span></a>
               <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn btn-social-icon btn-twitter' target='_blank'><span class="fa fa-twitter"><span></a>
               <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
@@ -302,7 +302,7 @@ exports.individualPost=function(req,res){
             +mainPost_body+`
             </p>
             <center>
-              <div class='btn-group share-bar hidden-xs' role='group' aria-label='...'>      
+              <div class='btn-group share-bar ' role='group' aria-label='...'>      
               <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-facebook facebook_share' target='_blank'><span class="fa fa-facebook-square"><span></a>
               <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn btn-social-icon btn-twitter' target='_blank'><span class="fa fa-twitter"><span></a>
               <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
