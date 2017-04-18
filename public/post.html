@@ -5,11 +5,11 @@
   <meta charset="utf-8">
 
 	<!--Facebook meta tags-->
-	<meta class="fbtag-url" property="og:url"                content="#" />
+	<!-- <meta class="fbtag-url" property="og:url"                content="#" />
 	<meta class="fbtag-type" property="og:type"               content="Post" />
 	<meta class="fbtag-title" property="og:title"              content="#" />
 	<meta class="fbtag-description" property="og:description"        content="#" />
-	<meta class="fbtag-image" property="og:image"              content="#" />
+	<meta class="fbtag-image" property="og:image"              content="#" /> -->
 	<!--Facebook meta tags-->
   
   <title>Feedcob | Posts</title>
@@ -18,10 +18,10 @@
   <meta name="author" content="Feedcob">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:type"          content="website" />
+<!--   <meta property="og:type"          content="website" />
   <meta property="og:title"         content="Feedcob" />
   <meta property="og:description"   content="New Post" />
-  <meta property="og:image"         content="https://murmuring-fortress-10024.herokuapp.com/images/fb-share-dialog.png" />
+  <meta property="og:image"         content="https://murmuring-fortress-10024.herokuapp.com/images/fb-share-dialog.png" /> -->
 
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -254,6 +254,8 @@ window.fbAsyncInit = function() {
 		 $(".fbtag-title").attr("content",""+data.title);
 		 $(".fbtag-description").attr("content",""+data.body);
 		 $(".fbtag-image").attr("content","https://"+window.location.hostname+"upload/"+data._id+".jpg");
+     var metaTags=$('meta');
+     $('meta[property="og:image"]').attr("content","https://"+window.location.hostname+"/upload/"+data._id+".jpg");
 		 
           $("#mainPostImage").attr("src","upload/"+data._id+".jpg");
 		  
@@ -282,13 +284,13 @@ window.fbAsyncInit = function() {
            var img_src="/upload/"+element._id+".jpg";
                   var alt_img_src="https://placehold.it/350x150";
               var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
-               $("#suggestedPosts").append("<a href='/post.html?id="+element._id+"'>"+
+               $("#suggestedPosts").append("<a href='/post/"+element._id+"'>"+
                 "   <div class='col-sm-3 col-md-2'>"+
                           "<div class='thumbnail posttile'>"+
                         "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                           "<div class='caption' style='word-wrap:break-word;'>"+
                           "<p>"+moment(element.date).format('MMMM Do YYYY')+"</p>"+
-                          "<h4><a href='post.html?id="+element._id+"'>"+element.title+
+                          "<h4><a href='post/"+element._id+"'>"+element.title+
                           "</a></h4>"+
                           /*"<p>"+getSubstring(element.body,50)+"</p>"+*/
                           "</div>"+

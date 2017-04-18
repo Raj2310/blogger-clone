@@ -140,6 +140,7 @@ app.post('/newsletterSignup',blog.newsletterSignup);
 app.post('/signup',blog.newUserSignup);
 //app.put('/blog/:id', blog.updateblog);
 app.get('/userinfo',blog.sendUserInfo);
+app.get('/post/:id',blog.individualPost);
 app.get('/dashboard',blog.authorDashboard);
 app.get('/adminBlogs',blog.adminBlogs);
 app.get('/admin/editPost/:id',blog.editPost);
