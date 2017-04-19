@@ -286,7 +286,7 @@ exports.individualPost=function(req,res){
         <h1><center ><span id='postTitle'>`+mainPost_title+`</span></center></h1>
         <h4><center><span id='postDate'></span>  <span id='postAuthor'></span></center></h4>
         <center>
-          <div class='btn-group share-bar ' role='group' aria-label='...'>      
+          <div class='btn-group share-bar below' role='group' aria-label='...'>      
             <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-facebook facebook_share' target='_blank'><span class="fa fa-facebook-square"></span></a>
             <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn btn-social-icon btn-twitter' target='_blank'><span class="fa fa-twitter"></span></a>
             <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
@@ -298,25 +298,25 @@ exports.individualPost=function(req,res){
             <a href='javascript:;' onclick='window.print()' class='btn btn-social-icon btn-reddit print-share' id=' target='_blank'><span class="fa fa-print"></span></a>
           </div>
         </center>
-        <img class='img-responsive' alt='Responsive image' src="`+mainPost_image_url+`" id='mainPostImage' onerror="this.onerror=null;this.src='https://placehold.it/800x400'"/>  
-        <div class="row mainPostContent">
-          <div class="col-md-12  col-lg-10 col-lg-offset-1 col-sm-12  col-xs-12">
-            <p id='postBody'>`
+        <img class='img-responsive below' alt='Responsive image' src="`+mainPost_image_url+`" id='mainPostImage' onerror="this.onerror=null;this.src='https://placehold.it/800x400'"/>  
+        <div class="row mainPostContent below">
+          <div class="below col-md-12  col-lg-10 col-lg-offset-1 col-sm-12  col-xs-12">
+            <p id='postBody below'>`
               +mainPost_body+`
             </p>
           </div>
         </div>
         <center>
-          <div class='btn-group share-bar ' role='group' aria-label='...'>      
-            <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-facebook facebook_share' target='_blank'><span class="fa fa-facebook-square"></span></a>
-            <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn btn-social-icon btn-twitter' target='_blank'><span class="fa fa-twitter"></span></a>
+          <div class='btn-group share-bar below' role='group' aria-label='...'>      
+            <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='below btn btn-social-icon btn-facebook facebook_share' target='_blank'><span class="fa fa-facebook-square"></span></a>
+            <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn btn-social-icon btn-twitter below' target='_blank'><span class="fa fa-twitter"></span></a>
             <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
-            &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`' class='btn btn-social-icon btn-pinterest pinterest-share'  target='_blank'><span class="fa fa-pinterest"></span></a>
-            <a href='https://plus.google.com/share?url=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-google google-share'  target='_blank'><span class="fa fa-google-plus"></span></a>            
-            <a href='https://tumblr.com/share/link?url=`+main_url+`/post/`+mainPost_id+`&amp;title=`+mainPost_title+`' class='btn btn-social-icon btn-tumblr tumblr-share'  target='_blank'><span class="fa fa-tumblr-square"></span></a>
-            <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class='btn btn-social-icon btn-tumblr whatsapp-share'><span class="fa fa-whatsapp"></span></a>
-            <a href='mailto:?Subject=Check out this&amp;Body=I%20saw%20this%20and%20thought%20to%20share%20with%20you%20`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-linkedin email-share'  target='_blank'><span class="fa fa-envelope"></span></a>
-            <a href='javascript:;' onclick='window.print()' class='btn btn-social-icon btn-reddit print-share' id=' target='_blank'><span class="fa fa-print"></span></a>
+            &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`' class='below btn btn-social-icon btn-pinterest pinterest-share'  target='_blank'><span class="fa fa-pinterest"></span></a>
+            <a href='https://plus.google.com/share?url=`+main_url+`/post/`+mainPost_id+`' class='below btn btn-social-icon btn-google google-share'  target='_blank'><span class="fa fa-google-plus"></span></a>            
+            <a href='https://tumblr.com/share/link?url=`+main_url+`/post/`+mainPost_id+`&amp;title=`+mainPost_title+`' class='below btn btn-social-icon btn-tumblr tumblr-share'  target='_blank'><span class="fa fa-tumblr-square"></span></a>
+            <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class='below btn btn-social-icon btn-tumblr whatsapp-share below'><span class="fa fa-whatsapp"></span></a>
+            <a href='mailto:?Subject=Check out this&amp;Body=I%20saw%20this%20and%20thought%20to%20share%20with%20you%20`+main_url+`/post/`+mainPost_id+`' class='below btn btn-social-icon btn-linkedin email-share'  target='_blank'><span class="fa fa-envelope"></span></a>
+            <a href='javascript:;' onclick='window.print()' class='btn btn-social-icon btn-reddit print-share below' id=' target='_blank'><span class="fa fa-print below"></span></a>
           </div>
         </center>
       </div>
@@ -324,15 +324,15 @@ exports.individualPost=function(req,res){
       <br/>
       <br/>
       <hr class='below-editor-pick'/>
-      <div class='hero-content'>
+      <div class='hero-content  below'>
 
-      <div class='main-outer-container'>
-        <div id="suggestedPosts">
+      <div class='main-outer-container below'>
+        <div id="suggestedPosts below">
         <h2><center><span class='label label-default'>Similar Readings</span></center></h2>
         </div>
         <a href='/blogs.html' class='btn btn-success pull-right space-bottom-20' >See All Posts</a>
       </div>
-      
+
     </div>
     <script src='../js/jquery.js'></script>
     <script src='../js/bootstrap.min.js'></script>

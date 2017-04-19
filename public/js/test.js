@@ -6,8 +6,8 @@
                   var alt_img_src="https://placehold.it/350x150";
               var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
                $("#suggestedPosts").append("<a href='/post/"+element._id+"'>"+
-                "   <div class='col-sm-3 col-md-2'>"+
-                          "<div class='thumbnail posttile'><a href='/post/"+element._id+"'>"+
+                "   <div class='col-sm-3 col-md-2 below'>"+
+                          "<div class='thumbnail posttile below'><a href='/post/"+element._id+"'>"+
                         "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                           "<div class='caption' style='word-wrap:break-word;'>"+
                           "<p class='date-style'>"+moment(element.date).format('MMMM Do YYYY')+"</p>"+

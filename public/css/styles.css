@@ -32,6 +32,9 @@
   word-spacing: 10px;
   font-size: 20px;
 }
+.below{
+  z-index: -1;
+}
 .hero-content img{
    max-height: 400px;
   
