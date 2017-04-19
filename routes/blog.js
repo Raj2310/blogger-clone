@@ -327,7 +327,7 @@ exports.individualPost=function(req,res){
       <div class='hero-content  below'>
 
       <div class='main-outer-container below'>
-        <div id="suggestedPosts below">
+        <div id="suggestedPosts">
         <h2><center><span class='label label-default'>Similar Readings</span></center></h2>
         </div>
         <a href='/blogs.html' class='btn btn-success pull-right space-bottom-20' >See All Posts</a>
