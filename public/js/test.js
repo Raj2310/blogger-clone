@@ -7,7 +7,7 @@
               var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/90x130\";'"
                $("#suggestedPosts").append("<a href='/post/"+element._id+"'>"+
                 "   <div class='col-sm-3 col-md-2 below'>"+
-                          "<div class='thumbnail posttile below'><a href='/post/"+element._id+"'>"+
+                          "<div class='thumbnail posttile below'>"+
                         "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                           "<div class='caption' style='word-wrap:break-word;'>"+
                           "<p class='date-style'>"+moment(element.date).format('MMMM Do YYYY')+"</p>"+
@@ -15,7 +15,7 @@
                           "</h4>"+
                           /*"<p>"+getSubstring(element.body,50)+"</p>"+*/
                           "</div>"+
-                          "</div></a>"+
+                          "</div>"+
                           "</div></a>");
         });
       });

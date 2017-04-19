@@ -332,7 +332,7 @@ exports.individualPost=function(req,res){
         </div>
         <a href='/blogs.html' class='btn btn-success pull-right space-bottom-20' >See All Posts</a>
       </div>
-
+      
     </div>
     <script src='../js/jquery.js'></script>
     <script src='../js/bootstrap.min.js'></script>
