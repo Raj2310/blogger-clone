@@ -178,7 +178,7 @@ exports.individualPost=function(req,res){
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@Feedcob" />
     <meta name="twitter:title" content="`+mainPost_title+`" />
-    <!--<meta name="twitter:description" content="View the post on Feedcob." />-->
+    <meta name="twitter:description" content="View the post on Feedcob." />
     <meta name="twitter:image" content="`+mainPost_image_url+`" />
     <link rel='stylesheet' href='../css/bootstrap.min.css'>
     <link rel='stylesheet' href='../css/bootstrap-social.css'>
@@ -332,7 +332,7 @@ exports.individualPost=function(req,res){
         </div>
         <a href='/blogs.html' class='btn btn-success pull-right space-bottom-20' >See All Posts</a>
       </div>
-      
+
     </div>
     <script src='../js/jquery.js'></script>
     <script src='../js/bootstrap.min.js'></script>
