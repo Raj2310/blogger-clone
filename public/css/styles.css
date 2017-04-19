@@ -211,8 +211,11 @@ body { padding-top: 70px; }
 #postBody{
 	margin-top:20px;
 	margin-bottom:20px;
+  
 }
-
+.mainPostContent{
+  overflow-x: auto;
+}
 .fb-like span,iframe{
 	width:300px !important;
 }
