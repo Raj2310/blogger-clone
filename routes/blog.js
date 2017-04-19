@@ -245,7 +245,7 @@ exports.individualPost=function(req,res){
         <a href="https://twitter.com/intent/tweet" role='button' ><img src="../images/twitter-share-mobile.jpg"/></a>
         <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
               &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`'><img src="../images/pinterest-share-mobile.jpg"/></a>
-        <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share'><img src="../images/whatsapp-share-mobile.jpg"/></a>
+        <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class="whatsapp-share"><img src="../images/whatsapp-share-mobile.jpg"/></a>
 
         </div>
       </div>
