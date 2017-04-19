@@ -598,8 +598,7 @@ exports.updateBlog = function(req, res) {
         if(err1){
           console.log("err1"+err1);
         }
-		
-         collection.update({_id:objectId(id)}, blog, {safe:true}, function(err, result) {
+          collection.update({_id:objectId(id)}, blog, {safe:true}, function(err, result) {
               if (err) {
                   console.log('Error updating blog: ' + err);
                   res.send({'error':'An error has occurred'});
@@ -675,7 +674,7 @@ exports.authorDashboard = function(req,res){
                  res.send({status:0})
               }
               else{
-                //console.log(items);
+                console.log(items);
                 res.send({status:1,blogs:items});
               }
              
@@ -753,7 +752,7 @@ function getAllBlogs(callback){
         }
         else {
           collection.find({}).sort('date', -1).toArray(function(err, items) {
-            //console.log(items);
+            console.log(items);
               callback(items);
           });
         }
@@ -769,7 +768,7 @@ function getUserBlogs(userid,callback){
         }
         else {
           collection.find({"author.id":userid.toString()}).toArray(function(err, items) {
-            //console.log(items);
+            console.log(items);
               callback(items);
           });
         }
