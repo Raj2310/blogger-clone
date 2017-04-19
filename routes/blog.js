@@ -242,7 +242,8 @@ exports.individualPost=function(req,res){
         <div>
        
         <a href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`'><img src="../images/facebook-share-mobile.jpg"/></a>
-        <a href="https://twitter.com/intent/tweet" role='button' ><img src="../images/twitter-share-mobile.jpg"/></a>
+        <a href="http://twitter.com/share?text=New post On Feedcob &url=`+main_url+`/post/`+mainPost_id+`
+" role='button' ><img src="../images/twitter-share-mobile.jpg"/></a>
         <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
               &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`'><img src="../images/pinterest-share-mobile.jpg"/></a>
         <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class="whatsapp-share"><img src="../images/whatsapp-share-mobile.jpg"/></a>
