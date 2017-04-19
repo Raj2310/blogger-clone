@@ -74,7 +74,7 @@
   padding: 0px!important;
 }
 .arial-font{
-  font-family: uni sans;
+  font-family: Tahoma;
   font-size: 17px;
   font-weight: bold;
 }
@@ -118,7 +118,7 @@
   background-color: #fec200;
   color: black;
   font-family:Comic Sans MS;
-  width:300px;
+  width:90%;
   font-size:20px;
 }
 /*#message {
@@ -162,7 +162,7 @@ body { padding-top: 70px; }
 	}
 	body{
 		
-		width:400px;
+		/*width:400px;*/
 	}
 	
 } 
@@ -203,5 +203,9 @@ body { padding-top: 70px; }
 }
 
 #postBody iframe{
-	
+	width:100%;
+}
+
+#mainPostImage{
+	width:80%;
 }
