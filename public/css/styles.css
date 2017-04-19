@@ -94,7 +94,7 @@
 	padding:0 0 0 0;
 }
 .share-icon-image{
-  height: 40px;
+  height: 40px !important;
 }
 .signup-section .upper-form{
   background-color: #fec200; 
@@ -126,17 +126,20 @@
 }
 .floating-share{
   position:fixed;
-  bottom: 0;
+  z-index:100;
+  width:10px;
+  top: 260px;
 
 }
 .floating-share > div{
-  margin: auto;
-  text-align: center;
+  /*margin: auto;
+  text-align: center;*/
 }
 .floating-share img{
-   display: inline-block;
+    /*display: inline-block;
     margin: auto;
-    z-index: 100;
+    z-index: 100;*/
+	height:35px;
 }
 /*#message {
     position: fixed;

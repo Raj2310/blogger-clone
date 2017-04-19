@@ -147,7 +147,7 @@ exports.individualPost=function(req,res){
         collection.findOne({_id:objectId(id)}, function(err, item) {
           //console.log(item);
           const mainPost_id=item._id;
-          const mainPost_image_url="http://murmuring-fortress-10024.herokuapp.com/upload/"+item._id+".jpg";
+          const mainPost_image_url="/upload/"+item._id+".jpg";
           const mainPost_title=item.title;
           const mainPost_body=item.body;
           const mainPost_date=item.date;
@@ -239,7 +239,7 @@ exports.individualPost=function(req,res){
         </div><!-- /.container-fluid -->
       </nav>
       <div class="floating-share visible-xs">
-        <div>
+        
        
         <a href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`'><img src="../images/facebook-share-mobile.jpg"/></a>
         <a href="http://twitter.com/share?text=New post On Feedcob &url=`+main_url+`/post/`+mainPost_id+`
@@ -248,7 +248,7 @@ exports.individualPost=function(req,res){
               &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`'><img src="../images/pinterest-share-mobile.jpg"/></a>
         <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class="whatsapp-share"><img src="../images/whatsapp-share-mobile.jpg"/></a>
 
-        </div>
+        
       </div>
     <div>
       <div class='hero-content-body'>
@@ -295,11 +295,10 @@ exports.individualPost=function(req,res){
             <a href='https://plus.google.com/share?url=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-google google-share'  target='_blank'><span class="fa fa-google-plus"></span></a>            
             <a href='https://tumblr.com/share/link?url=`+main_url+`/post/`+mainPost_id+`&amp;title=`+mainPost_title+`' class='btn btn-social-icon btn-tumblr tumblr-share'  target='_blank'><span class="fa fa-tumblr-square"></span></a>
             <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class='btn btn-social-icon btn-tumblr whatsapp-share'><span class="fa fa-whatsapp"></span></a>
-            <a href='mailto:?Subject=Check out this&amp;Body=I%20saw%20this%20and%20thought%20to%20share%20with%20you%20`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-linkedin email-share'  target='_blank'><span class="fa fa-envelope"></span></a>
-            <a href='javascript:;' onclick='window.print()' class='btn btn-social-icon btn-reddit print-share' id=' target='_blank'><span class="fa fa-print"></span></a>
+            
           </div>
         </center>
-        <img class='img-responsive below' alt='Responsive image' src="`+mainPost_image_url+`" id='mainPostImage' onerror="this.onerror=null;this.src='https://placehold.it/800x400'"/>  
+        <img class='img-responsive below' alt='Responsive image' src="`+mainPost_image_url+`" id='mainPostImage' onerror="this.onerror=null;this.src='https://placehold.it/800x400'" >  
         <div class="row mainPostContent below">
           <div class="below col-md-12  col-lg-10 col-lg-offset-1 col-sm-12  col-xs-12">
             <p id='postBody below'>`
@@ -316,8 +315,7 @@ exports.individualPost=function(req,res){
             <a href='https://plus.google.com/share?url=`+main_url+`/post/`+mainPost_id+`' class='below btn btn-social-icon btn-google google-share'  target='_blank'><span class="fa fa-google-plus"></span></a>            
             <a href='https://tumblr.com/share/link?url=`+main_url+`/post/`+mainPost_id+`&amp;title=`+mainPost_title+`' class='below btn btn-social-icon btn-tumblr tumblr-share'  target='_blank'><span class="fa fa-tumblr-square"></span></a>
             <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class='below btn btn-social-icon btn-tumblr whatsapp-share below'><span class="fa fa-whatsapp"></span></a>
-            <a href='mailto:?Subject=Check out this&amp;Body=I%20saw%20this%20and%20thought%20to%20share%20with%20you%20`+main_url+`/post/`+mainPost_id+`' class='below btn btn-social-icon btn-linkedin email-share'  target='_blank'><span class="fa fa-envelope"></span></a>
-            <a href='javascript:;' onclick='window.print()' class='btn btn-social-icon btn-reddit print-share below' id=' target='_blank'><span class="fa fa-print below"></span></a>
+            
           </div>
         </center>
       </div>
@@ -335,6 +333,34 @@ exports.individualPost=function(req,res){
       </div>
 
     </div>
+	
+	<div class="main-outer-container container-fluid" style="border-top-width:0px">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+          
+          <center>GOSSIPS.TRENDING.HUMOR</center>
+          <div>
+            <center>
+            <a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+            <a href="https://twitter.com/Feedcobofficial" target="_blank"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+			<a href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a>
+			<a href="https://www.instagram.com/feedcob/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+            </center>
+          <div>
+          <div>
+            <center><a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+         <div class="col-lg-4 col-md-3 col-sm-2 col-xs-12">
+          <div class="fb-like" data-href="https://www.feedcob.com/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
     <script src='../js/jquery.js'></script>
     <script src='../js/bootstrap.min.js'></script>
     <script src="../js/test.js"></script>
