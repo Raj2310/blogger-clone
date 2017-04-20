@@ -121,7 +121,7 @@
   background-color: #fec200;
   color: black;
   font-family:Comic Sans MS;
-  width:300px;
+  width:80%;
   font-size:20px;
 }
 .floating-share{
@@ -129,7 +129,7 @@
   z-index:100;
   width:10px;
   top: 260px;
-
+  left:0px;	
 }
 .floating-share > div{
   /*margin: auto;
@@ -227,7 +227,12 @@ body { padding-top: 70px; }
 .carousel-inner .item img{
 	width:100%;
 	height: 250px;
-	max-height: 250px
+	max-height: 250px;
+	filter: blur(1px);
+}
+.carousel-caption h3{
+	background-color:#e8edf4;
+	opacity:0.9;
 }
 
 #postBody iframe{

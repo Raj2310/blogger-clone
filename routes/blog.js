@@ -194,8 +194,8 @@ exports.individualPost=function(req,res){
       js.src = '//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=124336507997973';
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-    <div class='main-outer-container'>
-      <nav class='arial-font navbar navbar-default navbar-fixed-top tranparent-background reduce-margin-bottom'>
+    <div class='main-outer-container container-fluid'>
+      <nav class='arial-font navbar navbar-default navbar-fixed-top reduce-margin-bottom'>
         <div class='container-fluid'>
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class='navbar-header'>
@@ -253,7 +253,7 @@ exports.individualPost=function(req,res){
     <div>
       <div class='hero-content-body'>
         <div class='hero-content'>
-        <div class='row'>
+        <div class=''>
             <div class='col-md-8'>
               <img src='../images/heroFeedcob.png' class='banner'>
               

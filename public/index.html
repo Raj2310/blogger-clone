@@ -234,7 +234,7 @@
                   $.each(data.blog,function(index,element){
 				  var img_src="/upload/"+element._id+".jpg";
                   var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/870x300\";'"
-				  $(".carousel-inner").append("<div class='item'><a href='post/"+element._id+"'><img src='"+img_src+"'"+on_error_string+" alt=''><div class='carousel-caption'><h3 style='color:black' class='bg-success'>"+element.title+"</h3></div></a></div>");				  
+				  $(".carousel-inner").append("<div class='item'><a href='post/"+element._id+"'><img src='"+img_src+"'"+on_error_string+" alt=''><div class='carousel-caption'><h3 style='color:black'>"+element.title+"</h3></div></a></div>");				  
                   });
                   $(".carousel-inner .item:first-child").addClass("active");
                    
