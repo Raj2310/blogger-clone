@@ -157,13 +157,7 @@ exports.individualPost=function(req,res){
 <html lang='en'>
   <head>
     <meta charset='utf-8'>
-    <!--Facebook meta tags-->
-    <!-- <meta class='fbtag-url' property='og:url'                content='#' />
-    <meta class='fbtag-type' property='og:type'               content='Post' />
-    <meta class='fbtag-title' property='og:title'              content='#' />
-    <meta class='fbtag-description' property='og:description'        content='#' />
-    <meta class='fbtag-image' property='og:image'              content='#' /> -->
-    <!--Facebook meta tags-->
+    
     
     <title>Feedcob | Posts</title>
     <link rel='icon' href='../images/logo.png' type='image/gif'>
@@ -173,7 +167,7 @@ exports.individualPost=function(req,res){
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <meta property='og:type'          content='website' />
     <meta property='og:title'         content='`+mainPost_title+`' />
-    <!--<meta property='og:description'   content='`+mainPost_body+`' />-->
+    
     <meta property='og:image'         content='`+mainPost_image_url+`' /> 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@Feedcob" />
@@ -197,7 +191,7 @@ exports.individualPost=function(req,res){
     <div class='main-outer-container container-fluid'>
       <nav class='arial-font navbar navbar-default navbar-fixed-top reduce-margin-bottom'>
         <div class='container-fluid'>
-          <!-- Brand and toggle get grouped for better mobile display -->
+          
           <div class='navbar-header'>
             <a class='navbar-brand no-padding' href='/'>
               <img alt='Brand' class='logo-image ' src='../images/logo.png'>
@@ -208,12 +202,11 @@ exports.individualPost=function(req,res){
               <span class='icon-bar'></span>
               <span class='icon-bar'></span>
             </button>
-            <!--  <a class='navbar-brand' href='#'>Brand</a> -->
           </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
+         
           <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
             <ul class='nav navbar-nav'>
-            <!-- <li><a href='/'>Home</a></li> -->
+            
               <li><a href='/?tag=trend_feed' class='text-uppercase reduce-padding-right'>TrendFeed</a></li>
               <li><a href='/?tag=gossip' class='text-uppercase reduce-padding-right'>Gossips</a></li>
               <li><a href='/?tag=this_is_desi' class='text-uppercase reduce-padding-right'>DesiFeed</a></li>
@@ -235,8 +228,8 @@ exports.individualPost=function(req,res){
               <li><a href='https://plus.google.com/u/2/102020403779099888425' target='_blank'><img src='../images/ngp.png' class='nav-icon-image'></a></li>
               <li><a href='https://www.instagram.com/feedcob/' target='_blank'><img src='../images/nig.png' class='nav-icon-image'></a></li>      
             </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+          </div>
+        </div>
       </nav>
       <div class="floating-share visible-xs">
         
