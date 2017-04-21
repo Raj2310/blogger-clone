@@ -217,7 +217,7 @@ body { padding-top: 70px; }
   
 }
 .mainPostContent{
-  overflow-x: auto;
+  word-wrap:break-word;
 }
 .fb-like span,iframe{
 	width:300px !important;
