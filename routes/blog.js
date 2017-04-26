@@ -783,7 +783,7 @@ function sendMailForNewPost(id,title){
 }
 function mailer(email,text,sub){
   var transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    service: 'Godaddy',
     auth: {
       user: 'publicdesk@feedcob.com', // Your email id
       pass: 'S1H9A0Y3@17' // Your password
