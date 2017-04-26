@@ -189,48 +189,53 @@ exports.individualPost=function(req,res){
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     <div class='main-outer-container container-fluid'>
-      <nav class='arial-font navbar navbar-default navbar-fixed-top reduce-margin-bottom'>
-        <div class='container-fluid'>
-          
-          <div class='navbar-header'>
-            <a class='navbar-brand no-padding' href='/'>
-              <img alt='Brand' class='logo-image ' src='../images/logo.png'>
-            </a>
-            <button type='button' class='navbar-toggle collapsed' data-toggle='collapse'  data-target='#bs-example-navbar-collapse-1' aria-expanded='false'>
-              <span class='sr-only'>Toggle navigation</span>
-              <span class='icon-bar'></span>
-              <span class='icon-bar'></span>
-              <span class='icon-bar'></span>
-            </button>
-          </div>
-         
-          <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
-            <ul class='nav navbar-nav'>
-            
-              <li><a href='/?tag=trend_feed' class='text-uppercase reduce-padding-right'>TrendFeed</a></li>
-              <li><a href='/?tag=gossip' class='text-uppercase reduce-padding-right'>Gossips</a></li>
-              <li><a href='/?tag=this_is_desi' class='text-uppercase reduce-padding-right'>DesiFeed</a></li>
-               <li><a href='/?tag=hera_pheri' class='text-uppercase reduce-padding-right'>HeraPheri</a></li>
-              <li><a href='/?tag=feed_more' class='text-uppercase reduce-padding-right'>FeedMore</a></li>
-              <li><a href='/publish.html' class='text-uppercase reduce-padding-right'>FeedTales</a></li>    
-            </ul>
-            <div class='navbar-form navbar-left'>
-              <form method="get" action="../blogs.html">
-              <div class='form-group'>
-                <input type='text' name="search" class='form-control' id='searchBar' placeholder='Search'>
-              </div>
-              <button  class='btn btn-default' type="submit">Go</button>
-              </form>
-            </div>
-            <ul class='nav navbar-nav navbar-right'>  
-              <li><a href='https://www.facebook.com/Feedcob-766691663508464/' target='_blank'><img src='../images/nfb.png' class='nav-icon-image'></span></a></li>
-              <li><a href='https://twitter.com/Feedcobofficial' target='_blank'><img src='../images/ntt.png'class='nav-icon-image'></span></a></li>
-              <li><a href='https://plus.google.com/u/2/102020403779099888425' target='_blank'><img src='../images/ngp.png' class='nav-icon-image'></a></li>
-              <li><a href='https://www.instagram.com/feedcob/' target='_blank'><img src='../images/nig.png' class='nav-icon-image'></a></li>      
-            </ul>
-          </div>
+      <nav class="arial-font navbar navbar-default navbar-fixed-top"">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+        <a class="navbar-brand no-padding" href="/">
+          <img alt="Brand" class="logo-image " src="../images/logo.png">
+        </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+         <!--  <a class="navbar-brand" href="#">Brand</a> -->
         </div>
-      </nav>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+          <!-- <li><a href="/">Home</a></li> -->
+            <li><a href="/?tag=trend_feed" class="text-uppercase reduce-padding-right">TrendFeed</a></li>
+            <li><a href="/?tag=gossip" class="text-uppercase reduce-padding-right">Gossips</a></li>
+            <li><a href="/?tag=this_is_desi" class="text-uppercase reduce-padding-right">DesiFeed</a></li>
+             <li><a href="/?tag=hera_pheri" class="text-uppercase reduce-padding-right">HeraPheri</a></li>
+            <li><a href="/?tag=wtf_i_go" class="text-uppercase reduce-padding-right">FeedMore</a></li>
+            <li><a href="../publish.html" class="text-uppercase reduce-padding-right">FeedTales</a></li>
+            
+          </ul>
+          <div class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" id="searchBar" placeholder="Search">
+            </div>
+            <a id="searchBtn" class="btn btn-default">Go</a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+
+            
+            <li><a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="../images/nfb.png" class="nav-icon-image"></span></a></li>
+            <li><a href="https://twitter.com/Feedcobofficial" target="_blank"><img src="../images/ntt.png"class="nav-icon-image"></span></a></li>
+            <li><a href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="../images/ngp.png" class="nav-icon-image"></a></li>
+            <li><a href="https://www.instagram.com/feedcob/" target="_blank"><img src="../images/nig.png" class="nav-icon-image"></a></li>
+
+            
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+    </nav>
       <div class="floating-share visible-xs">
         
        
@@ -243,75 +248,87 @@ exports.individualPost=function(req,res){
 
         
       </div>
-    <div>
-      <div class='hero-content-body'>
-        <div class='hero-content'>
-        <div class=''>
+    
+        
+      
             <div class='col-md-8'>
               <img src='../images/heroFeedcob.png' class='banner'>
               
             </div>
-            <div class='col-sm-4'>
-              <div class='signup-section alert alert-dismissable'>
-                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                <div class='upper-form'>
-                  <center>
-                    <h3>
-                      SIGNUP TO OUR NEWSLETTER
-                    </h3>
-                  </center>
-                  <center class='comic-font white'>
-                    Get weekly stories & more
-                  </center>
-                  <h2>
-                    <center class='comic-font white inyourmailbox'>
-                      IN YOUR MAILBOX!
-                    </center>
-                  </h2>
-                  <div class='input-group'>
-                    <input type='text' class='form-control' placeholder='Email (email@example.com)' aria-describedby='basic-addon2'>
-                    <span class='input-group-addon feedme-button' id='basic-addon2' onClick='submitNewsletterRequest()'>Feedme</span>
-                  </div>
-                </div>
+            <div class="col-sm-4">
+          <div class="signup-section alert alert-dismissable row">
+		  <center>
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <div class="upper-form">
+			<center>
+              <h3>
+                SIGNUP TO OUR NEWSLETTER
+              </h3>
+			  </center>
+              <center><div class="comic-font white">
+                Get weekly stories & more
+              </div></center>
+              
+                <center><div class="comic-font white inyourmailbox">
+                  IN YOUR MAILBOX!
+				  </div>
+                </center>
+              
+              <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter your email" aria-describedby="basic-addon2">
+                  <span class="input-group-addon feedme-button" id="basic-addon2" onClick='submitNewsletterRequest()'>Feedme</span>
               </div>
             </div>
+            <div class="feedtales-section">
+              
+                <center><div class="feedtales-info">See What Writers Have To Share ...</div></center>
+
+                <center>
+                    <a class="btn btn-md " href="/publish.html">Feedtales</a>
+                </center>
+              
+            </div>
+			</center>
           </div>
+		  
+        </div>
           
-        <h1><center ><span id='postTitle'>`+mainPost_title+`</span></center></h1>
-        <h4><center><span id='postDate'></span>  <span id='postAuthor'></span></center></h4>
+        </div>  
+        <h1><center><div id='postTitle'>`+mainPost_title+`</div></center></h1>
         <center>
-          <div class='btn-group share-bar below' role='group' aria-label='...'>      
-            <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-facebook facebook_share' target='_blank'><span class="fa fa-facebook-square"></span></a>
-            <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn btn-social-icon btn-twitter' target='_blank'><span class="fa fa-twitter"></span></a>
+          <div class='btn-group share-bar' role='group' aria-label='...'>      
+            <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn facebook_share' target='_blank'><img src="../images/fb.png" class="share-icon-image"></a>
+            <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn' target='_blank'><img src="../images/tt.png" class="share-icon-image"></a>
             <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
-            &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`' class='btn btn-social-icon btn-pinterest pinterest-share'  target='_blank'><span class="fa fa-pinterest"></span></a>
-            <a href='https://plus.google.com/share?url=`+main_url+`/post/`+mainPost_id+`' class='btn btn-social-icon btn-google google-share'  target='_blank'><span class="fa fa-google-plus"></span></a>            
-            <a href='https://tumblr.com/share/link?url=`+main_url+`/post/`+mainPost_id+`&amp;title=`+mainPost_title+`' class='btn btn-social-icon btn-tumblr tumblr-share'  target='_blank'><span class="fa fa-tumblr-square"></span></a>
-            <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class='btn btn-social-icon btn-tumblr whatsapp-share'><span class="fa fa-whatsapp"></span></a>
+            &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`' class='btn pinterest-share'  target='_blank'><img src="../images/pp.png" class="share-icon-image"></a>
+            <a href='https://plus.google.com/share?url=`+main_url+`/post/`+mainPost_id+`' class='btn google-share'  target='_blank'><img src="../images/gp.png" class="share-icon-image"></a>         
+            <a href='https://tumblr.com/share/link?url=`+main_url+`/post/`+mainPost_id+`&amp;title=`+mainPost_title+`' class='btn tumblr-share'  target='_blank'><img src="../images/t.png" class="share-icon-image"></a>
+            <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class='btn whatsapp-share'><img src="../images/wa.png" class="share-icon-image"></a>
             
           </div>
         </center>
-        <img class='img-responsive below' alt='Responsive image' src="`+mainPost_image_url+`" id='mainPostImage' onerror="this.onerror=null;this.src='https://placehold.it/800x400'" >  
-        <div class="row mainPostContent below">
-          <div class="below col-md-12  col-lg-10 col-lg-offset-1 col-sm-12  col-xs-12">
-            <p id='postBody below'>`
+		<br>
+        <img class='img-responsive ' alt='Responsive image' src="`+mainPost_image_url+`" id='mainPostImage' onerror="this.onerror=null;this.src='https://placehold.it/800x400'" >  
+        <div class="mainPostContent ">
+          <div class=" col-md-12  col-lg-12 col-sm-12  col-xs-12">
+            <p id='postBody '>`
               +mainPost_body+`
             </p>
           </div>
         </div>
         <center>
-          <div class='btn-group share-bar below' role='group' aria-label='...'>      
-            <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='below btn btn-social-icon btn-facebook facebook_share' target='_blank'><span class="fa fa-facebook-square"></span></a>
-            <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn btn-social-icon btn-twitter below' target='_blank'><span class="fa fa-twitter"></span></a>
+          <div class='btn-group share-bar ' role='group' aria-label='...'>      
+            <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn facebook_share' target='_blank'><img src="../images/fb.png" class="share-icon-image"></a>
+            <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn' target='_blank'><img src="../images/tt.png" class="share-icon-image"></a>
             <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
-            &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`' class='below btn btn-social-icon btn-pinterest pinterest-share'  target='_blank'><span class="fa fa-pinterest"></span></a>
-            <a href='https://plus.google.com/share?url=`+main_url+`/post/`+mainPost_id+`' class='below btn btn-social-icon btn-google google-share'  target='_blank'><span class="fa fa-google-plus"></span></a>            
-            <a href='https://tumblr.com/share/link?url=`+main_url+`/post/`+mainPost_id+`&amp;title=`+mainPost_title+`' class='below btn btn-social-icon btn-tumblr tumblr-share'  target='_blank'><span class="fa fa-tumblr-square"></span></a>
-            <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class='below btn btn-social-icon btn-tumblr whatsapp-share below'><span class="fa fa-whatsapp"></span></a>
+            &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`' class='btn pinterest-share'  target='_blank'><img src="../images/pp.png" class="share-icon-image"></a>
+            <a href='https://plus.google.com/share?url=`+main_url+`/post/`+mainPost_id+`' class='btn google-share'  target='_blank'><img src="../images/gp.png" class="share-icon-image"></a>         
+            <a href='https://tumblr.com/share/link?url=`+main_url+`/post/`+mainPost_id+`&amp;title=`+mainPost_title+`' class='btn tumblr-share'  target='_blank'><img src="../images/t.png" class="share-icon-image"></a>
+            <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class='btn whatsapp-share'><img src="../images/wa.png" class="share-icon-image"></a>
             
           </div>
         </center>
-      </div>
+      
 
       <br/>
       <br/>
@@ -361,7 +378,7 @@ exports.individualPost=function(req,res){
     <script async src='//platform.twitter.com/widgets.js' charset='utf-8'></script>
   </body>
 </html>`;
-          res.send(html/*"<a href='"+image_url+"'>uhsbchuds</a>"*/);
+          res.send(html);
         });
       }
     });
@@ -768,13 +785,13 @@ function mailer(email,text,sub){
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'blogwebsite2302@gmail.com', // Your email id
-      pass: 'sahirblog2302' // Your password
+      user: 'publicdesk@feedcob.com', // Your email id
+      pass: 'S1H9A0Y3@17' // Your password
     }
   });
   
   var mailOptions = {
-    from: 'blogwebsite2302@gmail.com', // sender address
+    from: 'publicdesk@feedcob.com', // sender address
     to: email, // list of receivers
     subject: sub, // Subject line
     html: text //, // plaintext body

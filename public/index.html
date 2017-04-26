@@ -101,17 +101,14 @@
                        
             <center>
 			</div>
-          <br>
 			<br>
-
-            <br>
             <div id="carousel-top-blogs" class="carousel slide hero" data-ride="carousel">
               <!-- Indicators -->
-              <ol class="carousel-indicators">
+              <!--<ol class="carousel-indicators">
                 <li data-target="#carousel-top-blogs" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel-top-blogs" data-slide-to="1"></li>
                 <li data-target="#carousel-top-blogs" data-slide-to="2"></li>
-              </ol>
+              </ol>-->
 
               <!-- Wrapper for slides -->
               <div class="carousel-inner" role="listbox">
@@ -141,37 +138,45 @@
             </div>    
         </div>
         <div class="col-sm-4">
-          <div class="signup-section alert alert-dismissable">
-		  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <div class="signup-section alert alert-dismissable row">
+		  <center>
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
             <div class="upper-form">
 			<center>
               <h3>
                 SIGNUP TO OUR NEWSLETTER
               </h3>
 			  </center>
-              <center class="comic-font white">
+              <center><div class="comic-font white">
                 Get weekly stories & more
-              </center>
-              <h2>
-                <center class="comic-font white inyourmailbox">
+              </div></center>
+              
+                <center><div class="comic-font white inyourmailbox">
                   IN YOUR MAILBOX!
+				  </div>
                 </center>
-              </h2>
+              
               <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Email (email@example.com)" aria-describedby="basic-addon2">
+                  <input type="text" class="form-control" placeholder="Enter your email" aria-describedby="basic-addon2">
                   <span class="input-group-addon feedme-button" id="basic-addon2" onClick='submitNewsletterRequest()'>Feedme</span>
               </div>
             </div>
             <div class="feedtales-section">
-              <h3>
-                <center class="feedtales-info">See What Writers Have To Share ...</center>
-                <br>
+              
+                <center><div class="feedtales-info">See What Writers Have To Share ...</div></center>
+
                 <center>
                     <a class="btn btn-md " href="/publish.html">Feedtales</a>
                 </center>
-              </h3>
+              
             </div>
+			</center>
           </div>
+		  <center>
+		  <div class="row g_add">
+		  Google add
+		  </div>
+		  <center>
         </div>
       </div>
       
@@ -292,6 +297,7 @@
         else{
           $(".hero").hide();
           $(".feedtales-section").hide();
+		  $(".g_add").hide();
                var tag=param("tag");
                 $.get("/byTag/"+tag+"/"+0, function(data, status){
                     $.each(data, function(index, element) {
