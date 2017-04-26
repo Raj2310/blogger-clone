@@ -244,6 +244,7 @@ body { padding-top: 70px; }
 .mainPostContent{
   word-wrap:break-word;
 }
+
 .fb-like span,iframe{
 	width:300px !important;
 }
