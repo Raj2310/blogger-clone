@@ -236,7 +236,7 @@ exports.individualPost=function(req,res){
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
     </nav>
-      <div class="floating-share visible-xs">
+      <!--<div class="floating-share visible-xs">
         
        
         <a href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`'><img src="../images/facebook-share-mobile.jpg"/></a>
@@ -247,7 +247,7 @@ exports.individualPost=function(req,res){
         <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class="whatsapp-share"><img src="../images/whatsapp-share-mobile.jpg"/></a>
 
         
-      </div>
+      </div>-->
     
         
       
@@ -287,18 +287,9 @@ exports.individualPost=function(req,res){
           
         </div>  
         <h1><center><div id='postTitle'>`+mainPost_title+`</div></center></h1>
-        <center>
-          <div class='btn-group share-bar' role='group' aria-label='...'>      
-            <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn facebook_share' target='_blank'><img src="../images/fb.png" class="share-icon-image"></a>
-            <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn' target='_blank'><img src="../images/tt.png" class="share-icon-image"></a>
-            <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
-            &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`' class='btn pinterest-share'  target='_blank'><img src="../images/pp.png" class="share-icon-image"></a>
-            <a href='https://plus.google.com/share?url=`+main_url+`/post/`+mainPost_id+`' class='btn google-share'  target='_blank'><img src="../images/gp.png" class="share-icon-image"></a>         
-            <a href='https://tumblr.com/share/link?url=`+main_url+`/post/`+mainPost_id+`&amp;title=`+mainPost_title+`' class='btn tumblr-share'  target='_blank'><img src="../images/t.png" class="share-icon-image"></a>
-            <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class='btn whatsapp-share'><img src="../images/wa.png" class="share-icon-image"></a>
-            
-          </div>
-        </center>
+		<center>
+        <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
+		<center>
 		<br>
         <img class='img-responsive ' alt='Responsive image' src="`+mainPost_image_url+`" id='mainPostImage' onerror="this.onerror=null;this.src='https://placehold.it/800x400'" >  
         <div class="mainPostContent ">
@@ -309,16 +300,7 @@ exports.individualPost=function(req,res){
           </div>
         </div>
         <center>
-          <div class='btn-group share-bar ' role='group' aria-label='...'>      
-            <a role='button' href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`' class='btn facebook_share' target='_blank'><img src="../images/fb.png" class="share-icon-image"></a>
-            <a role='button' href='https://twitter.com/share' id='twitter-share' class='btn' target='_blank'><img src="../images/tt.png" class="share-icon-image"></a>
-            <a href='http://pinterest.com/pin/create/button/?url=`+main_url+`/post/`+mainPost_id+`
-            &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`' class='btn pinterest-share'  target='_blank'><img src="../images/pp.png" class="share-icon-image"></a>
-            <a href='https://plus.google.com/share?url=`+main_url+`/post/`+mainPost_id+`' class='btn google-share'  target='_blank'><img src="../images/gp.png" class="share-icon-image"></a>         
-            <a href='https://tumblr.com/share/link?url=`+main_url+`/post/`+mainPost_id+`&amp;title=`+mainPost_title+`' class='btn tumblr-share'  target='_blank'><img src="../images/t.png" class="share-icon-image"></a>
-            <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class='btn whatsapp-share'><img src="../images/wa.png" class="share-icon-image"></a>
-            
-          </div>
+          <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
         </center>
       
 
@@ -368,6 +350,7 @@ exports.individualPost=function(req,res){
     <script src="../js/test.js"></script>
     <script type='text/javascript' src='../js/moment.js'></script>
     <script async src='//platform.twitter.com/widgets.js' charset='utf-8'></script>
+	<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f9b697c911d569"></script> 
   </body>
 </html>`;
           res.send(html);

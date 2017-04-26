@@ -97,22 +97,22 @@
 }
 
 .share-icon-image{
-  height: 35px !important;
+  height: 45px !important;
 }
 .signup-section .upper-form{
 	margin-top:4px;
   background-color: #fec200; 
-  padding: 4px;
+  padding: 20px;
   /*margin-top: 60px;*/
 }
 .signup-section .upper-form h3{
   font-weight: bold;
-  font-size:21px;
+  font-size:25px;
 }
 .signup-section .close{
 	position:absolute;
 	top:13px;
-	right:25px;
+	right:10px;
 	z-index:2;
 }
 .signup-section{
@@ -120,8 +120,9 @@
 	margin-bottom:0;
 }
 .signup-section .upper-form .inyourmailbox{
-		margin-top:5px;
+		margin-top:15px;
 		font-size:22px;
+		margin-bottom:10px;
 }
 .feedtales-section{
   border:1px dashed grey;
@@ -262,12 +263,14 @@ body { padding-top: 70px; }
     bottom: 0;
     left: 0;
     padding: 15px;
+	/*opacity:0.5;*/
     background: #f9993e;
-    /*background: rgba(0, 0, 0, 0.75);*/
+    background: rgba(0, 0, 0, 0.5);
 }
 .carousel-caption h3 {
     margin-bottom: 0;
-	color:#000 !important;
+	color:#FFF !important;
+	/*opacity:1;*/
 }
 
 #postBody iframe{
