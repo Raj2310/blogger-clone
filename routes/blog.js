@@ -279,15 +279,7 @@ exports.individualPost=function(req,res){
                   <span class="input-group-addon feedme-button" id="basic-addon2" onClick='submitNewsletterRequest()'>Feedme</span>
               </div>
             </div>
-            <div class="feedtales-section">
-              
-                <center><div class="feedtales-info">See What Writers Have To Share ...</div></center>
-
-                <center>
-                    <a class="btn btn-md " href="/publish.html">Feedtales</a>
-                </center>
-              
-            </div>
+            
 			</center>
           </div>
 		  
