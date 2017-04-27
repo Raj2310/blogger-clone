@@ -335,10 +335,10 @@ exports.individualPost=function(req,res){
           <div>
           <div>
             <center>
-			<a href="aboutus.html/#contactus">About Us</a>
-			<a href="aboutus.html/#contactus">Contact Us</a>
-			<a href="aboutus.html/#contactus">Advertise</a>
-			<a href="aboutus.html/#contactus">Privacy Policy</a>
+			<a href="aboutus.html">About Us</a>
+			<a href="contactus.html">Contact Us</a>
+			<a href="advertise.html">Advertise</a>
+			<a href="privacypolicy.html">Privacy Policy</a>
 			</center>
           </div>
         </div>
