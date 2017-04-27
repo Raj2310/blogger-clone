@@ -264,13 +264,15 @@ body { padding-top: 70px; }
     bottom: 0;
     left: 0;
     padding: 15px;
-	opacity:0.9;
-    background: #FFF;
-    /*background: rgba(0, 0, 0, 0.5);*/
+	/*opacity:0.9;
+    background: #FFF;*/
+	border-radius:2px;
+	height:50%;
+    background: rgba(0, 0, 0, 0.5);
 }
 .carousel-caption h3 {
     margin-bottom: 0;
-	color:#000 !important;
+	color:#FFF !important;
 	/*opacity:1;*/
 }
 

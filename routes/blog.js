@@ -334,7 +334,12 @@ exports.individualPost=function(req,res){
             </center>
           <div>
           <div>
-            <center><a href="contact.html">Contact Us</a>
+            <center>
+			<a href="aboutus.html/#contactus">About Us</a>
+			<a href="aboutus.html/#contactus">Contact Us</a>
+			<a href="aboutus.html/#contactus">Advertise</a>
+			<a href="aboutus.html/#contactus">Privacy Policy</a>
+			</center>
           </div>
         </div>
          <div class="col-lg-4 col-md-3 col-sm-2 col-xs-12">
@@ -471,7 +476,7 @@ exports.suggestionRecieve=function(req,res){
   const subject=req.body.subject;
   const msg=req.body.msg;
   const mailCompose="Name: "+name+"<br> Email: "+email+"<br>Message: "+msg+"";
-  mailer('blogwebsite2302@gmail.com',mailCompose,subject);
+  mailer('publicdesk@feedcob.com',mailCompose,subject);
   res.redirect('/');
 }
 
