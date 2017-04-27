@@ -32,6 +32,9 @@
 .below{
 
 }
+#inner-message{
+	display:none;
+}
 .hero-content img{
    max-height: 400px;
   
@@ -236,6 +239,9 @@ body { padding-top: 70px; }
 .feedme-button{
 	background-color:#331c00;
 	color:white;
+}
+.feedme-button:hover{
+	cursor:pointer;
 }
 #postBody{
 	margin-top:20px;

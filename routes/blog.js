@@ -504,8 +504,9 @@ exports.findAll = function(req, res) {
 
 exports.newsletterSignup = function(req,res){
   var user=req.body;
+  
    MongoClient.connect(database_url,function(err, db) {
-
+		
       db.collection('signups', function(err, collection) {
 
           collection.insert(user, {safe:true}, function(err, result) {
@@ -515,6 +516,31 @@ exports.newsletterSignup = function(req,res){
                 var inserted_id=result.insertedIds[0];
                   console.log('Success: ' + JSON.stringify(inserted_id));
                   res.send("Success");
+				  var mailText='<!DOCTYPE html>'+
+'<html>'+
+  '<head>'+
+    '<style>'+
+      '@media only screen and (max-device-width: 480px) {'+
+        '/* mobile-specific CSS styles go here */'+
+      '}'+
+    '</style>'+
+  '</head>'+
+  '<body>'+
+    '<p><img src="https://image.ibb.co/g14fgQ/subscribe.png" alt="Subscription successful" width="443" height="626" style="display: block; margin-left: auto; margin-right: auto;" /></p>'+
+    '<p></p>'+
+    '<p><span style="font-size: 14pt;"><em><strong>Website -</strong></em></span></p>'+
+    '<p><span style="font-size: 12pt;"><em><strong><a href="https://feedcob.com/" target="_blank">Feedcob</a></strong></em></span></p>'+
+    '<p><span style="font-size: 14pt;"><em><strong></strong></em></span></p>'+
+    '<p><span style="font-size: 14pt;"><em><strong><span style="font-family: Georgia, palatino, '+"times new roman"+', times, serif;">Follow Us On -</span></strong></em></span></p>'+
+    '<p><span style="font-size: 12pt;"><em><strong><a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank">Facebook </a></strong></em></span></p>'+
+    '<p><span style="font-size: 12pt;"><em><strong><a href="https://twitter.com/Feedcobofficial" target="_blank">Twitter</a></strong></em></span></p>'+
+    '<p><span style="font-size: 12pt;"><em><strong><a href="https://plus.google.com/u/2/102020403779099888425" target="_blank">Google-Plus</a></strong></em></span></p>'+
+    '<p><span style="font-size: 12pt;"><em><strong><a href="https://www.instagram.com/feedcob/" target="_blank">Instagram</a></strong></em></span></p>'+
+    '<p><em><strong></strong></em></p>'+
+    '<p><em><strong></strong></em><em><strong>-- Feedcob Team</strong></em></p>'+
+  '</body>'+
+'</html>';
+				  mailer(user.email,mailText,'Feedcob | Thank you ! Successful subscription');
               }
           });
       });
@@ -750,7 +776,7 @@ function sendMailForNewPost(id,title){
         else {
           collection.find({}).toArray(function(err, items) {
             for(item of items){
-              mailer(item.email,mailText,'New blog post in feedcob');
+              mailer(item.email,mailText,'Feedcob | New Post');
             }
               
           });
