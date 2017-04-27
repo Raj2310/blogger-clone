@@ -168,12 +168,12 @@ exports.individualPost=function(req,res){
     <meta property='og:type'          content='website' />
     <meta property='og:title'         content='`+mainPost_title+`' />
     
-    <meta property='og:image'         content='`+ __dirname +``+mainPost_image_url+`' /> 
+    <meta property='og:image'         content='`+mainPost_image_url+`' /> 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@Feedcob" />
     <meta name="twitter:title" content="`+mainPost_title+`" />
     <meta name="twitter:description" content="View the post on Feedcob." />
-    <meta name="twitter:image" content="..`+mainPost_image_url+`" />
+    <meta name="twitter:image" content="`+mainPost_image_url+`" />
     <link rel='stylesheet' href='../css/bootstrap.min.css'>
     <link rel='stylesheet' href='../css/bootstrap-social.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
