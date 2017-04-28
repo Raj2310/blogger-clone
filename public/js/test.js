@@ -39,8 +39,10 @@
             url: frm.attr('action'),
             data: frm.serialize(),
             success: function (data) {
-               $('#inner-message').html('Thank you! You are now registered to us.');
+			   setTimeout(function(){ $("#inner-message").hide(); }, 3000);
             }
         });
+		$("#inner-message").show();
+		$("#submail").val('');
     }
   });

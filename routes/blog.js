@@ -274,10 +274,15 @@ exports.individualPost=function(req,res){
 				  </div>
                 </center>
               
-              <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Enter your email" aria-describedby="basic-addon2">
+              <form class="input-group" method='post' action='/newsletterSignup' id='newsletterForm'>
+                  <input type="email" class="form-control" placeholder="Enter your email" name='email' id="submail" aria-describedby="basic-addon2">
                   <span class="input-group-addon feedme-button" id="basic-addon2" onClick='submitNewsletterRequest()'>Feedme</span>
-              </div>
+              </form>
+			  <br>
+			  <div class="alert alert-success alert-dismissable fade in " id="inner-message">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>Thank you!</strong> You are now registered to us.
+			</div>
             </div>
             
 			</center>
