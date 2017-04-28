@@ -32,17 +32,5 @@
          $('#main-nav').addClass('tranparent-background');
     }
   });
-   function submitNewsletterRequest(){
-      var frm = $('#newsletterForm');
-        $.ajax({
-            type: frm.attr('method'),
-            url: frm.attr('action'),
-            data: frm.serialize(),
-            success: function (data) {
-			   setTimeout(function(){ $("#inner-message").hide(); }, 3000);
-            }
-        });
-		$("#inner-message").show();
-		$("#submail").val('');
-    }
+   
   });

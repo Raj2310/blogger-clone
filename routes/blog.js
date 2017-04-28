@@ -361,6 +361,21 @@ exports.individualPost=function(req,res){
     <script type='text/javascript' src='../js/moment.js'></script>
     <script async src='//platform.twitter.com/widgets.js' charset='utf-8'></script>
 	<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f9b697c911d569"></script> 
+	<script>
+	function submitNewsletterRequest(){
+      var frm = $('#newsletterForm');
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+			   setTimeout(function(){ $("#inner-message").hide(); }, 3000);
+            }
+        });
+		$("#inner-message").show();
+		$("#submail").val('');
+    }
+	</script>
   </body>
 </html>`;
           res.send(html);
