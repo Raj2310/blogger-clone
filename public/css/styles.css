@@ -217,6 +217,9 @@ body { padding-top: 70px; }
 	.bottomdiv_postpage{
 		padding-bottom:40px;
 	}
+	.posttile{
+		height:280px;
+	}
 	
 } 
 .date-style{
