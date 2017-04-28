@@ -211,9 +211,11 @@ body { padding-top: 70px; }
 		height: 150px !important;
 		max-height: 150px !important;
 	}
-	body{
-		
-		/*width:400px;*/
+	.bannerandcarousel{
+		padding:0;
+	}
+	.bottomdiv_postpage{
+		padding-bottom:40px;
 	}
 	
 } 
