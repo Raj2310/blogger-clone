@@ -753,7 +753,7 @@ exports.newsletterSignup = function(req,res){
 '    <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;Margin-right: 20px">'+
 '      <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">'+
 '        <a href="https://www.facebook.com/Feedcob-766691663508464/" title="Facebook" target="_blank">'+
-'          <img src="https://image.ibb.co/fh39Qk/facebook.png" alt="Facebook" title="Facebook" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">'+
+'          <img src="https://image.ibb.co/kt2p85/nfb.png" alt="Facebook" title="Facebook" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">'+
 '        </a>'+
 '      <div style="line-height:5px;font-size:1px"> </div>'+
 '      </td></tr>'+
@@ -762,7 +762,7 @@ exports.newsletterSignup = function(req,res){
 '    <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;Margin-right: 20px">'+
 '      <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">'+
 '        <a href="https://twitter.com/Feedcobofficial" title="Twitter" target="_blank">'+
-'          <img src="https://image.ibb.co/mYPikk/twitter.png" alt="Twitter" title="Twitter" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">'+
+'          <img src="https://image.ibb.co/hUjQgQ/ntt.png" alt="Twitter" title="Twitter" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">'+
 '        </a>'+
 '      <div style="line-height:5px;font-size:1px"> </div>'+
 '      </td></tr>'+
@@ -771,7 +771,7 @@ exports.newsletterSignup = function(req,res){
 '    <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;Margin-right: 20px">'+
 '      <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">'+
 '        <a href="https://plus.google.com/u/2/102020403779099888425" title="Google+" target="_blank">'+
-'          <img src="https://image.ibb.co/mVEurQ/googleplus.png" alt="Google+" title="Google+" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">'+
+'          <img src="https://image.ibb.co/mXZ2T5/ngp.png" alt="Google+" title="Google+" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">'+
 '        </a>'+
 '      <div style="line-height:5px;font-size:1px"> </div>'+
 '      </td></tr>'+
@@ -780,7 +780,7 @@ exports.newsletterSignup = function(req,res){
 '    <table align="left" border="0" cellspacing="0" cellpadding="0" width="32" height="32" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;Margin-right: 0">'+
 '      <tbody><tr style="vertical-align: top"><td align="left" valign="middle" style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">'+
 '        <a href="https://www.instagram.com/feedcob/" title="Instagram" target="_blank">'+
-'          <img src="https://image.ibb.co/mQuSBQ/instagram_2x.png" alt="Instagram" title="Instagram" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">'+
+'          <img src="https://image.ibb.co/jPhZak/nig.png" alt="Instagram" title="Instagram" width="32" style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">'+
 '        </a>'+
 '      <div style="line-height:5px;font-size:1px"> </div>'+
 '      </td></tr>'+
