@@ -239,7 +239,7 @@
         return (location.search.split(name + '=')[1] || '').split('&')[0];
     }
     function getSubstring(string,size){
-          return string.length>size?(string.substring(0,size))+"...":string;
+          return string.length>size?(string.substring(0,size))+" ...":string;
     }
     $(document).ready(
         function(){
@@ -249,7 +249,7 @@
                   $.each(data.blog,function(index,element){
 				  var img_src="/upload/"+element._id+".jpg";
                   var on_error_string="onerror='this.onerror=null;this.src=\"https://placehold.it/870x300\";'"
-				  $(".carousel-inner").append("<div class='item'><a href='post/"+element._id+"'><img src='"+img_src+"'"+on_error_string+" alt=''><div class='carousel-caption'><h3 style='color:black'>"+element.title+"</h3></div></a></div>");				  
+				  $(".carousel-inner").append("<div class='item'><a href='post/"+element._id+"'><img src='"+img_src+"'"+on_error_string+" alt=''><div class='carousel-caption' style='word-wrap:break-word;'><h3 style='color:black'>"+element.title+"</h3></div></a></div>");				  
                   });
                   $(".carousel-inner .item:first-child").addClass("active");
                    
@@ -283,6 +283,7 @@
                     "</div>");*/
                 }
             });
+			
             $.get("/blogsAll/"+0, function(data, status){
 			
                 $.each(data, function(index, element) {
@@ -295,7 +296,7 @@
                             "<img  class='img-responsive thumbnail-img' src='"+img_src+"'"+on_error_string+"  alt=''>"+
                               "<div class='caption' style='word-wrap:break-word;'>"+
                               "<p class='date-style'>"+moment(element.date).format('MMMM Do YYYY')+"</p>"+
-                              "<h4><a href='post/"+element._id+"'>"+element.title+
+                              "<h4><a href='post/"+element._id+"'>"+getSubstring(element.title,73)+
                               "</a></h4>"+
                               /*"<p>"+getSubstring(element.body,50)+"</p>"+*/
                               "</div>"+

@@ -269,7 +269,7 @@ body { padding-top: 70px; }
 	/*filter: blur(1px);*/
 }
 .carousel-caption {
-	width:60%;
+	width:45%;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -278,7 +278,7 @@ body { padding-top: 70px; }
 	/*opacity:0.9;
     background: #FFF;*/
 	border-radius:2px;
-	height:50%;
+	height:40%;
     background: rgba(0, 0, 0, 0.5);
 }
 .carousel-caption h3 {
