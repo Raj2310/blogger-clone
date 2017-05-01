@@ -528,9 +528,10 @@ exports.newsletterSignup = function(req,res){
    MongoClient.connect(database_url,function(err, db) {
 		
       db.collection('signups', function(err, collection) {
-
-          collection.insert(user, {safe:true}, function(err, result) {
+		  
+		  	  collection.insert(user, {safe:true}, function(err, result) {
               if (err) {
+				  console.log(err);
                   res.send({'error':'An error has occurred'});
               } else {
                 var inserted_id=result.insertedIds[0];
@@ -814,6 +815,9 @@ exports.newsletterSignup = function(req,res){
 				  mailer(user.email,mailText,'Feedcob | Thank you ! Successful subscription');
               }
           });
+
+          
+	  
       });
        db.close();
     });
