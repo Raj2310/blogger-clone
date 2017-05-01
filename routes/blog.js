@@ -119,7 +119,7 @@ exports.findByTag = function(req, res) {
             console.log(err);
         }
         else {
-          collection.find({tag:tag}).sort('date', -1).skip(num).limit(10).toArray(function(err, items) {
+          collection.find({tag:tag}).sort('date', -1).skip(num).limit(12).toArray(function(err, items) {
               res.send(items);
 			  //console.log(items);
           });
@@ -147,7 +147,7 @@ exports.individualPost=function(req,res){
         collection.findOne({_id:objectId(id)}, function(err, item) {
           //console.log(item);
           const mainPost_id=item._id;
-          const mainPost_image_url="/upload/"+item._id+".jpg";
+          const mainPost_image_url=item.mainImage;
           const mainPost_title=item.title;
           const mainPost_body=item.body;
           const mainPost_date=item.date;

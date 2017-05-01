@@ -91,32 +91,22 @@
                 <label for="exampleInputPassword1">Write the post</label>
                 <!-- <textarea id="postContent" class="form-control"></textarea> -->
                 <div id="summernote"></div>
-                <button id="submitPost"  class="btn btn-default">Submit</button>
+				<label for="main_image">Main post image url</label>
+				<input type="text" name="main_image" id="main_image" class="form-control" placeholder="Enter Main image url">
+                <button id="submitPost"  class="btn btn-default" style="margin-top:10px;">Submit</button>
 				<br><input type="checkbox" class="issendmail"> Send mail to subscribers
             </div>
 			
             <div class="col-lg-4 col-md-4 form-group">
-             <h3>Upload Image Here</h3>
-              <form ref='uploadForm' 
-                      id='uploadForm' 
-                      action='http://localhost:3000/upload' 
-                      method='post' 
-                      encType="multipart/form-data">
-                  
-                  <label for="fileUploadName">Post id</label>
-                  <input type="text" id="fileUploadName" name="fileUploadName" />
-                  
-                  <input type="file" name="sampleFile" id="fileUploadField" />
-                  
-                  <input type='submit' id="fileUploadButton" value='Upload!' disabled/>
-              </form>
+             <h3>Upload url of blog here</h3>
               <input type="url" name="Posturl" id="url" placeholder="Enter url to add post">
               <a type="btn" class="btn btn-success" id="submitForeignBlog">Submit</a>
 			  
 			  <div class="well">
 			  <h3>Instructions</h3><br>
 			  <ol>
-			  <li>First submit the post , then upload the image of it.</li> 
+			  <li><strong>First post submitting</strong><br>Enter all the field and click submit.</li> 
+			  <li><strong>For Main Image </strong><br>Insert the url of the picture.<br>Remember the picture has to be first uploaded to <a href="https://feedcob.imgbb.com/" target="_blank">https://imgbb.com</a> , then get the direct link of the picture and insert in the image url.</li>
 			  <li> Maximum characters in "Title of the Post" is <strong>73 characters</strong> including space.</li>	
 			  <li><strong>For inserting picture</strong><br>Click the picture tab and insert the url of the picture.<br>Remember the picture has to be first uploaded to <a href="https://feedcob.imgbb.com/" target="_blank">https://imgbb.com</a> , then get the direct link of the picture and insert in the image url.<br><strong>Do not</strong> choose files , just only the url link.</li>
 			  <li><strong>For inserting video</strong><br>Copy the embeded code of the video from youtube and paste it in the summernote code view.<br>Before doing this take help of a technician.</li>
@@ -170,6 +160,7 @@ $(document).ready(
             var postTitle=$("#postTitle").val();
             var postAuthor=$("#postAuthor").val();
             var postContent= $('#summernote').summernote('code');//$("#postContent").val();
+			var mainImage=$("#main_image").val();
             var tag=$("#tags").val();
 			var sm=0;
 			if($(".issendmail").is(':checked'))
@@ -177,7 +168,7 @@ $(document).ready(
 			else
 				sm=0;
             //var fileName=$("#fileUploadName").attr("name");
-            $.post("/blog",{ title:postTitle,tag:tag,body:postContent,author:writer,sendmail:sm}, function(data, status){
+            $.post("/blog",{ title:postTitle,tag:tag,body:postContent,author:writer,sendmail:sm,mainImage:mainImage}, function(data, status){
                      console.log(data);
                      //data returned is the inserted id
                      $("#fileUploadName").val(data);
