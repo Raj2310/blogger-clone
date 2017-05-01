@@ -1365,7 +1365,7 @@ function mailer(email,text,sub){
   });
   
   var mailOptions = {
-    from: 'publicdesk@feedcob.com', // sender address
+    from: 'Feedcob.com<publicdesk@feedcob.com>', // sender address
     to: email, // list of receivers
     subject: sub, // Subject line
     html: text //, // plaintext body
