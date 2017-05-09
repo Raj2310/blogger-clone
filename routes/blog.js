@@ -161,7 +161,7 @@ exports.individualPost=function(req,res){
     
     <title>Feedcob | Posts</title>
     <link rel='icon' href='../images/logo.png' type='image/gif'>
-    <meta name='description' content='GOSSIPS.TRENDING.HUMOR'>
+    <meta name='description' content='GOSSIPS.TRENDING.HUMOUR'>
     <meta name='author' content='Feedcob'>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -329,7 +329,7 @@ exports.individualPost=function(req,res){
       <div class="row">
         <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
           
-          <center>GOSSIPS.TRENDING.HUMOR</center>
+          <center>GOSSIPS.TRENDING.HUMOUR</center>
           <div>
             <center>
             <a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
@@ -794,7 +794,7 @@ exports.newsletterSignup = function(req,res){
 '                  '+
 '                    <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 15px; padding-bottom: 10px;"><![endif]-->'+
 '<div style="padding-right: 10px; padding-left: 10px; padding-top: 15px; padding-bottom: 10px;">'+
-'	<div style="font-size:12px;line-height:18px;color:#959595;font-family:Arial, \'Helvetica Neue\', Helvetica, sans-serif;text-align:left;"><p style="margin: 0;font-size: 12px;line-height: 18px;text-align: center"><span style="font-size: 16px; line-height: 24px;">GOSSIPS. TRENDING. HUMOR</span></p></div>'+
+'	<div style="font-size:12px;line-height:18px;color:#959595;font-family:Arial, \'Helvetica Neue\', Helvetica, sans-serif;text-align:left;"><p style="margin: 0;font-size: 12px;line-height: 18px;text-align: center"><span style="font-size: 16px; line-height: 24px;">GOSSIPS. TRENDING. HUMOUR</span></p></div>'+
 '</div>'+
 '<!--[if mso]></td></tr></table><![endif]-->'+
 ''+
@@ -1322,7 +1322,7 @@ function sendMailForNewPost(id,title){
 '                  '+
 '                    <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 15px; padding-bottom: 10px;"><![endif]-->'+
 '<div style="padding-right: 10px; padding-left: 10px; padding-top: 15px; padding-bottom: 10px;">'+
-'	<div style="font-size:12px;line-height:18px;color:#959595;font-family:Arial, \'Helvetica Neue\', Helvetica, sans-serif;text-align:left;"><p style="margin: 0;font-size: 12px;line-height: 18px;text-align: center"><span style="font-size: 16px; line-height: 24px;">GOSSIPS. TRENDING. HUMOR</span></p></div>'+
+'	<div style="font-size:12px;line-height:18px;color:#959595;font-family:Arial, \'Helvetica Neue\', Helvetica, sans-serif;text-align:left;"><p style="margin: 0;font-size: 12px;line-height: 18px;text-align: center"><span style="font-size: 16px; line-height: 24px;">GOSSIPS. TRENDING. HUMOUR</span></p></div>'+
 '</div>'+
 '<!--[if mso]></td></tr></table><![endif]-->'+
 ''+
