@@ -13,15 +13,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var fileUpload = require('express-fileupload');
 var database_url="mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website";
-app.set('port', (process.env.PORT || 80));
+app.set('port', (process.env.PORT || 5000));
 //app.configure(function () {
   //  app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
   //  app.use(express.bodyParser());
 //});
 app.use(fileUpload());
-//app.use(cookieParser());   
+//app.use(cookieParser());
 app.set('trust proxy', 1) // trust first proxy
- 
+
 app.use(cookieSession({
   name: 'session',
   keys: ['key1', 'key2']
@@ -61,7 +61,7 @@ app.get('/getcookie',function(req,res){
             html = '<form action="/login_attempt" method="post">' +
              'Your name: <input type="text" name="userName"><br>' +
              '<button type="submit">Submit</button>' +
-             '</form>';  
+             '</form>';
   }
   res.send(html);
 });*/
@@ -110,14 +110,14 @@ app.post('/login_attempt', function(req, res){
 /*app.get('/dashboard', function(req, res){
   var html="";
   if (req.session.userName) {
-   
-    var html = '<h2>Hello '+req.session.userName+'</h2>';  
+
+    var html = '<h2>Hello '+req.session.userName+'</h2>';
              res.send(html);
   }
   else{
              res.redirect('/login');
   }
-  
+
 });
 app.post('logout',function(req,res){
   req.session.destroy(function(err) {
@@ -148,16 +148,16 @@ app.post('/suggestionRecieve',blog.suggestionRecieve);
 //app.delete('/blog/:id', blog.deleteblog);
 app.post('/upload', function(req, res) {
   var sampleFile;
- 
+
   if (!req.files) {
     res.send('No files were uploaded.');
     return;
   }
- 
-  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file 
+
+  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
   sampleFile = req.files.sampleFile;
  console.log(req);
-  // Use the mv() method to place the file somewhere on your server 
+  // Use the mv() method to place the file somewhere on your server
   var fileName=req.body.fileUploadName;
   sampleFile.mv('public/upload/'+fileName+'.jpg', function(err) {
     if (err) {
