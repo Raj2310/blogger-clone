@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var fileUpload = require('express-fileupload');
 var database_url="mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website";
-app.set('port', (process.env.PORT || 80));
+app.set('port', (process.env.PORT || 5000));
 //app.configure(function () {
   //  app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */
   //  app.use(express.bodyParser());
