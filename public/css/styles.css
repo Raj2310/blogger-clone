@@ -60,6 +60,9 @@
 	height:auto;
 	padding:0;
 }
+.posttile .caption{
+  padding-bottom: 0px;
+}
 .reduce-padding-right{
   padding-right: 10px;
 }
