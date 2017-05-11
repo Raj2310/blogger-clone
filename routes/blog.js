@@ -297,7 +297,7 @@ exports.individualPost=function(req,res){
 		<center>
 		<br>
         <img class='img-responsive ' alt='Responsive image' src="`+mainPost_image_url+`" id='mainPostImage' onerror="this.onerror=null;this.src='https://placehold.it/800x400'" >
-        <div class="mainPostContent">
+        <div class="mainPostContent container">
           <div class=" col-md-12  col-lg-12 col-sm-12  col-xs-12">
             <p id='postBody '>`
               +mainPost_body+`
