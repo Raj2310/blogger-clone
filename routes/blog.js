@@ -25,7 +25,7 @@ exports.topBlog=function(req,res){
               } else{
                   res.send({status:1,blog:item});
               };
-              
+
           });
         }
 
@@ -51,7 +51,7 @@ exports.topBlogs=function(req,res){
                   res.send({status:1,blog:items});
 			  //console.log({blog:items});
               }
-              
+
           });
         }
       });
@@ -81,7 +81,7 @@ exports.addFromJsonData = function(){
                }
              });
            });
-          }); 
+          });
         db.close();
       }
    });
@@ -157,8 +157,8 @@ exports.individualPost=function(req,res){
 <html lang='en'>
   <head>
     <meta charset='utf-8'>
-    
-    
+
+
     <title>Feedcob | Posts</title>
     <link rel='icon' href='../images/logo.png' type='image/gif'>
     <meta name='description' content='GOSSIPS.TRENDING.HUMOUR'>
@@ -167,8 +167,8 @@ exports.individualPost=function(req,res){
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <meta property='og:type'          content='website' />
     <meta property='og:title'         content='`+mainPost_title+`' />
-    
-    <meta property='og:image'         content='`+mainPost_image_url+`' /> 
+
+    <meta property='og:image'         content='`+mainPost_image_url+`' />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@Feedcob" />
     <meta name="twitter:title" content="`+mainPost_title+`" />
@@ -215,7 +215,7 @@ exports.individualPost=function(req,res){
              <li><a href="/?tag=hera_pheri" class="text-uppercase reduce-padding-right">HeraPheri</a></li>
             <li><a href="/?tag=wtf_i_go" class="text-uppercase reduce-padding-right">FeedMore</a></li>
             <li><a href="../publish.html" class="text-uppercase reduce-padding-right">FeedTales</a></li>
-            
+
           </ul>
           <div class="navbar-form navbar-left">
             <div class="form-group">
@@ -225,20 +225,20 @@ exports.individualPost=function(req,res){
           </div>
           <ul class="nav navbar-nav navbar-right">
 
-            
+
             <li><a href="https://www.facebook.com/Feedcob-766691663508464/" target="_blank"><img src="../images/nfb.png" class="nav-icon-image"></span></a></li>
             <li><a href="https://twitter.com/Feedcobofficial" target="_blank"><img src="../images/ntt.png"class="nav-icon-image"></span></a></li>
             <li><a href="https://plus.google.com/u/2/102020403779099888425" target="_blank"><img src="../images/ngp.png" class="nav-icon-image"></a></li>
             <li><a href="https://www.instagram.com/feedcob/" target="_blank"><img src="../images/nig.png" class="nav-icon-image"></a></li>
 
-            
+
           </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
     </nav>
       <!--<div class="floating-share visible-xs">
-        
-       
+
+
         <a href='http://www.facebook.com/sharer/sharer.php?u=`+main_url+`/post/`+mainPost_id+`'><img src="../images/facebook-share-mobile.jpg"/></a>
         <a href="http://twitter.com/share?text=New post On Feedcob &url=`+main_url+`/post/`+mainPost_id+`
 " role='button' ><img src="../images/twitter-share-mobile.jpg"/></a>
@@ -246,14 +246,14 @@ exports.individualPost=function(req,res){
               &media=`+main_url+`/upload/`+mainPost_id+`.jpg&description=`+mainPost_title+`'><img src="../images/pinterest-share-mobile.jpg"/></a>
         <a href='whatsapp://send?text='`+main_url+`/post/`+mainPost_id+`' data-action='share/whatsapp/share' class="whatsapp-share"><img src="../images/whatsapp-share-mobile.jpg"/></a>
 
-        
+
       </div>-->
-    
-        
-      
+
+
+
             <div class='col-md-8'>
               <img src='../images/heroFeedcob.png' class='banner'>
-              
+
             </div>
             <div class="col-sm-4">
           <div class="signup-section alert alert-dismissable row">
@@ -268,12 +268,12 @@ exports.individualPost=function(req,res){
               <center><div class="comic-font white">
                 Get weekly stories & more
               </div></center>
-              
+
                 <center><div class="comic-font white inyourmailbox">
                   IN YOUR MAILBOX!
 				  </div>
                 </center>
-              
+
               <form class="input-group" method='post' action='/newsletterSignup' id='newsletterForm'>
                   <input type="email" class="form-control" placeholder="Enter your email" name='email' id="submail" aria-describedby="basic-addon2">
                   <span class="input-group-addon feedme-button" id="basic-addon2" onClick='submitNewsletterRequest()'>Feedme</span>
@@ -284,20 +284,20 @@ exports.individualPost=function(req,res){
 			<strong>Thank you!</strong> You are now registered to us.
 			</div>
             </div>
-            
+
 			</center>
           </div>
-		  
+
         </div>
-          
-        </div>  
+
+        </div>
         <h1><center><div id='postTitle'>`+mainPost_title+`</div></center></h1>
 		<center>
         <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
 		<center>
 		<br>
-        <img class='img-responsive ' alt='Responsive image' src="`+mainPost_image_url+`" id='mainPostImage' onerror="this.onerror=null;this.src='https://placehold.it/800x400'" >  
-        <div class="mainPostContent ">
+        <img class='img-responsive ' alt='Responsive image' src="`+mainPost_image_url+`" id='mainPostImage' onerror="this.onerror=null;this.src='https://placehold.it/800x400'" >
+        <div class="mainPostContent container">
           <div class=" col-md-12  col-lg-12 col-sm-12  col-xs-12">
             <p id='postBody '>`
               +mainPost_body+`
@@ -307,7 +307,7 @@ exports.individualPost=function(req,res){
         <center>
           <!-- Go to www.addthis.com/dashboard to customize your tools --> <div class="addthis_inline_share_toolbox"></div>
         </center>
-      
+
 
       <br/>
       <br/>
@@ -322,13 +322,13 @@ exports.individualPost=function(req,res){
       </div>
 
     </div>
-	
+
 	<div class="main-outer-container container-fluid bottomdiv_postpage" style="border-top-width:0px">
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
-          
+
           <center>GOSSIPS.TRENDING.HUMOUR</center>
           <div>
             <center>
@@ -360,7 +360,7 @@ exports.individualPost=function(req,res){
     <script src="../js/test.js"></script>
     <script type='text/javascript' src='../js/moment.js'></script>
     <script async src='//platform.twitter.com/widgets.js' charset='utf-8'></script>
-	<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f9b697c911d569"></script> 
+	<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58f9b697c911d569"></script>
 	<script>
 	function submitNewsletterRequest(){
       var frm = $('#newsletterForm');
@@ -393,7 +393,7 @@ exports.individualPost=function(req,res){
 
 exports.sendUserInfo = function(req,res){
     if(req.session.id){
-     res.send({status:1,firstName:req.session.firstName,lastName:req.session.lastName,id:req.session.id});   
+     res.send({status:1,firstName:req.session.firstName,lastName:req.session.lastName,id:req.session.id});
     }
     else{
       res.send({status:0})
@@ -408,12 +408,12 @@ exports.adminBlogs=function(req,res){
       if(user.type==="writer"){
           getUserBlogs(user.id,function(blogs){
         res.send(blogs);
-            
+
           });
       }else if(user.type==="admin"){
           getAllBlogs(function(blogs){
         res.send(blogs);
-            
+
           });
       }
       else{
@@ -480,14 +480,14 @@ exports.newUserSignup = function(req,res){
                         else{
                            res.send({status:0,msg:'Wrong Confirmation Code'});
                         }
-                        
+
                     }
                   }
-                
+
           });
         }
       });
-    });  
+    });
 };
 
 exports.suggestionRecieve=function(req,res){
@@ -511,24 +511,24 @@ exports.findAll = function(req, res) {
         else{
           collection.find({}).sort('date', -1).skip(num).limit(12).toArray(function(err, items) {
             res.send(items);
-          }); 
+          });
         }
       });
     //console.log(req.params);
       db.close();
   });
-   
-    
+
+
 };
 
 
 exports.newsletterSignup = function(req,res){
   var user=req.body;
-  
+
    MongoClient.connect(database_url,function(err, db) {
-		
+
       db.collection('signups', function(err, collection) {
-		  
+
 		  	  collection.insert(user, {safe:true}, function(err, result) {
               if (err) {
 				  console.log(err);
@@ -810,14 +810,14 @@ exports.newsletterSignup = function(req,res){
 ''+
 ''+
 '</body></html>';
-	
+
 
 				  mailer(user.email,mailText,'Feedcob | Thank you ! Successful subscription');
               }
           });
 
-          
-	  
+
+
       });
        db.close();
     });
@@ -839,7 +839,7 @@ exports.addblog = function(req, res) {
                 var inserted_id=result.insertedIds[0];
                   console.log('Success: ' + JSON.stringify(inserted_id));
                   if(blog.sendmail==1){
-					sendMailForNewPost(inserted_id,""+blog.title+"");  
+					sendMailForNewPost(inserted_id,""+blog.title+"");
 				  }
                   res.send(inserted_id);
               }
@@ -900,8 +900,8 @@ exports.deleteblog = function(req, res) {
         console.log("Not authorzed to delete");
         res.send("Not Authorized");
       }
-    }); 
-    
+    });
+
 }
 
 
@@ -910,7 +910,7 @@ exports.editPost=function(req,res){
   let session_id=req.session.id;
   usertype(session_id,function(user){
     getBlogById(post_id,function(blog){
-      
+
       if(blog && ( blog.author.id.toString()==user.id || user.type=="admin")){
         //console.log("Blog Here");
         //console.log(blog)
@@ -940,7 +940,7 @@ exports.authorDashboard = function(req,res){
                 console.log(items);
                 res.send({status:1,blogs:items});
               }
-             
+
           });
         });
         db.close();
@@ -963,7 +963,7 @@ exports.blogSearch = function(req,res){
         else{
           collection.find({$text:{$search:text}}).toArray(function(err, items) {
             res.send(items);
-          }); 
+          });
         }
       });
     //console.log(req.params);
@@ -1338,7 +1338,7 @@ function sendMailForNewPost(id,title){
 ''+
 ''+
 '</body></html>';
-	
+
 
   MongoClient.connect(database_url,function(err, db) {
       db.collection('signups', function(err, collection) {
@@ -1350,14 +1350,14 @@ function sendMailForNewPost(id,title){
             for(item of items){
               mailer(item.email,mailText,'Feedcob | Greetings , a New Post added. Check it out !');
             }
-              
+
           });
         }
       });
        db.close();
     });
- 
-  
+
+
 }
 function mailer(email,text,sub){
   var transporter = nodemailer.createTransport({
@@ -1367,7 +1367,7 @@ function mailer(email,text,sub){
       pass: 'S1H9A0Y3@17' // Your password
     }
   });
-  
+
   var mailOptions = {
     from: 'Feedcob.com<publicdesk@feedcob.com>', // sender address
     to: email, // list of receivers
@@ -1378,7 +1378,7 @@ function mailer(email,text,sub){
   transporter.sendMail(mailOptions, function(error, info){
     if(error){
         console.log(error);
-        
+
     }else{
         console.log('Message sent: ' + info.response);
     };
