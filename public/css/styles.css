@@ -37,7 +37,7 @@
 }
 .hero-content img{
    max-height: 400px;
-  
+
 }
 #mainPostImage{
   margin: auto;
@@ -57,7 +57,7 @@
   height:100px !important;
 }
 .posttile{
-	height:220px;
+	height:auto;
 	padding:0;
 }
 .reduce-padding-right{
@@ -104,7 +104,7 @@
 }
 .signup-section .upper-form{
 	margin-top:4px;
-  background-color: #fec200; 
+  background-color: #fec200;
   padding: 20px;
   /*margin-top: 60px;*/
 }
@@ -158,7 +158,7 @@
   z-index:100;
   width:10px;
   top: 260px;
-  left:0px;	
+  left:0px;
 }
 .floating-share > div{
   /*margin: auto;
@@ -218,10 +218,10 @@ body { padding-top: 70px; }
 		padding-bottom:40px;
 	}
 	.posttile{
-		height:280px;
+		height:auto;
 	}
-	
-} 
+
+}
 .date-style{
       font-size: 12px;
     color: #726a6a;
@@ -251,7 +251,7 @@ body { padding-top: 70px; }
 #postBody{
 	margin-top:20px;
 	margin-bottom:20px;
-  
+
 }
 .mainPostContent{
   word-wrap:break-word;
@@ -288,5 +288,5 @@ body { padding-top: 70px; }
 }
 
 #postBody iframe{
-	
+
 }
