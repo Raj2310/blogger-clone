@@ -223,6 +223,9 @@ body { padding-top: 70px; }
 	.posttile{
 		height:250px;
 	}
+  #postTitle{
+    text-align: left;
+  }
 
 }
 .date-style{
