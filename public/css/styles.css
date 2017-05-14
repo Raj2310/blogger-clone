@@ -207,11 +207,6 @@ body { padding-top: 70px; }
 	.signup-section .upper-form .inyourmailbox{
 		font-size:20px;
 	}
-	.carousel-caption h3{
-		font-size:15px;
-    background: rgba(0, 0, 0, 0.6);
-	}
-
 	.carousel-inner .item img{
 		height: 150px !important;
 		max-height: 150px !important;
@@ -297,6 +292,8 @@ body { padding-top: 70px; }
 .carousel-caption h3 {
     margin-bottom: 0;
 	color:#FFF !important;
+  font-size:15px;
+  background: rgba(0, 0, 0, 0.6);
 	/*opacity:1;*/
 }
 
