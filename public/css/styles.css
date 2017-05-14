@@ -210,6 +210,9 @@ body { padding-top: 70px; }
 	.carousel-caption h3{
 		font-size:15px;
 	}
+  .carousel-caption h3 span{
+    background: rgba(0, 0, 0, 0.5);
+  }
 	.carousel-inner .item img{
 		height: 150px !important;
 		max-height: 150px !important;
@@ -290,7 +293,7 @@ body { padding-top: 70px; }
     background: #FFF;*/
 	border-radius:2px;
 	height:40%;
-    background: rgba(0, 0, 0, 0.5);
+
 }
 .carousel-caption h3 {
     margin-bottom: 0;
