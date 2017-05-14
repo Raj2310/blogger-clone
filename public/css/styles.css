@@ -221,7 +221,8 @@ body { padding-top: 70px; }
 		height:250px;
 	}
   #postTitle{
-    text-align: left;
+    font-size: 20px;
+    font-family: Tahoma;
   }
   .mainPostContent{
     margin-left: 0px;
