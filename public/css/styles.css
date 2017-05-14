@@ -229,6 +229,9 @@ body { padding-top: 70px; }
     padding-left: 0px;
     padding-right: 0px;
   }
+  .arousel-caption{
+    width: 100%;
+  }
 }
 .date-style{
       font-size: 12px;
