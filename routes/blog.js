@@ -161,12 +161,12 @@ exports.individualPost=function(req,res){
 
     <title>Feedcob | Posts</title>
     <link rel='icon' href='../images/logo.png' type='image/gif'>
-  
+
     <meta name='author' content='Feedcob'>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <meta property='og:type'          content='website' />
-    <meta property='og:title'         content='`+mainPost_title+`' />
+    
 
     <meta property='og:image'         content='`+mainPost_image_url+`' />
     <meta name="twitter:card" content="summary" />
