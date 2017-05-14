@@ -209,10 +209,9 @@ body { padding-top: 70px; }
 	}
 	.carousel-caption h3{
 		font-size:15px;
-	}
-  .carousel-caption h3 span{
     background: rgba(0, 0, 0, 0.5);
-  }
+	}
+
 	.carousel-inner .item img{
 		height: 150px !important;
 		max-height: 150px !important;
