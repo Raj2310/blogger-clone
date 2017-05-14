@@ -236,6 +236,8 @@ body { padding-top: 70px; }
   }
   .carousel-caption h3{
    font-size:  18px;
+   padding-left: 10px;
+   padding-right: 10px;
   }
 }
 .date-style{
