@@ -41,7 +41,7 @@ exports.articles=function(req,res) {
           console.log(err);
         }
         else{
-          collection.find({}).skip(num).limit(10).sort({"publishedTime": 1}).toArray(function(err, items) {
+          collection.find({}).skip(num).limit(10).sort({"publishedTime": -1}).toArray(function(err, items) {
             res.send(items);
           });
         }
