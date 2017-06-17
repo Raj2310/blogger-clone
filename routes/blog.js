@@ -169,6 +169,8 @@ exports.individualPost=function(req,res){
     <meta property='og:type'          content='article' />
     <meta property='og:title'         content='`+mainPost_title+`' />
     <meta property='og:image'         content='`+mainPost_image_url+`' />
+    <meta property='og:image:width '  content='600px'/>
+    <meta property='og:image:height '  content='315px'/>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@Feedcob" />
     <meta name="twitter:title" content="`+mainPost_title+`" />
