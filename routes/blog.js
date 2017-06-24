@@ -36,8 +36,11 @@ exports.topBlog=function(req,res){
 
 exports.topBlogs=function(req,res){
   MongoClient.connect(database_url,function(err, db) {
-      db.collection('blogs', function(err, collection) {
-        if(err){
+    if(err){
+      console.log("database connection error",err)
+    }
+      db.collection('blogs', function(err1, collection) {
+        if(err1){
             res.send({status:0});
             console.log("Error in topBlog function "+err);
         }
@@ -993,8 +996,11 @@ function usertype(session_id,callback){
 
 function getBlogById(blogid,callback){
     MongoClient.connect(database_url,function(err, db) {
-      db.collection('blogs', function(err, collection) {
-        if(err){
+      if(err){
+        console.log("database connection error",err)
+      }
+      db.collection('blogs', function(err1, collection) {
+        if(err1){
             return("here");
             //console.log(err);
         }
