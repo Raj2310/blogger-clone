@@ -12,7 +12,7 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 var fileUpload = require('express-fileupload');
-var database_url="mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website";
+var database_url="mongodb://admin:saajansaajan@ds139072.mlab.com:39072/testing";
 app.set('port', (process.env.PORT || 50000));
 //app.configure(function () {
   //  app.use(express.logger('dev'));     /* 'default', 'short', 'tiny', 'dev' */

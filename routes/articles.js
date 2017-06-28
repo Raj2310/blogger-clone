@@ -5,7 +5,7 @@ let Server = mongo.Server,
     BSON = mongo.BSONPure;
 let objectId=mongo.ObjectId;
 let MongoClient = mongo.MongoClient;
-let database_url="mongodb://admin:nljtmvmkhk@ds157549.mlab.com:57549/blog_website";
+let database_url="mongodb://admin:saajansaajan@ds139072.mlab.com:39072/testing";
 
 
 exports.addArticle=function(req,res){
