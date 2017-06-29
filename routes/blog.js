@@ -142,13 +142,16 @@ exports.individualPost=function(req,res){
   console.log('Retrieving blog: ' + id);
   MongoClient.connect(database_url,function(err, db) {
     db.collection('blogs', function(err, collection) {
-      if(err){
+      if(err || collection==null){
         res.redirect("/");
         //console.log(err);
       }
       else {
         collection.findOne({_id:objectId(id)}, function(err, item) {
           //console.log(item);
+          if(item==null){
+            res.redirect("/");
+          }
           const mainPost_id=item._id;
           const mainPost_image_url=item.mainImage;
           const mainPost_title=item.title;
