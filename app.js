@@ -1,53 +1,57 @@
-var express = require('express')
-var mongo = require('mongodb')
-var blog = require('./routes/blog')
-var articles = require('./routes/articles')
+const express = require('express')
+const mongo = require('mongodb')
+const blog = require('./blog/blog')
+const articles = require('./article/articles')
 const database_url = "mongodb://admin:saajansaajan@ds139072.mlab.com:39072/testing"
 
-var app = express()
-var MongoClient = mongo.MongoClient;
-app.use(express.static('public'));
-app.post('/logout', function(req, res){
-    req.session = null;
-    res.send("logged out");
+const app = express()
+const MongoClient = mongo.MongoClient
+app.use(express.static('public'))
+app.post('/logout', function (req, res) {
+	req.session = null
+	res.send("logged out")
 })
-app.post('/login_attempt', function(req, res){
-  console.log(req.session);
-  if (req.session.id) {
-       res.send({
-        status:2
-	   })
-  }
-  else{
-              var email=req.body.email;
-               var password=req.body.password;
-              // console.log(req.body);
-              MongoClient.connect(database_url,function(err, db) {
-                db.collection('users', function(err, collection) {
-                  if(err){
-					  res.send({status: 0, msg: 'An error occured'})
-					  console.log(err)
-                  }
-                  else {
-                    console.log(email+" "+password);
-                    collection.findOne({email:email,password:password}, function(err, item) {
-                        if(item){
+app.post('/login_attempt', function (req, res) {
+	if (req.session.id) {
+		res.send({
+			status: 2
+		})
+	} else {
+		const email = req.body.email
+		const password = req.body.password
+		MongoClient.connect(database_url, function (err, db) {
+			db.collection('users', function (err, collection) {
+				if (err) {
+					res.send({
+						status: 0,
+						msg: 'An error occured'
+					})
+				} else {
+					collection.findOne({
+						email: email,
+						password: password
+					}, function (err, item) {
+						if (item) {
 							req.session.email = item.email
 							req.session.password = item.password
 							req.session.firstName = item.firstName
 							req.session.lastName = item.lastName
 							req.session.id = item._id
-							res.send({status: 1})
-                        }
-                        else{
-							res.send({status: 0, msg: "Email and password Do no match"})
-                        }
+							res.send({
+								status: 1
+							})
+						} else {
+							res.send({
+								status: 0,
+								msg: "Email and password Do no match"
+							})
+						}
 					})
-                  }
-				})
-				  db.close()
-			  })
-  }
+				}
+			})
+			db.close()
+		})
+	}
 })
 app.get('/top-blog', blog.topBlog)
 app.get('/blogsAll/:num', blog.findAll)
@@ -68,26 +72,23 @@ app.get('/dashboard', blog.authorDashboard)
 app.get('/adminBlogs', blog.adminBlogs)
 app.get('/admin/editPost/:id', blog.editPost)
 app.post('/suggestionRecieve', blog.suggestionRecieve)
-app.post('/upload', function(req, res) {
-  var sampleFile;
+app.post('/upload', function (req, res) {
+	var sampleFile
 
-  if (!req.files) {
-	  res.send('No files were uploaded.')
-	  return
-  }
+	if (!req.files) {
+		res.send('No files were uploaded.')
+		return
+	}
 	sampleFile = req.files.sampleFile
-	console.log(req)
-  // Use the mv() method to place the file somewhere on your server
+	// Use the mv() method to place the file somewhere on your server
 	var fileName = req.body.fileUploadName
-  sampleFile.mv('public/upload/'+fileName+'.jpg', function(err) {
-    if (err) {
-      res.status(500).send(err);
-		console.log("There was upload error" + err)
-    }
-    else {
-		res.send('File uploaded!')
-    }
-  })
+	sampleFile.mv('public/upload/' + fileName + '.jpg', function (err) {
+		if (err) {
+			res.status(500).send(err)
+		} else {
+			res.send('File uploaded!')
+		}
+	})
 })
 
 module.exports = app

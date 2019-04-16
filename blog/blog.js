@@ -24,7 +24,7 @@ exports.topBlog=function(req,res){
 
               } else{
                   res.send({status:1,blog:item});
-              };
+              }
 
           });
         }
@@ -1017,7 +1017,7 @@ function getBlogById(blogid,callback){
       });
        db.close();
     });
-};
+}
 function getAllBlogs(callback){
    MongoClient.connect(database_url,function(err, db) {
       db.collection('blogs', function(err, collection) {
@@ -1392,6 +1392,6 @@ function mailer(email,text,sub){
 
     }else{
         console.log('Message sent: ' + info.response);
-    };
+    }
   });
 }
