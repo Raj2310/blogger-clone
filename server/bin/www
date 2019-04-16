@@ -1,7 +1,7 @@
 var cookieSession = require('cookie-session')
 var fileUpload = require('express-fileupload')
 var bodyParser = require("body-parser")
-var app = require('../../../app')
+var app = require('../../app')
 
 app.set('port', (process.env.PORT || 50000))
 app.set('trust proxy', 1) // trust first proxy
