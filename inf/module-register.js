@@ -1,8 +1,7 @@
 module.exports = function(appObject,moduleObjects){
-    moduleObjects.array.forEach(module => {
+    moduleObjects.forEach(module => {
         module.routes.forEach(route =>{
-            appObject.use(routePath,routeFunction)
+            appObject.use(route.routePath,route.routeFunction)
         })
     });
-
 }
