@@ -1,4 +1,4 @@
-exports.logout = function (req, res) {
+module.exports = function (req, res) {
     req.session = null
     res.send("logged out")
 }

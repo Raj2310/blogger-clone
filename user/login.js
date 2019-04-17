@@ -2,7 +2,7 @@ const mongo = require('mongodb')
 const MongoClient = mongo.MongoClient
 const database_url = "mongodb://admin:saajansaajan@ds139072.mlab.com:39072/testing"
 
-exports.login = function (req, res) {
+module.exports = function (req, res) {
     if (req.session.id) {
         res.send({
             status: 2
@@ -43,4 +43,4 @@ exports.login = function (req, res) {
             db.close()
         })
     }
-}    
+}
